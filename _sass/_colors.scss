@@ -1,0 +1,48 @@
+/// Gets a value from a map.
+/// @author Hugo Giraudel
+/// @param {map} $map Map.
+/// @param {string} $keys Key(s).
+/// @return {string} Value.
+@function val($map, $keys...) {
+    
+        @if nth($keys, 1) == null {
+            $keys: remove-nth($keys, 1);
+        }
+    
+        @each $key in $keys {
+            $map: map-get($map, $key);
+        }
+    
+        @return $map;
+    
+    }
+    
+    /// Gets a palette value.
+    /// @param {string} $keys Key(s).
+    /// @return {string} Value.
+    @function _palette($keys...) {
+        @return val($palette, $keys...);
+    }
+
+// Color palette
+$palette: (
+    orange: #F99D1C,
+    orangeHov: #FAB024,
+    orangeAct: #F88E16,
+    blue: #04C9D7,
+    blueHov: #04D6E1,
+    blueAct: #03BFCF,
+    chartreuse: #B8D757,
+    chartreuseHov: #E6E97B,
+    chartreuseAct: #D0D54F,
+    yellow: #FBE04B,
+    green: #96BD4C,
+    greenHov: #A9CC5C,
+    greenAct: #87B13F,
+    gray: #666,
+    grayVLight: #EEE,
+    grayLight: #CCC,
+    grayMed: #A1A1A1,
+    grayDark: #292929,
+    textPrimary: #444
+);

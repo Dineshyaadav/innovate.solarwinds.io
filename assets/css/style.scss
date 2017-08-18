@@ -1,0 +1,141 @@
+---
+---
+
+@import 'colors';
+
+// Screen breaks
+$s: 576px;
+$m: 768px;
+$l: 992px;
+$xl: 1200px;
+
+// Import corporate fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+$roboto: 'Roboto', sans-serif;
+$openSans: 'Open Sans', sans-serif;
+
+body {
+    font-size: 16px;
+    font-family: $openSans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $roboto;
+}
+
+.navbar {
+    width: 100%;
+    z-index: 1000;
+    padding: 1em 0;
+    overflow: hidden;
+
+    #logo {
+        float: left;
+
+        img {
+            max-width: 14em;            
+        }
+    }
+
+    nav {
+        float: right;
+        padding-top: 1em;
+        font-size: 0.9em;
+        
+        ul {
+            text-decoration-style: none;
+
+            li {
+                display: inline-block;
+                list-style-type: none;
+                padding: 0 0.6em;
+            }
+        }
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.hero {
+    height: 600px;
+    background: url('../images/brno-skyline.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    .intro {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .blurb {
+            width: 360px;
+            padding: 1em;
+            background: rgba(0,0,0,0.7);
+        }
+
+        h1, h2, h3 {
+            color: #FFF;
+            text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: _palette(orange);
+        }
+    }
+}
+
+@media screen and (max-width: $s) {
+    body {
+        font-size: 14px;
+    }
+
+    .navbar {
+        width: 100%;
+        z-index: 1000;
+        padding: 1em 0;
+        overflow: hidden;
+    
+        #logo {
+            float: none;
+            display: block;
+            margin: 0 auto;
+
+            img {
+                display: block;
+                margin: 0 auto;
+                max-width: 14em;          
+            }
+        }
+    
+        nav {
+            float: none;
+            font-size: 1em;
+            padding: 0;
+            text-align: center;
+            
+            ul {
+                text-decoration-style: none;
+                padding: 0;
+    
+                li {
+                    display: block;
+                    list-style-type: none;
+                    padding: 0.6em 0;
+                }
+            }
+        }
+    }
+
+    .intro {
+        .blurb {
+            max-width: 100%;
+        }
+
+        h1 {
+            color: _palette(orange);
+        }
+    }
+}
