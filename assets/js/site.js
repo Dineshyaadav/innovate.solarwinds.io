@@ -10,16 +10,17 @@ $(document).ready(() => {
             $(".navbar").removeClass("affix").fadeIn(10000);
         }
     });
-    
 
     $(document).on("click", ".expand-nav", () => {
         switch ($("nav").css("display")) {
             case "none":
                 $("nav").css("display", "block");
+                $(".navbar").css("background-color", "#FFF");                
                 break;
             default:
                 $("nav").css("display", "none");
+                $(".navbar").css("background-color", "");                                
                 break;
         }
-    });
+    });    
 });
