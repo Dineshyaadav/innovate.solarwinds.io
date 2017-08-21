@@ -1,6 +1,9 @@
 $(document).ready(() => {
+    // Set a scroll position for certain sections so we can
+    // recognize when user has gotten to that area
+
     $(".hero:after").scrollTop(1);
-    
+
     $(window).scroll(function() {
         if ($(window).scrollTop() >= 1) {
             $(".navbar").addClass("affix").fadeIn(10000);        
@@ -22,5 +25,9 @@ $(document).ready(() => {
                 $(".navbar").css("background-color", "");                                
                 break;
         }
-    });    
+    });
+    
+    $("#about").mouseover(() => {
+        $(".light").toggleClass("hidden");
+      });
 });

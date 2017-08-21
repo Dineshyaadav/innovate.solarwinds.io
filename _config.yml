@@ -3,5 +3,5 @@ description: A conference for tech professionals
 baseurl: '.'
 # baseurl: 'http://innovate.solarwinds.io'
 iourl: 'http://solarwinds.io'
-sass:
-    style: compressed
+# sass:
+#     style: compressed

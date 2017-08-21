@@ -1,1 +1,181 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto");body{font-size:16px;font-family:"Open Sans",sans-serif}h1,h2,h3,h4,h5,h6{font-family:"Roboto",sans-serif}mark{background:#FBE04B}::selection{background:#FBE04B}::-moz-selection{background:#FBE04B}.navbar{position:absolute;width:100%;z-index:1000;padding:1em 0;overflow:hidden}.navbar #logo{float:left}.navbar #logo img{max-width:14em}.navbar .expand-nav{display:none}.navbar nav{float:right;padding-top:1.5em;font-size:0.9em;display:inline-block}.navbar nav ul{text-decoration-style:none}.navbar nav ul li{display:inline-block;list-style-type:none}.navbar nav ul li a{color:inherit;text-decoration:none;padding:1em}.navbar nav ul li a:visited{color:#444;background:none}.navbar nav ul li a:hover{color:#FFF;background:#666;border-radius:0.5em}.navbar nav ul li a:active{background-color:#292929}.navbar:after{clear:both}.affix{position:fixed;top:0;background:rgba(255,255,255,0.8);box-shadow:0 0 0.2em rgba(0,0,0,0.4)}.hero{position:relative;height:700px;background:url("../images/brno-skyline.jpg");background-size:cover;background-position:center center;background-repeat:no-repeat;background-attachment:fixed}.hero .overlay,.hero .intro,.hero .container,.hero .row{height:inherit}.hero .overlay{position:absolute;width:100%;background:rgba(255,255,255,0.6)}.hero .intro{position:relative}.hero .intro .blurb{padding:1em;background:rgba(255,255,255,0.8)}.hero .intro h1{color:#F99D1C}.hero .intro h2,.hero .intro h3{color:#666}section{margin:3em 0}@media screen and (max-width: 576px){body{font-size:14px}.navbar{top:-1px}.navbar #logo{display:block;width:100%;float:none}.navbar #logo img{float:left;max-width:14em}.navbar #logo .expand-nav{display:inline;float:right;padding-top:2em}.navbar #logo:after{clear:both}.navbar nav{float:none;font-size:1.2em;padding:1em 0 0;text-align:center;display:none}.navbar nav ul{padding:0}.navbar nav ul li{display:block;padding:1em 0;border-top:0.1em solid #CCC}.navbar nav ul li a{width:100%}.navbar nav ul li a:visited{color:#444}.navbar nav ul li a:hover{color:#F99D1C;background-color:inherit;border-radius:0}.navbar nav ul li a:active{color:#444}.navbar nav ul li:first-child{border-top:0px}.navbar nav ul li:last-child{padding-bottom:0}.affix{background:#FFF;box-shadow:0 0 0.5em rgba(0,0,0,0.4)}.hero{height:400px}.hero .overlay{height:400px}.hero .intro h1{color:#F99D1C}}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto");
+body {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif; }
+
+p {
+  line-height: 1.5em;
+  margin: 2em 0; }
+
+mark {
+  background: #FBE04B; }
+
+::selection {
+  background: #FBE04B; }
+
+::-moz-selection {
+  background: #FBE04B; }
+
+.navbar {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  padding: 1em 0;
+  overflow: hidden; }
+  .navbar #logo {
+    float: left; }
+    .navbar #logo img {
+      max-width: 14em; }
+  .navbar .expand-nav {
+    display: none; }
+  .navbar nav {
+    float: right;
+    padding-top: 1.5em;
+    font-size: 0.9em;
+    display: inline-block; }
+    .navbar nav ul {
+      text-decoration-style: none; }
+      .navbar nav ul li {
+        display: inline-block;
+        list-style-type: none; }
+        .navbar nav ul li a {
+          color: inherit;
+          text-decoration: none;
+          padding: 1em; }
+          .navbar nav ul li a:visited {
+            color: #444;
+            background: none; }
+          .navbar nav ul li a:hover {
+            color: #FFF;
+            background: #F99D1C;
+            border-radius: 0.5em; }
+          .navbar nav ul li a:active {
+            background-color: #292929; }
+  .navbar:after {
+    clear: both; }
+
+.affix {
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.4); }
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("../images/brno-skyline.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+  .hero .overlay,
+  .hero .intro,
+  .hero .container,
+  .hero .row {
+    height: inherit; }
+  .hero .overlay {
+    position: absolute;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6); }
+  .hero .intro {
+    position: relative; }
+    .hero .intro .blurb {
+      padding: 2em;
+      background: rgba(255, 255, 255, 0.8);
+      text-align: center; }
+    .hero .intro h1 {
+      font-size: 2.5em;
+      color: #F99D1C; }
+    .hero .intro h2, .hero .intro h3 {
+      font-size: 1.75em;
+      color: #666; }
+
+section {
+  padding: 6em 0; }
+  section h2 {
+    font-size: 2em;
+    font-weight: 400; }
+  section#about {
+    position: relative;
+    min-height: 700px; }
+    section#about #lightbulb {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -100;
+      width: 100%;
+      height: 700px;
+      background: url("../images/lightbulb.jpg");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: auto;
+      background-attachment: fixed; }
+  section#schedule {
+    background: #B8D757; }
+  section#register {
+    background: #04C9D7; }
+  section#details {
+    background: #FBE04B; }
+
+.hidden {
+  display: none; }
+
+@media screen and (max-width: 576px) {
+  body {
+    font-size: 14px; }
+
+  .navbar {
+    top: -1px; }
+    .navbar #logo {
+      display: block;
+      width: 100%;
+      float: none; }
+      .navbar #logo img {
+        float: left;
+        max-width: 14em; }
+      .navbar #logo .expand-nav {
+        display: inline;
+        float: right;
+        padding-top: 2em; }
+      .navbar #logo:after {
+        clear: both; }
+    .navbar nav {
+      float: none;
+      font-size: 1.2em;
+      padding: 1em 0 0;
+      text-align: center;
+      display: none; }
+      .navbar nav ul {
+        padding: 0; }
+        .navbar nav ul li {
+          display: block;
+          padding: 1em 0;
+          border-top: 0.1em solid #CCC; }
+          .navbar nav ul li a {
+            width: 100%; }
+            .navbar nav ul li a:visited {
+              color: #444; }
+            .navbar nav ul li a:hover {
+              color: #F99D1C;
+              background-color: inherit;
+              border-radius: 0; }
+            .navbar nav ul li a:active {
+              color: #444; }
+          .navbar nav ul li:first-child {
+            border-top: 0px; }
+          .navbar nav ul li:last-child {
+            padding-bottom: 0; }
+
+  .affix {
+    background: #FFF;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.4); }
+
+  .hero .overlay {
+    height: 400px; }
+  .hero .intro h1 {
+    font-size: 2em; }
+  .hero .intro h2 {
+    font-size: 1.5em; } }
