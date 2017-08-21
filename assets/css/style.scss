@@ -60,7 +60,7 @@ a {
 button {
     font-family: $roboto;
     padding: 1em;
-    margin: 0.2em;
+    margin: 1.5em 0.2em;
     border: 0;
     outline: none;    
 
@@ -157,6 +157,11 @@ button {
                     &:active {
                         background-color: _palette(grayDark);
                     }
+
+                    &.active {
+                        color: #FFF;
+                        background-color: _palette(grayDark);
+                    }
                 }
             }
         }
@@ -250,11 +255,11 @@ section {
     }
 
     &#schedule {
-        background: _palette(chartreuse);
+        background: _palette(blue);
     }
 
     &#register {
-        background: _palette(blue);
+        background: _palette(chartreuse);
     }
 
     &#details {
@@ -263,6 +268,7 @@ section {
 
     &#map {
         padding: 0;
+        height: 450px;
     }
 }
 

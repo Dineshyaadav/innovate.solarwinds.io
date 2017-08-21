@@ -32,7 +32,7 @@ a {
 button {
   font-family: "Roboto", sans-serif;
   padding: 1em;
-  margin: 0.2em;
+  margin: 1.5em 0.2em;
   border: 0;
   outline: none; }
   button a {
@@ -94,6 +94,9 @@ button {
             color: #FFF;
             background-color: #F99D1C; }
           .navbar nav ul li a:active {
+            background-color: #292929; }
+          .navbar nav ul li a.active {
+            color: #FFF;
             background-color: #292929; }
   .navbar:after {
     clear: both; }
@@ -158,13 +161,14 @@ section {
       z-index: -50;
       background-image: url("../images/lightbulb.jpg"); }
   section#schedule {
-    background: #B8D757; }
-  section#register {
     background: #04C9D7; }
+  section#register {
+    background: #B8D757; }
   section#details {
     background: #FBE04B; }
   section#map {
-    padding: 0; }
+    padding: 0;
+    height: 450px; }
 
 .footer {
   padding: 3em 0;
