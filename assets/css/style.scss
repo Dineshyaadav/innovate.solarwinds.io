@@ -40,6 +40,70 @@ mark {
     background: _palette(yellow);
 }
 
+a {
+    transition: color 0.25s ease-in-out;
+    color: inherit;
+
+    &:visited {
+        color: _palette(grayDark);
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: _palette(grayDark);
+    }
+}
+
+button {
+    font-family: $roboto;
+    padding: 1em;
+    margin: 0.2em;
+    border: 0;
+    outline: none;    
+
+    a {
+        color: inherit;
+        text-decoration: none;       
+    
+        &:visited {
+            color: inherit;
+        }
+    
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    
+        &:active {
+            color: inherit;
+        }
+    }
+
+    &.action {
+        transition: background 0.25s ease-in-out;
+        background: _palette(green);
+        color: #FFF;
+    
+        &:hover {
+            background: _palette(greenHov);
+        }
+    }
+
+    &.secondary {
+        transition: box-shadow 0.25s ease-in-out;
+        background: none;
+        color: _palette(gray);
+        box-shadow: inset 0 0 0 0.1em _palette(gray);
+    
+        &:hover {
+            box-shadow: inset 0 0 0 0.1em _palette(grayMed);
+        }
+    }
+}
+
 .navbar {
     position: absolute;
     width: 100%;
@@ -62,7 +126,7 @@ mark {
     nav {
         float: right;
         padding-top: 1.5em;
-        font-size: 0.9em;
+        font-size: 0.96em;
         display: inline-block;
         
         ul {
@@ -73,9 +137,12 @@ mark {
                 list-style-type: none;
 
                 a {
+                    transition: background-color 0.25s ease-in-out,
+                                color 0.25s ease-in-out;
                     color: inherit;
                     text-decoration: none;
-                    padding: 1em;
+                    padding: 0.5em 1em;
+                    border-radius: 0.5em;                    
 
                     &:visited {
                         color: _palette(textPrimary);
@@ -84,8 +151,7 @@ mark {
 
                     &:hover {
                         color: #FFF;
-                        background: _palette(orange);
-                        border-radius: 0.5em;
+                        background-color: _palette(orange);
                     }
 
                     &:active {
@@ -163,18 +229,23 @@ section {
         position: relative;
         min-height: 700px;
 
-        #lightbulb {
+        .light {
             position: absolute;
             top: 0;
             right: 0;
             z-index: -100;
             width: 100%;
             height: 700px;
-            background: url('../images/lightbulb.jpg');
+            background: url('../images/lightbulb_on.jpg');
             background-repeat: no-repeat;
             background-position: right center;
             background-size: auto;
             background-attachment: fixed;
+        }
+
+        #lightbulb {
+            z-index: -50;            
+            background-image: url('../images/lightbulb.jpg');
         }
     }
 
@@ -189,6 +260,29 @@ section {
     &#details {
         background: _palette(yellow);
     }
+
+    &#map {
+        padding: 0;
+    }
+}
+
+.footer {
+    padding: 3em 0;
+    background: _palette(grayDark);
+    color: #FFF;
+
+    h3 {
+        color: #FFF;
+    }
+
+    .copyright {
+        background: _palette(gray);
+        margin: 4em auto 0;
+        width: 290px;
+        padding: 1em;
+        border-radius: 0.5em;
+        text-align: center;
+    }
 }
 
 .hidden {
@@ -196,7 +290,7 @@ section {
 }
 
 // Adjust menu for phone screens
-@media screen and (max-width: $s) {
+@media screen and (max-width: $m) {
     body {
         font-size: 14px;
     }
@@ -278,10 +372,6 @@ section {
 
     .hero {
 
-        .overlay {
-            height: 400px;
-        }
-
         .intro {
             h1 {
                 font-size: 2em;
@@ -289,6 +379,17 @@ section {
 
             h2 {
                 font-size: 1.5em;
+            }
+        }
+    }
+    
+    section {
+        &#about {
+            position: static;
+            min-height: 0;
+    
+            .light {
+                display: none;
             }
         }
     }

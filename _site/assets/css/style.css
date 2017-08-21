@@ -19,6 +19,46 @@ mark {
 ::-moz-selection {
   background: #FBE04B; }
 
+a {
+  transition: color 0.25s ease-in-out;
+  color: inherit; }
+  a:visited {
+    color: #292929; }
+  a:hover {
+    text-decoration: underline; }
+  a:active {
+    color: #292929; }
+
+button {
+  font-family: "Roboto", sans-serif;
+  padding: 1em;
+  margin: 0.2em;
+  border: 0;
+  outline: none; }
+  button a {
+    color: inherit;
+    text-decoration: none; }
+    button a:visited {
+      color: inherit; }
+    button a:hover {
+      color: inherit;
+      text-decoration: none; }
+    button a:active {
+      color: inherit; }
+  button.action {
+    transition: background 0.25s ease-in-out;
+    background: #96BD4C;
+    color: #FFF; }
+    button.action:hover {
+      background: #A9CC5C; }
+  button.secondary {
+    transition: box-shadow 0.25s ease-in-out;
+    background: none;
+    color: #666;
+    box-shadow: inset 0 0 0 0.1em #666; }
+    button.secondary:hover {
+      box-shadow: inset 0 0 0 0.1em #A1A1A1; }
+
 .navbar {
   position: absolute;
   width: 100%;
@@ -34,7 +74,7 @@ mark {
   .navbar nav {
     float: right;
     padding-top: 1.5em;
-    font-size: 0.9em;
+    font-size: 0.96em;
     display: inline-block; }
     .navbar nav ul {
       text-decoration-style: none; }
@@ -42,16 +82,17 @@ mark {
         display: inline-block;
         list-style-type: none; }
         .navbar nav ul li a {
+          transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
           color: inherit;
           text-decoration: none;
-          padding: 1em; }
+          padding: 0.5em 1em;
+          border-radius: 0.5em; }
           .navbar nav ul li a:visited {
             color: #444;
             background: none; }
           .navbar nav ul li a:hover {
             color: #FFF;
-            background: #F99D1C;
-            border-radius: 0.5em; }
+            background-color: #F99D1C; }
           .navbar nav ul li a:active {
             background-color: #292929; }
   .navbar:after {
@@ -101,29 +142,48 @@ section {
   section#about {
     position: relative;
     min-height: 700px; }
-    section#about #lightbulb {
+    section#about .light {
       position: absolute;
       top: 0;
       right: 0;
       z-index: -100;
       width: 100%;
       height: 700px;
-      background: url("../images/lightbulb.jpg");
+      background: url("../images/lightbulb_on.jpg");
       background-repeat: no-repeat;
       background-position: right center;
       background-size: auto;
       background-attachment: fixed; }
+    section#about #lightbulb {
+      z-index: -50;
+      background-image: url("../images/lightbulb.jpg"); }
   section#schedule {
     background: #B8D757; }
   section#register {
     background: #04C9D7; }
   section#details {
     background: #FBE04B; }
+  section#map {
+    padding: 0; }
+
+.footer {
+  padding: 3em 0;
+  background: #292929;
+  color: #FFF; }
+  .footer h3 {
+    color: #FFF; }
+  .footer .copyright {
+    background: #666;
+    margin: 4em auto 0;
+    width: 290px;
+    padding: 1em;
+    border-radius: 0.5em;
+    text-align: center; }
 
 .hidden {
   display: none; }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   body {
     font-size: 14px; }
 
@@ -173,9 +233,13 @@ section {
     background: #FFF;
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.4); }
 
-  .hero .overlay {
-    height: 400px; }
   .hero .intro h1 {
     font-size: 2em; }
   .hero .intro h2 {
-    font-size: 1.5em; } }
+    font-size: 1.5em; }
+
+  section#about {
+    position: static;
+    min-height: 0; }
+    section#about .light {
+      display: none; } }

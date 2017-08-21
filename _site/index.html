@@ -15,21 +15,21 @@
 		<div class="navbar">
     <div class="container">
         <div class="row">
-            <div class="col-md-5 col-sm-12">
+            <div class="col-lg-3 col-md-12">
                 <div id="logo">
-                    <img src="./assets/images/logo.png" alt="SolarWinds Innovate Summit" />
+                    <a href="."><img src="./assets/images/logo.png" alt="SolarWinds Innovate Summit" /></a>
                     <div class="expand-nav"><i class="fa fa-2x fa-navicon" aria-hidden="true"></i></div>            
                 </div>
             </div>
 
-            <div class="col-md-7 col-sm-12">
+            <div class="col-lg-9 col-md-12">
                 <nav>
                     <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Schedule</a></li>
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Call For Papers</a></li>
-                        <li><a href="#">Event Details</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#register">Register</a></li>
+                        <li><a href="#speakers">Call For Speakers</a></li>
+                        <li><a href="#details">Event Details</a></li>
                     </ul>
                 </nav>
             </div>
@@ -46,6 +46,8 @@
                         <h1>Innovate Summit 2017</h1>
                         <h2>Brno, Czech Republic</h2>
                         <h2>December 14, 2017</h2>
+                        <button class="action"><a href="#register">Register Now</a></button>
+                        <button class="secondary"><a href="#register">Become A Speaker</a></button>                        
                     </div>
                 </div>
             </div>
@@ -61,7 +63,8 @@
         <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, metus nec auctor placerat, dolor sem imperdiet ex, in finibus justo diam eu erat. Integer eget sodales sapien, quis ullamcorper urna. Maecenas ultrices suscipit congue. Nunc sagittis, diam in ultrices imperdiet, justo magna eleifend urna, eget ullamcorper felis nulla a magna. Sed finibus euismod elit eget pellentesque. Pellentesque id sem ligula. Integer mollis sapien leo, quis ultricies arcu fermentum sed.
         </p>
-        <div id="lightbulb"></div>
+        <div class="light"></div>
+        <div id="lightbulb" class="light"></div>
     </div>
 </section>
 <section id="schedule">
@@ -96,7 +99,30 @@
         </p>
     </div>
 </section>
-        
+
+<section id="map">
+    <iframe width="100%" height="450" frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJEVE_wDqUEkcRsLEUZg-vAAQ&key=AIzaSyDZ1xeIkiN9Hy3UcGD_bNzRc4CWpuOPngY" allowfullscreen></iframe>
+</section>
+        <div class="footer">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-4"><h2>More Solar Winds</h2></div>
+                    <div class="col-md-4"><h2>Additional Resources</h2></div>
+                    <div class="col-md-4"><h2>Connect With Us</h2></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">Link list here</div>
+                    <div class="col-md-4">Resources maybe?</div>
+                    <div class="col-md-4">Social media links here</div>
+                </div>
+                <div class="copyright">
+                    &copy; SolarWinds. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+            
+
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="./assets/js/site.js"></script>
     </body>
