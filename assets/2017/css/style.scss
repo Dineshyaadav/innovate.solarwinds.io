@@ -90,6 +90,24 @@ button {
         &:hover {
             background: _palette(greenHov);
         }
+
+        &:active {
+            background: _palette(greenAct);
+        }
+    }
+
+    &.primary {
+        transition: background 0.25s ease-in-out;
+        background: _palette(orange);
+        color: #FFF;
+    
+        &:hover {
+            background: _palette(orangeHov);
+        }
+
+        &:active {
+            background: _palette(orangeAct);
+        }
     }
 
     &.secondary {
@@ -107,7 +125,7 @@ button {
 .navbar {
     position: absolute;
     width: 100%;
-    z-index: 1000;
+    z-index: 500;
     padding: 1em 0;
     overflow: hidden;
 
@@ -295,6 +313,45 @@ section {
     display: none;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background: rgba(255,255,255, 0.8);
+
+    .content {
+        position: relative;
+        top: 25%;
+        margin: auto;
+        padding: 2em;
+        width: 50%;
+        background-color: #FFF;
+        box-shadow: 0 0 0.3em rgba(0,0,0, 0.4);
+    }
+
+    .close {
+        float: right;
+        font-size: 2em;
+        font-weight: bold;
+
+        &:hover,
+        &:focus {
+            color: _palette(gray);
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
 // Adjust menu for phone screens
 @media screen and (max-width: $m) {
     body {
@@ -356,6 +413,10 @@ section {
                         &:active {
                             color: _palette(textPrimary);
                         }
+
+                        &.active {
+                            color: #FFF;
+                        }
                         
                     }
 
@@ -397,6 +458,12 @@ section {
             .light {
                 display: none;
             }
+        }
+    }
+
+    .modal {
+        .content {
+            width: 90%;
         }
     }
 }

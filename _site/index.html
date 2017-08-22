@@ -6,10 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="/assets/css/normalize.min.css">
-		<link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css">
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		<link rel="stylesheet" href="/assets/css/style.css">
+
+		<!-- Favicon/device icons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+		<link rel="manifest" href="./assets/icons/manifest.json">
+		<link rel="mask-icon" href="./assets/icons/safari-pinned-tab.svg" color="#f99d1c">
+		<meta name="apple-mobile-web-app-title" content="SolarWinds Innovate">
+		<meta name="application-name" content="SolarWinds Innovate">
+		<meta name="theme-color" content="#ffffff">
+
+		<link rel="stylesheet" href="./assets/2017/css/normalize.min.css">
+		<link rel="stylesheet" href="./assets/2017/css/bootstrap-grid.min.css">
+		<link rel="stylesheet" href="./assets/2017/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./assets/2017/css/style.css">
 	</head>
 	<body>
 
@@ -18,7 +29,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-12">
                 <div id="logo">
-                    <a href=""><img src="/assets/images/logo.png" alt="SolarWinds Innovate Summit" /></a>
+                    <a href="."><img src="./assets/2017/images/logo.png" alt="SolarWinds Innovate Summit" /></a>
                     <div class="expand-nav"><i class="fa fa-2x fa-navicon" aria-hidden="true"></i></div>            
                 </div>
             </div>
@@ -87,11 +98,22 @@
 <section id="speakers">
     <div class="container">
         <h2>Speakers</h2>
-        <p>
-            Call for speakers with form here
-        </p>
+        <p>To be announced</p>
+        <button id="open-speakerModal" class="primary">Submit your proposal</button>
     </div>
 </section>
+
+
+
+<div id="speakerModal" class="modal">
+    <div class="content">
+        <span class="close" id="close-speakerModal">&times;</span>
+        <h2>Apply to be a speaker</h2>
+        
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe4_R8f9nvKCQk1w5SxtlbVM1m_MSBiWnQ1rLg1_nz6moEW3w/viewform?embedded=true" width="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>    
+
+    </div>
+</div>
 <section id="details">
     <div class="container">
         <h2>Event Details</h2>
@@ -147,6 +169,6 @@
             
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="/assets/js/site.js"></script>
+        <script type="text/javascript" src="./assets/2017/js/site.js"></script>
     </body>
 </html>
