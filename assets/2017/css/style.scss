@@ -60,7 +60,7 @@ a {
 button {
     font-family: $roboto;
     padding: 1em;
-    margin: 1.5em 0.2em;
+    margin: 0.5em 0.2em;
     border: 0;
     outline: none;    
 
@@ -122,6 +122,17 @@ button {
     }
 }
 
+ul {
+    // Add class "links" to a list to have it display with no bullets
+    &.links {
+        text-decoration: none;        
+
+        li {
+            list-style-type: none;            
+        }
+    }
+}
+
 .navbar {
     position: absolute;
     width: 100%;
@@ -133,7 +144,7 @@ button {
         float: left;
 
         img {
-            max-width: 14em;            
+            max-width: 13em;            
         }
     }
 
@@ -148,11 +159,9 @@ button {
         display: inline-block;
         
         ul {
-            text-decoration-style: none;
 
             li {
                 display: inline-block;
-                list-style-type: none;
 
                 a {
                     transition: background-color 0.25s ease-in-out,
@@ -280,8 +289,8 @@ section {
         background: _palette(chartreuse);
     }
 
-    &#details {
-        background: _palette(yellow);
+    &#speakers {
+        background: _palette(yellow);        
     }
 
     &#map {
@@ -293,16 +302,56 @@ section {
 .footer {
     padding: 3em 0;
     background: _palette(grayDark);
-    color: #FFF;
+    color: _palette(grayLight);
 
-    h3 {
+    h2 {
         color: #FFF;
+    }
+
+    ul {
+        margin: 2em 0;
+        padding: 0;
+
+        li {
+            color: #FFF;
+        }
+    }
+
+    a {
+        color: _palette(grayVLight);
+
+        .social {
+            display: inline-block;
+            width: 3.5em;
+            height: 3.5em;
+
+            &#facebook {
+                transition: background-image 0.25s ease-in-out;
+                background-image: url('../../icons/social/facebook-grayLight.png');
+                background-size: 100% auto;
+
+                &:hover {
+                    background-image: url('../../icons/social/facebook-grayVLight.png')
+                }
+            }
+
+            &#twitter {
+                transition: background-image 0.25s ease-in-out;
+                background-image: url('../../icons/social/twitter-grayLight.png');
+                background-size: 100% auto;
+
+                &:hover {
+                    background-image: url('../../icons/social/twitter-grayVLight.png')
+                }
+            }
+        }
     }
 
     .copyright {
         background: _palette(gray);
         margin: 4em auto 0;
-        width: 290px;
+        font-size: 0.95em;
+        width: 21em;
         padding: 1em;
         border-radius: 0.5em;
         text-align: center;
@@ -326,7 +375,7 @@ section {
 
     .content {
         position: relative;
-        top: 25%;
+        top: 10%;
         margin: auto;
         padding: 2em;
         width: 50%;
@@ -352,118 +401,5 @@ section {
     overflow: hidden;
 }
 
-// Adjust menu for phone screens
-@media screen and (max-width: $m) {
-    body {
-        font-size: 14px;
-    }
-
-    .navbar {
-        top: -1px;
-
-        #logo {
-            display: block;
-            width: 100%;
-            float: none;
-
-            img {
-                float: left;
-                max-width: 14em;          
-            }
-
-            .expand-nav {
-                display: inline;
-                float: right;
-                padding-top: 2em;          
-            }
-
-            &:after {
-                clear: both;
-            }
-        }
-    
-        nav {
-            float: none;
-            font-size: 1.2em;
-            padding: 1em 0 0;
-            text-align: center;
-            display: none;
-            
-            ul {
-                padding: 0;                
-    
-                li {
-                    display: block;
-                    padding: 1em 0;                    
-                    border-top: 0.1em solid _palette(grayLight);                                           
-
-                    a {
-                        width: 100%;
-
-                        &:visited {
-                            color: _palette(textPrimary);
-                        }
-
-                        &:hover {
-                            color: _palette(orange);
-                            background-color: inherit;
-                            border-radius: 0;
-                        }
-
-                        &:active {
-                            color: _palette(textPrimary);
-                        }
-
-                        &.active {
-                            color: #FFF;
-                        }
-                        
-                    }
-
-                    &:first-child {
-                        border-top: 0px;
-                    }
-
-                    &:last-child {
-                        padding-bottom: 0;
-                    }
-                }
-            }
-        }
-    }
-
-    .affix {
-        background: #FFF;
-        box-shadow: 0 0 0.5em rgba(0,0,0,0.4);
-    }
-
-    .hero {
-
-        .intro {
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-        }
-    }
-    
-    section {
-        &#about {
-            position: static;
-            min-height: 0;
-    
-            .light {
-                display: none;
-            }
-        }
-    }
-
-    .modal {
-        .content {
-            width: 90%;
-        }
-    }
-}
+// Mobile media query overrides
+@import 'mobile'

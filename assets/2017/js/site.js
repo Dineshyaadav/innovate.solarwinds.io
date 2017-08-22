@@ -1,4 +1,10 @@
 $(document).ready(() => {
+    let scroll = $(window).scrollTop();    
+
+    // If user reloads page not at top, display fixed nav
+    if (scroll >= 1) {
+        $('.navbar').addClass('affix');        
+    }
 
     // Function to capture data when user is scrolling
     $(window).scroll(function() {
@@ -54,12 +60,14 @@ $(document).ready(() => {
             $('nav li a[href="#details"]').removeClass('active');
         }
 
-        // Toggle lightbulb to lit when user hits about section
-        if (scroll > ($about.offset().top - navHeight - 100)
-            && scroll < ($about.offset().top - navHeight + 100)) {
-            $('#lightbulb').fadeOut('slow');
-        } else {
-            $('#lightbulb').fadeIn('slow');
+        if ($('.expand-nav').css('display') === 'none') {
+            // Toggle lightbulb to lit when user hits about section
+            if (scroll > ($about.offset().top - navHeight - 100)
+                && scroll < ($about.offset().top - navHeight + 100)) {
+                $('#lightbulb').fadeOut('slow');
+            } else {
+                $('#lightbulb').fadeIn('slow');
+            }
         }
 
     });

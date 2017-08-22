@@ -1,0 +1,111 @@
+@media screen and (max-width: $m) {
+
+    .navbar {
+        top: -1px;
+
+        #logo {
+            display: block;
+            width: 100%;
+            float: none;
+
+            img {
+                float: left;
+                max-width: 14em;          
+            }
+
+            .expand-nav {
+                display: inline;
+                float: right;
+                padding-top: 2em;          
+            }
+
+            &:after {
+                clear: both;
+            }
+        }
+    
+        nav {
+            float: none;
+            font-size: 1.2em;
+            padding: 1em 0 0;
+            text-align: center;
+            display: none;
+            
+            ul {
+                padding: 0;              
+    
+                li {
+                    display: block;
+                    padding: 1em 0;                    
+                    border-top: 0.1em solid _palette(grayLight);                                           
+
+                    a {
+                        width: 100%;
+
+                        &:visited {
+                            color: _palette(textPrimary);
+                        }
+
+                        &:hover {
+                            color: _palette(orange);
+                            background-color: inherit;
+                            border-radius: 0;
+                        }
+
+                        &:active {
+                            color: _palette(textPrimary);
+                        }
+
+                        &.active {
+                            color: #FFF;
+                        }
+                        
+                    }
+
+                    &:first-child {
+                        border-top: 0px;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .affix {
+        background: #FFF;
+        box-shadow: 0 0 0.5em rgba(0,0,0,0.4);
+    }
+
+    .hero {
+
+        .intro {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    }
+    
+    section {
+        &#about {
+            position: static;
+            min-height: 0;
+    
+            .light {
+                display: none;
+            }
+        }
+    }
+
+    .modal {
+        .content {
+            width: 90%;
+        }
+    }
+}

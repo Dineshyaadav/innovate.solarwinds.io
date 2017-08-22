@@ -1,0 +1,17 @@
+<!-- Just for example purposes -->
+
+<!-- Button to open modal - give it a name -->
+<button id="open-[name]Modal" class="primary">Submit your proposal</button>
+
+{% capture modalContent %}
+    <!-- 
+        
+        Include html to go within the modal's content section here.
+        It will get passed into the modal partial when you include it
+    
+    -->
+{% endcapture %}
+
+{% include partials/modal.html id="[name]Modal" name="[Title on modal]" content=modalContent  %}
+
+<!-- Include it in the site.js file -->
