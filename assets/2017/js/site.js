@@ -110,11 +110,17 @@ $(document).ready(() => {
         switch ($('nav').css('display')) {
             case 'none':
                 $('nav').css('display', 'block');
-                $('.navbar').css('background-color', '#FFF');                
+                $('.navbar').css({
+                    'background-color': '#FFF',
+                    'box-shadow': '0 0 0.2em rgba(0,0,0,0.4)'
+                });                
                 break;
             default:
                 $('nav').css('display', 'none');
-                $('.navbar').css('background-color', '');                                
+                $('.navbar').css({
+                    'background-color': '',
+                    'box-shadow': ''
+                });                                
                 break;
         }
     });

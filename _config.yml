@@ -1,8 +1,8 @@
 name: SolarWinds Innovate Summit 2017
 description: A conference for tech professionals
 # baseurl: ''
-# baseurl: '.'
-baseurl: 'http://innovate.solarwinds.io'
+baseurl: '.'
+# baseurl: 'http://innovate.solarwinds.io'
 iourl: 'http://solarwinds.io'
 sass:
     style: compressed
