@@ -40,6 +40,10 @@ mark {
     background: _palette(yellow);
 }
 
+:focus {
+    outline: none;
+}
+
 a {
     transition: color 0.25s ease-in-out;
     color: inherit;
@@ -62,7 +66,6 @@ button {
     padding: 1em;
     margin: 0.5em 0.2em;
     border: 0;
-    outline: none;    
 
     a {
         color: inherit;
@@ -202,6 +205,7 @@ ul {
 .affix {
     position: fixed;
     top: 0;
+    left: 0;
     background: rgba(255,255,255, 0.95);
     box-shadow: 0 0 0.2em rgba(0,0,0,0.4);
 }

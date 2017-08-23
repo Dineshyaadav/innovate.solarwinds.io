@@ -1,16 +1,14 @@
 $(document).ready(() => {
-    let scroll = $(window).scrollTop();    
-
     // If user reloads page not at top, display fixed nav
-    if (scroll >= 1) {
-        $('.navbar').addClass('affix');        
+    if ($(window).scrollTop() >= 1) {
+        $('.navbar').addClass('affix');       
     }
 
     // Function to capture data when user is scrolling
     $(window).scroll(function() {
-
+        let scroll = $(window).scrollTop();    
+        
         // When user scrolls, display fixed nav menu with background
-        let scroll = $(window).scrollTop();
         if (scroll >= 1) {
             $('.navbar').addClass('affix');        
         } else {
@@ -23,7 +21,8 @@ $(document).ready(() => {
         let $register = $('section#register');
         let $speakers = $('section#speakers');
         let $details = $('section#details');
-        let navHeight = $('.navbar').outerHeight(true);       
+        let navHeight = $('.navbar').outerHeight(true);
+        
 
         if (scroll >= ($about.offset().top - navHeight)
             && scroll <= ($about.offset().top + $about.outerHeight()/2 - navHeight)) {
@@ -69,7 +68,41 @@ $(document).ready(() => {
                 $('#lightbulb').fadeIn('slow');
             }
         }
+    });
 
+    // Smooth scrolling from CSS Tricks
+    $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(e) {
+        // If the location pathname after the initial / matches the element pathname
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+            && location.hostname == this.hostname) {
+            
+            // Figure out element to scroll to and check if it exists
+            let target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          
+            // If it does exist, implement smooth scrolling
+            if (target.length) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: (target.offset().top - $('.navbar').outerHeight(true))
+                }, 1000, function() {
+                    // Must change focus!
+                    let $target = $(target);
+                    $target.focus();
+
+                    if ($target.is(":focus")) { // Checking if the target was focused
+                        return false;
+                    } else {
+                        $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                        $target.focus(); // Set focus again
+                    };
+                });
+            }
+        }
     });
 
     // When you click the mobile nav menu expander, show the menu, vice versa
