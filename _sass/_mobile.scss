@@ -1,5 +1,11 @@
 @media screen and (max-width: $m) {
 
+    form {
+        input {
+            margin-left: 0;
+        }
+    }
+
     .navbar {
         #logo {
             display: block;
@@ -98,6 +104,12 @@
             .light {
                 display: none;
             }
+        }
+    }
+
+    .callout {
+        &.half-size {
+            max-width: 100%;
         }
     }
 

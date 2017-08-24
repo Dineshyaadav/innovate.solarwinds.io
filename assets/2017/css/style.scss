@@ -16,6 +16,7 @@ $openSans: 'Open Sans', sans-serif;
 
 body {
     font-size: 16px;
+    line-height: 1.5em;
     font-family: $openSans;
 }
 
@@ -24,7 +25,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    line-height: 1.5em;
     margin: 2em 0;
 }
 
@@ -61,7 +61,8 @@ a {
     }
 }
 
-button {
+button,
+.button {
     font-family: $roboto;
     padding: 1em;
     margin: 0.5em 0.2em;
@@ -143,6 +144,49 @@ ul {
     }
 }
 
+form {
+    .field-group {
+        margin: 2em 0;
+        text-align: left;
+    }
+
+    label {
+        text-align: right;
+    }
+
+    input {
+        transform: box-shadow 0.25s ease-in-out;
+        display: inline-block;
+        margin-left: 1em;
+        padding: 0.7em;
+        width: 100%;
+        border: 0;
+        box-shadow: 0 0 0.1em rgba(0,0,0, 0.4);
+        color: _palette(textPrimary);
+
+        &:focus {
+            box-shadow: 0 0 0.4em rgba(0,0,0, 0.4);            
+        }
+    }
+
+    .form-control {
+        text-align: left;
+    }
+
+    .row {
+        margin-bottom: 0.5em;
+    }
+
+    .response {
+        margin: 0.5em 0;
+        padding: 0.5em;
+        text-align: center;
+        text-shadow: 0 0 0.2em rgba(0,0,0, 0.3);
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+}
+
 .navbar {
     position: absolute;
     width: 100%;
@@ -189,6 +233,7 @@ ul {
                     &:hover {
                         color: #FFF;
                         background-color: _palette(orange);
+                        box-shadow: 0 2px 2px rgba(0,0,0, 0.1);
                     }
 
                     &:active {
@@ -264,6 +309,7 @@ ul {
 
 section {
     padding: 6em 0;
+    overflow: auto;
 
     h2 {
         font-size: 2em;
@@ -272,7 +318,8 @@ section {
 
     &#about {
         position: relative;
-        min-height: 700px;
+        overflow: hidden;
+        box-shadow: 0 0 0.4em rgba(0,0,0,0.2);
 
         .light {
             position: absolute;
@@ -280,12 +327,11 @@ section {
             right: 0;
             z-index: -100;
             width: 100%;
-            height: 700px;
+            height: 500px;
             background: url('../images/lightbulb_on.jpg');
             background-repeat: no-repeat;
-            background-position: right center;
-            background-size: auto;
-            background-attachment: fixed;
+            background-position: 90% center;
+            background-size: contain;
         }
 
         #lightbulb {
@@ -296,6 +342,31 @@ section {
 
     &#schedule {
         background: _palette(blue);
+        box-shadow: inset 0 2px 0.4em rgba(0,0,0,0.1);
+
+        .event-times {
+            margin-top: 3em;
+        }
+
+        .row {
+            margin: 0.5em 0;
+        }
+
+        .time {
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+
+        .time-block {
+            padding: 1em;
+            text-align: center;
+            background: rgba(238,238,238,0.8);            
+            box-shadow: 0 0 0.1em rgba(0,0,0, 0.4);
+
+            &.standard {
+                background: rgba(255,255,255, 0.5);                
+            }
+        }
     }
 
     &#register {
@@ -303,12 +374,31 @@ section {
     }
 
     &#speakers {
-        background: _palette(yellow);        
+        background: _palette(yellow);
+    }
+
+    &#details {
     }
 
     &#map {
         padding: 0;
         height: 450px;
+        overflow: hidden;
+    }
+
+    .callout {
+        padding: 2em;
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 0 0.1em rgba(0,0,0,0.4);
+
+        &.center {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        &.half-size {
+            max-width: 50%;
+        }
     }
 }
 
