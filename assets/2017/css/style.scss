@@ -53,7 +53,7 @@ a {
     }
 
     &:hover {
-        text-decoration: underline;
+        text-decoration: none;
     }
 
     &:active {
@@ -67,6 +67,7 @@ button,
     padding: 1em;
     margin: 0.5em 0.2em;
     border: 0;
+    border-radius: 0.5em;
 
     a {
         color: inherit;
@@ -157,10 +158,10 @@ form {
     input {
         transform: box-shadow 0.25s ease-in-out;
         display: inline-block;
-        margin-left: 1em;
         padding: 0.7em;
         width: 100%;
         border: 0;
+        border-radius: 0.5em;
         box-shadow: 0 0 0.1em rgba(0,0,0, 0.4);
         color: _palette(textPrimary);
 
@@ -191,7 +192,7 @@ form {
     position: absolute;
     width: 100%;
     z-index: 500;
-    padding: 1em 0;
+    padding: 0.5em 0;
     overflow: hidden;
 
     #logo {
@@ -208,7 +209,7 @@ form {
 
     nav {
         float: right;
-        padding-top: 1em;
+        padding-top: 0.7em;
         font-size: 0.96em;
         display: inline-block;
         
@@ -251,6 +252,24 @@ form {
 
     &:after {
         clear: both;
+    }
+}
+
+.plain {
+    margin: 0.5em auto;
+    padding: 1em 0;    
+
+    #logo {
+        background: #FFF;
+        width: 100%;
+
+        img {
+            max-width: 11.4em;            
+        }
+    }
+
+    .back {
+        margin-top: 1em;
     }
 }
 
@@ -307,9 +326,24 @@ form {
     }
 }
 
+.main-wrapper {
+    overflow: hidden;
+}
+
+aside {
+    padding: 2em;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 0.1em rgba(0,0,0,0.4);
+
+    &.center {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
 section {
     padding: 6em 0;
-    overflow: auto;
+    position: relative;
 
     h2 {
         font-size: 2em;
@@ -319,6 +353,7 @@ section {
     &#about {
         position: relative;
         overflow: hidden;
+        height: 500px;
         box-shadow: 0 0 0.4em rgba(0,0,0,0.2);
 
         .light {
@@ -367,17 +402,57 @@ section {
                 background: rgba(255,255,255, 0.5);                
             }
         }
+
+        &.diagonal {
+            &::before {
+                background: #9bf6fd;                
+            }
+        }
     }
 
     &#register {
         background: _palette(chartreuse);
+        box-shadow: 0 0 0.2em rgba(0,0,0, 0.3);
+        border-top: 2em double #FFF;
+        border-bottom: 2em double #FFF;
+
+        form {
+            input {
+                margin-left: 1em;
+            }
+        }
+
+        &.triangles {
+            &::before,
+            &::after {
+                background: inherit;
+            }
+
+            &::before {
+                box-shadow: -0.2em -0.2em 0.2em -0.2em rgba(0,0,0, 0.3);                
+            }
+
+            &::after {
+                box-shadow: 0.2em 0.2em 0.2em -0.2em rgba(0,0,0, 0.3);                
+            }
+        }
     }
 
     &#speakers {
         background: _palette(yellow);
+        
+        &.diagonal-left {
+            &::before {
+                background: #fdee9b;
+            }
+        }
     }
 
     &#details {
+        ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
     }
 
     &#map {
@@ -386,18 +461,100 @@ section {
         overflow: hidden;
     }
 
-    .callout {
-        padding: 2em;
-        background: rgba(255,255,255,0.8);
-        box-shadow: 0 0 0.1em rgba(0,0,0,0.4);
+    &.plain-content {
+        padding: 2em 0;
 
-        &.center {
-            margin: 0 auto;
-            text-align: center;
+        p {
+            text-align: justify;
         }
 
-        &.half-size {
-            max-width: 50%;
+        h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    }
+
+    // Section divider styles
+
+    &.divider {
+        z-index: 1;
+        padding-top: 6em;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            pointer-events: none;
+        }
+    }
+
+    &.diagonal {
+        &::before,
+        &::after {
+            top: 0;
+            left: -25%;
+            z-index: -1;
+            width: 150%;
+            height: 75%;
+            background: inherit;
+            -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+        
+        &::before {
+            height: 50%;
+            -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+            -webkit-transform-origin: 3% 0;
+            transform-origin: 3% 0;
+        }
+    }
+
+    &.diagonal-left {
+        z-index: 0;
+
+        &::before,
+        &::after {
+            bottom: 0;
+            right: -25%;
+            z-index: -1;
+            width: 150%;
+            height: 75%;
+            background: inherit;
+            -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+        
+        &::before {
+            height: 50%;
+            -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+            -webkit-transform-origin: 3% 0;
+            transform-origin: 3% 0;
+        }
+    }
+
+    &.triangles {
+        &::before,
+        &::after {
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            -webkit-transform: translateX(-50%) rotate(45deg);
+            transform: translateX(-50%) rotate(45deg);
+        }
+        
+        &::before {
+            top: -50px;
+        }
+        
+        &::after {
+            bottom: -50px;
+            z-index: 10;
         }
     }
 }
@@ -417,11 +574,12 @@ section {
 
         li {
             color: #FFF;
+            margin: 1.5em 0;
         }
     }
 
     a {
-        color: _palette(grayVLight);
+        color: _palette(grayLight);
 
         .social {
             display: inline-block;
@@ -450,8 +608,14 @@ section {
         }
     }
 
+    button {
+        margin-left: 0;
+        padding: 0.7em;
+    }
+
     .copyright {
-        background: _palette(gray);
+        background: rgba(255,255,255, 0.05);
+        color: #858484;
         margin: 4em auto 0;
         font-size: 0.95em;
         width: 21em;

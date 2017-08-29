@@ -7,6 +7,7 @@
                                 <h2>More</h2>
                                 <ul class="links">
                                     <li><a href="http://solarwinds.io">SolarWinds Innovate</a></li>
+                                    <li><a href="{{ site.baseurl }}/code-of-conduct">Code of Conduct</a>
                                 </ul>
                             </div>
                         </div>
@@ -20,16 +21,36 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="row">
+                            <div class="col-s-12">
+                                <h2>Stay Updated</h2>
+                                <!-- Begin MailChimp Signup Form -->
+								<div id="mc_embed_signup">
+                                    <form action="//solarwinds.us16.list-manage.com/subscribe/post?u=7d7247cc00a4c3851b004ec21&amp;id=70b8867c09" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                        <div id="mc_embed_signup_scroll">
+                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7d7247cc00a4c3851b004ec21_70b8867c09" tabindex="-1" value=""></div>
+                                        <div class="clear"><button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="primary">Sign Up</button></div>
+                                        </div>
+                                    </form>
+								</div>
+								<!--End mc_embed_signup-->                               
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="copyright">
                     &copy; SolarWinds, 2017. All Rights Reserved.
                 </div>
             </div>
         </div>
-            
 
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="{{ site.baseurl }}/assets/2017/js/resize.js"></script>                
-        <script type="text/javascript" src="{{ site.baseurl }}/assets/2017/js/site.js"></script>
+        {% if page.layout != "2017/plain" %}
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="{{ site.baseurl }}/assets/2017/js/resize.js"></script>                
+            <script type="text/javascript" src="{{ site.baseurl }}/assets/2017/js/site.js"></script>
+        {% endif %}
     </body>
 </html>

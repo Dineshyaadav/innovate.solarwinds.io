@@ -6,8 +6,10 @@ iourl: 'http://solarwinds.io'
 
 # Setup
 sass:
+    sass_dir: ./_sass
     style: compressed
 
 # Testing
 # baseurl: ''
-# baseurl: '.'
+# port: 4001
+# host: mgardner-lt

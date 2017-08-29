@@ -8,28 +8,29 @@
 		<meta name="keywords" content="" />
 
 		<!-- Favicon/device icons -->
-		<link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
-		<link rel="manifest" href="./assets/icons/manifest.json">
-		<link rel="mask-icon" href="./assets/icons/safari-pinned-tab.svg" color="#f99d1c">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+		<link rel="manifest" href="/assets/icons/manifest.json">
+		<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#f99d1c">
 		<meta name="apple-mobile-web-app-title" content="SolarWinds Innovate">
 		<meta name="application-name" content="SolarWinds Innovate">
 		<meta name="theme-color" content="#ffffff">
 
-		<link rel="stylesheet" href="./assets/2017/css/normalize.min.css">
-		<link rel="stylesheet" href="./assets/2017/css/bootstrap-grid.min.css">
-		<link rel="stylesheet" href="./assets/2017/css/font-awesome.min.css">
-		<link rel="stylesheet" href="./assets/2017/css/style.css">
+		<link rel="stylesheet" href="/assets/2017/css/normalize.min.css">
+		<link rel="stylesheet" href="/assets/2017/css/bootstrap-grid.min.css">
+		<link rel="stylesheet" href="/assets/2017/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/assets/2017/css/style.css">
 	</head>
 	<body id="top">
 
-		<div class="navbar">
+				
+			<div class="navbar">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-12">
                 <div id="logo">
-                    <a href="#top"><img src="./assets/2017/images/logo.png" alt="SolarWinds Innovate Summit" /></a>
+                    <a href="#top"><img src="/assets/2017/images/logo.png" alt="SolarWinds Innovate Summit" /></a>
                     <div class="expand-nav"><i class="fa fa-2x fa-navicon" aria-hidden="true"></i></div>            
                 </div>
             </div>
@@ -48,6 +49,7 @@
         </div>
     </div>
 </div>
+		
 <div class="hero">
     <div class="overlay"></div>  
     <div class="intro">                
@@ -68,6 +70,7 @@
         </div>
     </div>  
 </div>
+<div class="main-wrapper">
     <section id="about">
     <div class="container">
         <h2>About</h2>
@@ -88,7 +91,7 @@
     <div class="light"></div>
     <div id="lightbulb" class="light"></div>
 </section>
-<section id="schedule">
+<section id="schedule" class="divider diagonal">
     <div class="container">
         <h2>Schedule</h2>
         <div class="event-times">
@@ -173,49 +176,53 @@
         <p></p>
 
         <!-- Begin MailChimp Signup Form -->
-        <div class="callout center half-size">
-            <h3>We'll let you know when registration opens</h3>                
-            <form action="//solarwinds.us16.list-manage.com/subscribe/post?u=7d7247cc00a4c3851b004ec21&amp;id=70b8867c09" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                <div id="mc_embed_signup_scroll">
-                    <div class="form-control">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3 col-sm-12">
-                                <label for="mce-EMAIL">Email</label>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-12">
+                <aside class="center">
+                    <h3>We'll let you know when registration opens</h3>                
+                    <form action="//solarwinds.us16.list-manage.com/subscribe/post?u=7d7247cc00a4c3851b004ec21&amp;id=70b8867c09" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <div class="form-control">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-3 col-sm-12">
+                                        <label for="mce-EMAIL">Email</label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-3 col-sm-12">
+                                        <label for="mce-FNAME">First Name </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-3 col-sm-12">
+                                        <label for="mce-LNAME">Last Name </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6 col-sm-12">
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                            </div>
+                            <div id="mce-responses" class="clear">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7d7247cc00a4c3851b004ec21_70b8867c09" tabindex="-1" value=""></div>
+                            <div class="clear"><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="secondary">Get Updates</button></div>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-3 col-sm-12">
-                                <label for="mce-FNAME">First Name </label>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-3 col-sm-12">
-                                <label for="mce-LNAME">Last Name </label>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-                            </div>
-                        </div>
-                    </div>
-                    <div id="mce-responses" class="clear">
-                        <div class="response" id="mce-error-response" style="display:none"></div>
-                        <div class="response" id="mce-success-response" style="display:none"></div>
-                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7d7247cc00a4c3851b004ec21_70b8867c09" tabindex="-1" value=""></div>
-                    <div class="clear"><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="secondary">Submit</button></div>
-                </div>
-            </form>
-        </div>   
+                    </form>
+                </aside>   
+            </div>
+        </div>
         <!--End mc_embed_signup-->
     </div>
 </section>
-<section id="speakers">
+<section id="speakers" class="divider diagonal-left">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-md-7 col-sm-12">
@@ -225,7 +232,7 @@
                 </p>
             </div>
             <div class="col-md-4 col-sm-12">
-                <div class="callout">
+                <aside>
                     <h3>Do you have a research project or topic you're particularly
                         knowledgable on?
                     </h3>
@@ -234,23 +241,11 @@
                         Summit.
                     </p>
                     <button class="primary"><a href="https://goo.gl/forms/YWTEw1jVSIOQzFzg1" target="_blank">Submit your proposal</a></button>
-                </div>
+                </aside>
             </div>
         </div>
     </div>
 </section>
-
-<!-- 
-
-<div id="speakerModal" class="modal">
-    <div class="content">
-        <span class="close" id="close-speakerModal">&times;</span>
-        <h2>Apply to be a speaker</h2>
-        
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe4_R8f9nvKCQk1w5SxtlbVM1m_MSBiWnQ1rLg1_nz6moEW3w/viewform?embedded=true" width="100%" height="500px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>    
-
-    </div>
-</div> -->
 <section id="details">
     <div class="container">
         <h2>Event Details</h2>
@@ -268,7 +263,12 @@
             </div>
             <div class="col-md-4 col-sm-12">
                 <h3>What's nearby</h3>
-                <p>Restaurants, bars</p>
+                <p>
+                    <ul>
+                        <li><a href="https://www.google.com/search?q=restaurants+near+Holandská+12%2C+639+00+Brno-střed%2C+Czechia&rlz=1C1GGRV_enUS758US758&oq=restaurants+near+Holandská+12%2C+639+00+Brno-střed%2C+Czechia" target="_blank">Restaurants</a></li>
+                        <li><a href="https://www.google.com/search?rlz=1C1GGRV_enUS758US758&q=bars+near+Holandská+12%2C+639+00+Brno-střed%2C+Czechia&oq=bars+near+Holandská+12%2C+639+00+Brno-střed%2C+Czechia" target="_blank">Bars</a></li>
+                    </ul>
+                </p>
             </div>
         </div>
     </div>
@@ -278,6 +278,7 @@
     <iframe width="100%" height="450" frameborder="0" style="border:0"
     src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJWwbvSaqVEkcRcBNVMCFzWM4&key=AIzaSyDZ1xeIkiN9Hy3UcGD_bNzRc4CWpuOPngY" allowfullscreen></iframe>
 </section>
+</div>
         <div class="footer">
             <div class="container">
                 <div class="row justify-content-between">
@@ -287,6 +288,7 @@
                                 <h2>More</h2>
                                 <ul class="links">
                                     <li><a href="http://solarwinds.io">SolarWinds Innovate</a></li>
+                                    <li><a href="/code-of-conduct">Code of Conduct</a>
                                 </ul>
                             </div>
                         </div>
@@ -300,16 +302,36 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="row">
+                            <div class="col-s-12">
+                                <h2>Stay Updated</h2>
+                                <!-- Begin MailChimp Signup Form -->
+								<div id="mc_embed_signup">
+                                    <form action="//solarwinds.us16.list-manage.com/subscribe/post?u=7d7247cc00a4c3851b004ec21&amp;id=70b8867c09" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                        <div id="mc_embed_signup_scroll">
+                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7d7247cc00a4c3851b004ec21_70b8867c09" tabindex="-1" value=""></div>
+                                        <div class="clear"><button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="primary">Sign Up</button></div>
+                                        </div>
+                                    </form>
+								</div>
+								<!--End mc_embed_signup-->                               
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="copyright">
                     &copy; SolarWinds, 2017. All Rights Reserved.
                 </div>
             </div>
         </div>
-            
 
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="./assets/2017/js/resize.js"></script>                
-        <script type="text/javascript" src="./assets/2017/js/site.js"></script>
+        
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="/assets/2017/js/resize.js"></script>                
+            <script type="text/javascript" src="/assets/2017/js/site.js"></script>
+        
     </body>
 </html>

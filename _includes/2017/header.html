@@ -24,4 +24,8 @@
 	</head>
 	<body id="top">
 
-		{% include 2017/nav.html %}
+		{% if page.layout == "2017/plain" %}
+			{% include 2017/nav_plain.html %}
+		{% else %}		
+			{% include 2017/nav.html %}
+		{% endif %}
