@@ -20,6 +20,7 @@
 		<link rel="stylesheet" href="/assets/2017/css/normalize.min.css">
 		<link rel="stylesheet" href="/assets/2017/css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="/assets/2017/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/assets/2017/css/atc.min.css">
 		<link rel="stylesheet" href="/assets/2017/css/style.css">
 	</head>
 	<body id="top">
@@ -257,9 +258,22 @@
                     +420-515-519 519
             </div>
             <div class="col-md-4 col-sm-12">
-                <h3>Date/Time</h3>
+                <h3 class="datetime">Date/Time</h3>
+                <span class="addtocalendar"><i class="atcb-link fa fa-calendar-plus-o" aria-hidden="true"></i>
+                    <var class="atc_event">
+                        <var class="atc_date_start">2017-05-04 12:00:00</var>
+                        <var class="atc_date_end">2017-05-04 18:00:00</var>
+                        <var class="atc_timezone">Europe/London</var>
+                        <var class="atc_title">Star Wars Day Party</var>
+                        <var class="atc_description">May the force be with you</var>
+                        <var class="atc_location">Tatooine</var>
+                        <var class="atc_organizer">Luke Skywalker</var>
+                        <var class="atc_organizer_email">luke@starwars.com</var>
+                    </var>
+                </span>
                 <p>December 14, 2017<br />
                     1pm to 9pm
+                </p>
             </div>
             <div class="col-md-4 col-sm-12">
                 <h3>What's nearby</h3>
@@ -297,7 +311,6 @@
                         <div class="row">
                             <div class="col-s-12">
                                 <h2>Connect With Us</h2>
-                                <a href="#"><div class="social" id="facebook"></div></a>
                                 <a href="#"><div class="social" id="twitter"></div></a>                                
                             </div>
                         </div>
@@ -332,6 +345,14 @@
             <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
             <script type="text/javascript" src="/assets/2017/js/resize.js"></script>                
             <script type="text/javascript" src="/assets/2017/js/site.js"></script>
+            <script type="text/javascript">(function () {
+                if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
+                if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
+                    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                    s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
+                    s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
+                    var h = d[g]('body')[0];h.appendChild(s); }})();
+            </script>
         
     </body>
 </html>
