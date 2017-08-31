@@ -564,6 +564,8 @@ section {
 }
 
 .footer {
+    position: relative;
+    overflow: hidden;
     padding: 3em 0;
     background: _palette(grayDark);
     color: _palette(grayLight);
@@ -626,6 +628,34 @@ section {
         padding: 1em;
         border-radius: 0.5em;
         text-align: center;
+    }
+
+    .ribbon {
+        position: absolute;
+        top: -35%;
+        left: -30%; // Goes to -14% when user scrolls to bottom
+        display: inline-block;
+        padding: 0.5em;
+        width: 30%;
+        background: _palette(orange);
+        color: #FFF;
+        font-family: $roboto;
+        font-size: 1.1em;
+        font-weight: bold;
+        text-align: center;        
+        transform: rotate(-45deg);
+        transform-origin: 100% 100%;
+
+        a {
+            color: #FFF;
+            text-decoration: none;
+
+            &:visited,
+            &:hover,
+            &:active {
+                color: inherit;
+            }
+        }
     }
 }
 

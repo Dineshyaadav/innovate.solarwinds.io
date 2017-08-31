@@ -1,72 +1,95 @@
 $(document).ready(() => {
     // If user reloads page not at top, display fixed nav
-    if ($(window).scrollTop() >= 1) {
+    if ($(window).scrollTop() >= 1 && !$('navbar').hasClass('affix')) {
         $('.navbar').addClass('affix');       
     }
 
-    // Function to capture data when user is scrolling
+    // Calculate section element positioning once on page load
+    let navHeight = $('.navbar').outerHeight(true);
+    
+    let $about = $('section#about'),
+        $aboutOffset = ($about.offset().top - navHeight),
+        $aboutPosition = ($aboutOffset + $about.outerHeight()/2 - navHeight);
+    let $schedule = $('section#schedule'),
+        $scheduleOffset = ($schedule.offset().top - navHeight),
+        $schedulePosition = ($scheduleOffset + $schedule.outerHeight()/2);
+    let $register = $('section#register'),
+        $registerOffset = ($register.offset().top - navHeight),
+        $registerPosition = ($registerOffset + $register.outerHeight()/2);
+    let $speakers = $('section#speakers'),
+        $speakersOffset = ($speakers.offset().top - navHeight),
+        $speakersPosition = ($speakersOffset + $speakers.outerHeight()/2);
+    let $details = $('section#details'),
+        $detailsOffset = ($details.offset().top - navHeight),
+        $detailsPosition = ($detailsOffset + $details.outerHeight()/2);
+    let $footerRibbon = $('.footer .ribbon'),
+        $ribbonState = $footerRibbon.data('state');
+
+    // Global scroll events
     $(window).scroll(function() {
         let scroll = $(window).scrollTop();    
         
         // When user scrolls, display fixed nav menu with background
-        if (scroll >= 1) {
+        if (scroll >= 1 && !$('.navbar').hasClass('affix')) {
             $('.navbar').addClass('affix');        
-        } else {
+        } else if (scroll < 1 && $('.navbar').hasClass('affix')) {
             $('.navbar').removeClass('affix');
         }
 
         // Highlight active nav links
-        let $about = $('section#about');
-        let $schedule = $('section#schedule');
-        let $register = $('section#register');
-        let $speakers = $('section#speakers');
-        let $details = $('section#details');
-        let navHeight = $('.navbar').outerHeight(true);
-        
+        // To add active link, scroll position must be within the section and link element must not have the 'active' class
+        // To remove link, scroll position must be outside of the section and link element must have 'active' class
 
-        if (scroll >= ($about.offset().top - navHeight)
-            && scroll <= ($about.offset().top + $about.outerHeight()/2 - navHeight)) {
-            $('nav li a[href="#about"]').addClass('active');
-        } else {
+        if (scroll >= $aboutOffset && scroll <= $aboutPosition && !$('nav li a[href="#about"]').hasClass('active')) {
+            $('nav li a[href="#about"]').addClass('active').siblings().removeClass('active');
+        } else if ((scroll < $aboutOffset && $('nav li a[href="#about"]').hasClass('active'))
+                     || (scroll > $aboutPosition && $('nav li a[href="#about"]').hasClass('active'))) {
             $('nav li a[href="#about"]').removeClass('active');
         }
 
-        if (scroll >= ($schedule.offset().top - navHeight)
-            && scroll <= ($schedule.offset().top + $schedule.outerHeight()/2 - navHeight)) {
+        if (scroll >= $scheduleOffset && scroll <= $schedulePosition && !$('nav li a[href="#schedule"]').hasClass('active')) {
             $('nav li a[href="#schedule"]').addClass('active');
-        } else {
+        } else if ((scroll < $scheduleOffset && $('nav li a[href="#schedule"]').hasClass('active'))
+                    || (scroll > $schedulePosition && $('nav li a[href="#schedule"]').hasClass('active'))) {
             $('nav li a[href="#schedule"]').removeClass('active');
         }
 
-        if (scroll >= ($register.offset().top - navHeight)
-            && scroll <= ($register.offset().top + $register.outerHeight()/2 - navHeight)) {
+        if (scroll >= $registerOffset && scroll <= $registerPosition && !$('nav li a[href="#register"]').hasClass('active')) {
             $('nav li a[href="#register"]').addClass('active');
-        } else {
+        } else if ((scroll < $registerOffset && $('nav li a[href="#register"]').hasClass('active'))
+                    || (scroll > $registerPosition && $('nav li a[href="#register"]').hasClass('active'))) {
             $('nav li a[href="#register"]').removeClass('active');
         }
 
-        if (scroll >= ($speakers.offset().top - navHeight)
-            && scroll <= ($speakers.offset().top + $speakers.outerHeight()/2 - navHeight)) {
+        if (scroll >= $speakersOffset && scroll <= $speakersPosition && !$('nav li a[href="#speaker"]').hasClass('active')) {
             $('nav li a[href="#speakers"]').addClass('active');
-        } else {
+        } else if ((scroll < $speakersOffset && $('nav li a[href="#speakers"]').hasClass('active'))
+                    || (scroll > $speakersPosition && $('nav li a[href="#speakers"]').hasClass('active'))) {
             $('nav li a[href="#speakers"]').removeClass('active');
         }
 
-        if (scroll >= ($details.offset().top - navHeight)
-            && scroll <= ($details.offset().top + $details.outerHeight()/2 - navHeight)) {
+        if (scroll >= $detailsOffset && scroll <= $detailsPosition && !$('nav li a[href="#details"]').hasClass('active')) {
             $('nav li a[href="#details"]').addClass('active');
-        } else {
+        } else if ((scroll < $detailsOffset && $('nav li a[href="#details"]').hasClass('active'))
+                    || (scroll > $detailsPosition && $('nav li a[href="#details"]').hasClass('active'))) {
             $('nav li a[href="#details"]').removeClass('active');
         }
 
-        if ($('.expand-nav').css('display') === 'none') {
-            // Toggle lightbulb to lit when user hits about section
-            if (scroll > ($about.offset().top - navHeight - 100)
-                && scroll < ($about.offset().top - navHeight + 100)) {
-                $('#lightbulb').fadeOut('slow');
-            } else {
-                $('#lightbulb').fadeIn('slow');
-            }
+        // Only on desktop, toggle lightbulb to lit when user hits about section
+        if ($('#lightbulb').css('display') !== 'none'
+            && scroll > ($aboutOffset - 100)
+            && scroll < ($aboutOffset + 100)) {
+            $('#lightbulb').fadeOut('slow');
+        } else if (($('#lightbulb').css('display') === 'none' && scroll < ($aboutOffset - 99))
+                    || ($('#lightbulb').css('display') === 'none' && scroll > ($aboutOffset + 101))) {
+            $('#lightbulb').fadeIn('slow');
+        }
+
+        if ($(window).width() > 768
+            && scroll + $(window).height() === $(document).height()
+            && $ribbonState === 'offscreen') {
+            $footerRibbon.animate({left: '-14%'}, 300);
+            $footerRibbon.data('state', 'onscreen');
         }
     });
 
@@ -131,11 +154,6 @@ $(document).ready(() => {
             $('nav').css('display', 'none');
         });
     }
-
-    // Show lit lightbulb when user hovers on about section content
-    // $('#about .container').hover(() => {
-    //     $('#lightbulb').fadeToggle('fast', 0);
-    // })
 
     // Modals
 
