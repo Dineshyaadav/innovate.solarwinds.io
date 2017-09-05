@@ -107,6 +107,22 @@
                 }
             }
         }
+
+        &#speakers {
+            .speaker {
+                &.card {
+                    .info {
+                        position: relative;
+                        opacity: 1;
+                        top: auto;
+                        right: auto;
+                        bottom: auto;
+                        left: auto;
+                        background: none;
+                    }
+                }
+            }
+        }
     }
 
     .modal {

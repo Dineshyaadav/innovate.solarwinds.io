@@ -157,23 +157,23 @@ $(document).ready(() => {
 
     // Modals
 
-    // Call for speakers
-    // $('#open-speakerModal').on('click', (e) => {
-    //     $(`#speakerModal`).css('display', 'block');
-    //     $('body').addClass('modal-open');
-    // });
+    $('.speaker.card').on('click', (e) => {
+        let modalId = $(e.target).data('target-modal');
+        $(`#${modalId}`).css('display', 'block');
+        $('body').addClass('modal-open');
+    });
 
-    // $('#close-speakerModal').on('click', (e) => {
-    //     $(`#speakerModal`).css('display', 'none');
-    //     $('body').removeClass('modal-open');
-    // });
+    $('.modal .close').on('click', (e) => {
+        $(`.modal`).css('display', 'none');
+        $('body').removeClass('modal-open');
+    });
 
-    // // Handle when someone clicks outside the modal window
-    // // Need to add each specific modal within this
-    // $(window).on('click', (e) => {
-    //     if (e.target.id == 'speakerModal') {
-    //         $('#speakerModal').css('display', 'none');
-    //         $('body').removeClass('modal-open');
-    //     }
-    // });
+    // Handle when someone clicks outside the modal window
+    // Need to add each specific modal within this
+    $(window).on('click', (e) => {
+        if ($(e.target).hasClass('modal')) {
+            $('.modal').css('display', 'none');
+            $('body').removeClass('modal-open');
+        }
+    });
 });
