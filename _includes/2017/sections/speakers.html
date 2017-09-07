@@ -1,13 +1,24 @@
 <section id="speakers" class="divider diagonal-left">
     <div class="container">
         <h2>Speakers</h2>
-        <div class="row justify-content-between">              
-            <div class="col-md-7 col-sm-12">
-                <p>
-                    We are still working on the lineup. Subscribe above to receive updates!
-                </p>
-            </div>
-            <div class="col-md-4 col-sm-12">
+        <div class="row justify-content-center">              
+            {% for speaker_hash in site.data.speakers %}
+            {% assign id = speaker_hash[0] %}
+            {% assign speaker = speaker_hash[1] %}       
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="speaker card" data-target-modal="{{ id }}Modal">
+                        <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}" data-target-modal="{{ id }}Modal">
+                        <div class="info">
+                            <h3>{{ speaker.name }}</h3>
+                            <p class="title">
+                                <em>{{ speaker.title }}</em><br />
+                                {{ speaker.company }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <aside>
                     <h3>Do you have a research project or topic you're particularly
                         knowledgable on?
@@ -22,3 +33,30 @@
         </div>
     </div>
 </section>
+
+{% for speaker_hash in site.data.speakers %}
+    {% capture modalId %}{{ speaker_hash[0] | append: "Modal" }}{% endcapture %}
+    {% assign speaker = speaker_hash[1] %}
+    {% capture speakerName %}{{ speaker.name }}{% endcapture %}
+
+    {% capture modalContent %}
+    <div class="speaker">            
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-9 col-sm-12">
+                <div class="headshot">
+                    <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}">
+                </div>
+                <h2>{{ speaker.name }}</h2>
+                <p class="title">
+                    <em>{{ speaker.title }}</em><br />
+                    {{ speaker.company }}
+                </p>
+                {{ speaker.bio }}
+            </div>
+        </div>  
+    </div>  
+    {% endcapture %}
+
+    {% include partials/modal.html id=modalId content=modalContent  %}
+
+{% endfor %}

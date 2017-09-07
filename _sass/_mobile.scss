@@ -1,4 +1,4 @@
-@media screen and (max-width: $m) {
+@media screen and (max-width: $l) {
 
     .navbar {
         #logo {
@@ -122,6 +122,12 @@
                     }
                 }
             }
+        }
+    }
+
+    .speaker {
+        .headshot {
+            display: none;
         }
     }
 
