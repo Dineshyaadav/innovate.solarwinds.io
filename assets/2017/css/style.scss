@@ -673,14 +673,18 @@ section {
     }
 
     .copyright {
-        background: rgba(255,255,255, 0.05);
         color: #858484;
-        margin: 4em auto 0;
         font-size: 0.95em;
-        width: 21em;
-        padding: 1em;
-        border-radius: 0.5em;
         text-align: center;
+
+        .row {
+            .col-lg-6, .col-sm-12 {
+                background: rgba(255,255,255, 0.05);
+                margin: 4em auto 0;  
+                padding: 1em;            
+                border-radius: 0.5em;
+            }
+        }
     }
 
     .ribbon {
