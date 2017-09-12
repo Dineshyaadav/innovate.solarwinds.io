@@ -28,7 +28,8 @@
             padding: 1em 0 0;
             text-align: center;
             display: none;
-            
+            height: 0;
+
             ul {
                 padding: 0;              
     
@@ -48,6 +49,7 @@
                             color: _palette(orange);
                             background-color: inherit;
                             border-radius: 0;
+                            box-shadow: none;
                         }
 
                         &:active {

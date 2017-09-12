@@ -133,12 +133,14 @@ $(document).ready(() => {
         switch ($('nav').css('display')) {
             case 'none':
                 $('nav').css('display', 'block');
+                $('nav').animate({height: "100%"}, 500);                
                 $('.navbar').css({
                     'background-color': '#FFF',
                     'box-shadow': '0 0 0.2em rgba(0,0,0,0.4)'
-                });                
+                });
                 break;
             default:
+                $('nav').animate({height: "0"}, 500);
                 $('nav').css('display', 'none');
                 $('.navbar').css({
                     'background-color': '',
