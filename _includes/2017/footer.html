@@ -56,17 +56,7 @@
         </div>
 
         {% if page.layout != "2017/plain" %}
-            <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-            <script type="text/javascript" src="{{ site.baseurl }}/assets/2017/js/resize.js"></script>                
-            <script type="text/javascript" src="{{ site.baseurl }}/assets/2017/js/site.js"></script>
-            <script type="text/javascript">(function () {
-                if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
-                if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
-                    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-                    s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
-                    s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
-                    var h = d[g]('body')[0];h.appendChild(s); }})();
-            </script>
+            {% include 2017/global_scripts.html %}
         {% endif %}
     </body>
 </html>
