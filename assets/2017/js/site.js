@@ -1,4 +1,10 @@
 $(document).ready(() => {
+    // Screen breaks
+    let sizeS = 576,
+        sizeM = 768,
+        sizeL = 992,
+        sizeXl = 1200;
+
     // If user reloads page not at top, display fixed nav
     if ($(window).scrollTop() >= 1 && !$('navbar').hasClass('affix')) {
         $('.navbar').addClass('affix');       
@@ -132,6 +138,7 @@ $(document).ready(() => {
     $(document).on('click', '.expand-nav', () => {
         switch ($('nav').css('display')) {
             case 'none':
+                $('body').addClass('modal-open');
                 $('nav').css('display', 'block');
                 $('nav').animate({height: "100%"}, 500);                
                 $('.navbar').css({
@@ -140,6 +147,7 @@ $(document).ready(() => {
                 });
                 break;
             default:
+                $('body').removeClass('modal-open');            
                 $('nav').animate({height: "0"}, 500);
                 $('nav').css('display', 'none');
                 $('.navbar').css({
@@ -153,13 +161,14 @@ $(document).ready(() => {
     // If user clicks on a menu item on mobile, hide the menu
     if ($('.expand-nav').css('display') === "block") {
         $(document).on('click', 'nav *', () => {
-            $('nav').css('display', 'none');
+            $('nav').css({'display': 'none', 'height':'0'});
+            $('body').removeClass('modal-open');
         });
     }
 
     // Modals
 
-    $('.speaker.card').on('click', (e) => {
+    $('[data-target-modal]').on('click', (e) => {
         let modalId = $(e.target).data('target-modal');
         $(`#${modalId}`).css('display', 'block');
         $('body').addClass('modal-open');
