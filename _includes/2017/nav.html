@@ -1,21 +1,21 @@
 <div class="navbar">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-12">
-                <div id="logo">
-                    <a href="#top"><img src="{{ site.baseurl }}/assets/2017/images/logo.png" alt="SolarWinds Innovate Summit" /></a>
-                    <div class="expand-nav"><i class="fa fa-2x fa-navicon" aria-hidden="true"></i></div>            
+            <div class="col-lg-3 col-sm-12">
+                <div id="logo">                            
+                    <a href="#top"><img src="{{ site.baseurl }}/assets/2017/images/logo.png" alt="SolarWinds" /></a>
+                    Innovate Summit 2017
+
+                    <div id="expand-nav"><i class="fa fa-2x fa-navicon" aria-hidden="true"></i></div>                  
                 </div>
             </div>
 
-            <div class="col-lg-9 col-md-12">
+            <div class="col-lg-9">
                 <nav>
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#schedule">Schedule</a></li>
-                        <li><a href="#register">Register</a></li>
-                        <li><a href="#speakers">Call For Speakers</a></li>
-                        <li><a href="#details">Event Details</a></li>
+                        {% for link in site.data.navLinks %}
+                            <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+                        {% endfor %}
                     </ul>
                 </nav>
             </div>

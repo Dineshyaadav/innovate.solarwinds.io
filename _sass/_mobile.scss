@@ -2,32 +2,16 @@
 
     .navbar {
         #logo {
-            display: block;
-            width: 100%;
-            float: none;
-
-            img {
-                float: left;
-            }
-
-            .expand-nav {
-                display: inline;
-                float: right;
-                padding-top: 1.2em;
-                cursor: pointer;     
-            }
-
-            &:after {
-                clear: both;
+            #expand-nav {
+                display: inline-block;
             }
         }
     
         nav {
-            float: none;
+            display: none;
             font-size: 1.2em;
             padding: 1em 0 0;
             text-align: center;
-            display: none;
             height: 0;
 
             ul {
@@ -98,8 +82,8 @@
             min-height: 0;
             height: auto;
     
-            .light {
-                display: none;
+            .light, #lightbulb {
+                display: none !important;
             }
         }
 

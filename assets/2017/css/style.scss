@@ -11,7 +11,7 @@ $l: 992px;
 $xl: 1200px;
 
 // Import corporate fonts
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,500,700');
 $roboto: 'Roboto', sans-serif;
 $openSans: 'Open Sans', sans-serif;
 
@@ -68,7 +68,7 @@ button,
     padding: 1em;
     margin: 0.5em 0.2em;
     border: 0;
-    border-radius: 0.5em;
+    text-transform: uppercase;
 
     a {
         color: inherit;
@@ -90,15 +90,15 @@ button,
 
     &.action {
         transition: background 0.25s ease-in-out;
-        background: _palette(green);
+        background: _palette(cta);
         color: #FFF;
     
         &:hover {
-            background: _palette(greenHov);
+            background: _palette(ctaHov);
         }
 
         &:active {
-            background: _palette(greenAct);
+            background: _palette(ctaAct);
         }
     }
 
@@ -162,7 +162,6 @@ form {
         padding: 0.7em;
         width: 100%;
         border: 0;
-        border-radius: 0.5em;
         box-shadow: 0 0 0.1em rgba(0,0,0, 0.4);
         color: _palette(textPrimary);
 
@@ -193,26 +192,35 @@ form {
     position: absolute;
     width: 100%;
     z-index: 500;
-    padding: 0.5em 0;
+    padding-top: 1em;
+    margin-bottom: 1em;
     overflow: hidden;
 
     #logo {
-        float: left;
+        text-transform: uppercase;
+        color: _palette(textPrimary);
+        font-weight: 700;
+
+        #expand-nav {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 1.5em;
+            padding-top: 1.2em;
+            cursor: pointer;
+        }
 
         img {
-            max-width: 11.4em;            
+            display: block;
+            max-width: 11.4em;
+            margin-bottom: 0.5em;      
         }
     }
 
-    .expand-nav {
-        display: none;
-    }
-
     nav {
-        float: right;
-        padding-top: 0.7em;
-        font-size: 0.96em;
-        display: inline-block;
+        text-align: center;
+        padding-top: 1.5em;
+        text-transform: uppercase;
         
         ul {
 
@@ -220,39 +228,36 @@ form {
                 display: inline-block;
 
                 a {
-                    transition: background-color 0.25s ease-in-out,
-                                color 0.25s ease-in-out;
+                    transition: color 0.25s ease-in-out;
                     color: inherit;
                     text-decoration: none;
                     padding: 0.5em 1em;
-                    border-radius: 0.5em;                    
+                    font-weight: 500;                    
 
                     &:visited {
                         color: _palette(textPrimary);
-                        background: none;
                     }
 
                     &:hover {
-                        color: #FFF;
-                        background-color: _palette(orange);
-                        box-shadow: 0 2px 2px rgba(0,0,0, 0.1);
-                    }
-
-                    &:active {
-                        background-color: _palette(grayDark);
+                        color: _palette(orange);
                     }
 
                     &.active {
-                        color: #FFF;
-                        background-color: _palette(grayDark);
+                        color: _palette(blue);
                     }
                 }
             }
         }
     }
 
-    &:after {
-        clear: both;
+    &::after {
+        content: "";
+        display: block;
+        margin-top: 20px;
+        width: 100%;
+        height: 17px;
+        background: url("{{ site.baseurl }}/assets/2017/images/brand-line.jpg");
+        background-repeat: no-repeat;
     }
 }
 
@@ -278,49 +283,30 @@ form {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(255,255,255, 0.95);
+    background: rgba(255,255,255, 1);
     box-shadow: 0 0 0.2em rgba(0,0,0,0.4);
 }
 
 .hero {
     position: relative;
     height: 100vh;
-    background: url('../images/brno-skyline.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 
-    .overlay,
     .intro,
     .container,
     .row {
         height: inherit;        
     }
 
-    .overlay {
-        position: absolute;
-        width: 100%;
-        background: rgba(255,255,255, 0.6);
-    }
-
     .intro {
         position: relative;
-
-        .blurb {
-            padding: 2em;
-            background: rgba(255,255,255, 0.8);
-            text-align: center;
-            box-shadow: 0 0.1em 0.2em rgba(0,0,0,0.1);
-            opacity: 0;
-            animation: fade-in 1s forwards;            
-        }
+        padding: 2em;
+        text-align: center;
+        animation: fade-in 1s forwards; 
 
         h1 {
             font-size: 2.5em;
             line-height: 1.5em;
-            color: _palette(orange);
-            text-shadow: 0 2px 0.1em rgba(0,0,0,0.1);
+            color: _palette(blue);
         }
 
         h2, h3 {
@@ -383,6 +369,17 @@ section {
         background: _palette(blue);
         box-shadow: inset 0 0 0.4em rgba(0,0,0,0.3);
 
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 17px;
+            background: url("{{ site.baseurl }}/assets/2017/images/brand-line.jpg");
+            background-repeat: no-repeat;
+        }
+
         .event-times {
             margin-top: 3em;
         }
@@ -405,17 +402,15 @@ section {
             &.standard {
                 background: rgba(255,255,255, 0.5);                
             }
-        }
 
-        &.diagonal {
-            &::before {
-                background: #9bf6fd;                
+            &.min-45 {
+                padding: 2em;
             }
         }
     }
 
     &#register {
-        background: _palette(chartreuse);
+        background: _palette(green);
         box-shadow: 0 0 0.2em rgba(0,0,0, 0.3);
 
         form {
@@ -480,90 +475,6 @@ section {
         h2 {
             font-size: 1.5em;
             font-weight: bold;
-        }
-    }
-
-    // Section divider styles
-
-    &.divider {
-        z-index: 1;
-        padding-top: 6em;
-
-        &::before,
-        &::after {
-            position: absolute;
-            content: '';
-            pointer-events: none;
-        }
-    }
-
-    &.diagonal {
-        &::before,
-        &::after {
-            top: 0;
-            left: -25%;
-            z-index: -1;
-            width: 150%;
-            height: 75%;
-            background: inherit;
-            -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
-            -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
-        }
-        
-        &::before {
-            height: 50%;
-            -webkit-transform: rotate(-3deg);
-            transform: rotate(-3deg);
-            -webkit-transform-origin: 3% 0;
-            transform-origin: 3% 0;
-        }
-    }
-
-    &.diagonal-left {
-        z-index: 0;
-
-        &::before,
-        &::after {
-            bottom: 0;
-            right: -25%;
-            z-index: -1;
-            width: 150%;
-            height: 75%;
-            background: inherit;
-            -webkit-transform: rotate(2deg);
-            transform: rotate(2deg);
-            -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
-        }
-        
-        &::before {
-            height: 50%;
-            -webkit-transform: rotate(3deg);
-            transform: rotate(3deg);
-            -webkit-transform-origin: 3% 0;
-            transform-origin: 3% 0;
-        }
-    }
-
-    &.triangles {
-        &::before,
-        &::after {
-            left: 50%;
-            width: 100px;
-            height: 100px;
-            -webkit-transform: translateX(-50%) rotate(45deg);
-            transform: translateX(-50%) rotate(45deg);
-        }
-        
-        &::before {
-            top: -50px;
-        }
-        
-        &::after {
-            bottom: -50px;
-            z-index: 10;
         }
     }
 }

@@ -1,0 +1,14 @@
+- name: About
+  url: "#about"
+
+- name: Schedule
+  url: "#schedule"
+
+- name: Register
+  url: "#register"
+
+- name: Speakers
+  url: "#speakers"
+
+- name: Details
+  url: "#details"

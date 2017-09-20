@@ -134,8 +134,18 @@ $(document).ready(() => {
         }
     });
 
+    $(window).resize(() => {
+        if ($(window).width() >= sizeL) {
+            $('nav').css('display', 'block');
+            $('#expand-nav').css('display', 'none');            
+        } else {
+            $('nav').css('display', 'none');
+            $('#expand-nav').css('display', 'block');
+        }
+    })
+
     // When you click the mobile nav menu expander, show the menu, vice versa
-    $(document).on('click', '.expand-nav', () => {
+    $(document).on('click', '#expand-nav', () => {
         switch ($('nav').css('display')) {
             case 'none':
                 $('body').addClass('modal-open');
@@ -159,7 +169,7 @@ $(document).ready(() => {
     });
 
     // If user clicks on a menu item on mobile, hide the menu
-    if ($('.expand-nav').css('display') === "block") {
+    if ($('#expand-nav').css('display') === "block") {
         $(document).on('click', 'nav *', () => {
             $('nav').css({'display': 'none', 'height':'0'});
             $('body').removeClass('modal-open');
