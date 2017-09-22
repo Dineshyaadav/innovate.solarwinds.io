@@ -5,6 +5,10 @@
             #expand-nav {
                 display: inline-block;
             }
+
+            img {
+                max-width: 60%;
+            }
         }
     
         nav {
@@ -18,16 +22,17 @@
     }
 
     .hero {
-        height: 450px;
+        height: 100vh;
+        margin-top: 100px;        
 
         .intro {
             h1 {
-                font-size: 1.7em;
+                font-size: 2.5em;
                 line-height: 1.2em;
             }
 
             h2 {
-                font-size: 1.2em;
+                font-size: 1.6em;
             }
         }
     }
@@ -89,10 +94,10 @@
     
             .mobile-nav {
                 font-size: 1.2em;
-                padding: 1em 0 0;
+                padding: 1.5em 0 0;
                 text-align: center;
                 height: 0;
-                text-transform: uppercase;                
+                text-transform: uppercase;               
     
                 ul {
                     padding: 0;              
@@ -100,10 +105,11 @@
                     li {
                         display: block;
                         padding: 1em 0;                    
-                        border-top: 0.1em solid _palette(grayLight);                                           
+                        border-top: 0.1em solid _palette(grayLight);
     
                         a {
                             width: 100%;
+                            text-decoration: none;                       
     
                             &:visited {
                                 color: _palette(textPrimary);

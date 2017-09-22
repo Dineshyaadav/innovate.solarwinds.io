@@ -86,8 +86,10 @@ $(document).ready(() => {
             && scroll > ($aboutOffset - 100)
             && scroll < ($aboutOffset + 100)) {
             $('#lightbulb').fadeOut('slow');
+            $('.light').css('display', 'block');
         } else if (($('#lightbulb').css('display') === 'none' && scroll < ($aboutOffset - 99))
                     || ($('#lightbulb').css('display') === 'none' && scroll > ($aboutOffset + 101))) {
+            $('.light').fadeOut('slow');                       
             $('#lightbulb').fadeIn('slow');
         }
 
@@ -134,6 +136,7 @@ $(document).ready(() => {
         }
     });
 
+    // If window resizes, make sure correct navigation is displaying
     $(window).resize(() => {
         if ($(window).width() >= sizeL) {
             $('nav').css('display', 'block');
@@ -143,42 +146,6 @@ $(document).ready(() => {
             $('#expand-nav').css('display', 'block');
         }
     })
-
-    $(document).on('click', '#expand-nav', () => {
-        $('#mobileNavModal nav').animate({height: "100%"}, 500);
-    });
-
-    // // When you click the mobile nav menu expander, show the menu, vice versa
-    // $(document).on('click', '#expand-nav', () => {
-    //     switch ($('nav').css('display')) {
-    //         case 'none':
-    //             $('body').addClass('modal-open');
-    //             $('nav').css('display', 'block');
-    //             $('nav').animate({height: "100%"}, 500);                
-    //             $('.navbar').css({
-    //                 'background-color': '#FFF',
-    //                 'box-shadow': '0 0 0.2em rgba(0,0,0,0.4)'
-    //             });
-    //             break;
-    //         default:
-    //             $('body').removeClass('modal-open');            
-    //             $('nav').animate({height: "0"}, 500);
-    //             $('nav').css('display', 'none');
-    //             $('.navbar').css({
-    //                 'background-color': '',
-    //                 'box-shadow': ''
-    //             });                                
-    //             break;
-    //     }
-    // });
-
-    // // If user clicks on a menu item on mobile, hide the menu
-    // if ($('#expand-nav').css('display') === "block") {
-    //     $(document).on('click', 'nav *', () => {
-    //         $('nav').css({'display': 'none', 'height':'0'});
-    //         $('body').removeClass('modal-open');
-    //     });
-    // }
 
     // Modals
 
@@ -193,12 +160,17 @@ $(document).ready(() => {
         $('body').removeClass('modal-open');
     });
 
-    // Handle when someone clicks outside the modal window
-    // Need to add each specific modal within this
+    // Handle when user clicks outside the modal window
     $(window).on('click', (e) => {
         if ($(e.target).hasClass('modal')) {
             $('.modal').css('display', 'none');
             $('body').removeClass('modal-open');
         }
+    });
+
+    // Handle closing mobile nav modal when user clicks link
+    $(document).on('click', '.mobile-nav .links li', () => {
+        $(`.modal`).css('display', 'none');
+        $('body').removeClass('modal-open');
     });
 });

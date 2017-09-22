@@ -48,5 +48,15 @@
             </div>
         </div>
         <!--End mc_embed_signup-->
+
+        <button class="primary" data-target-modal="registrationModal">Register</button>
     </div>
 </section>
+
+{% capture modalContent %}
+    <div id="registration-form">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeNp6iCmdXl1HdoLrnpeKYW3RFaX2imutjp3Fiws46m21uPOw/viewform?embedded=true" frameborder="0">Loading...</iframe>
+    </div>
+{% endcapture %}
+
+{% include partials/modal.html id="registrationModal" content=modalContent fullScreen=true %}

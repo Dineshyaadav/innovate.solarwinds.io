@@ -1,4 +1,4 @@
-<div id="{{ include.id }}" class="modal">
+<div id="{{ include.id }}" class="modal {% if include.fullScreen %}full-screen{% endif %}">
     <div class="content">
         <span class="close" id="close-{{ include.id }}">&times;</span>
         <h2>{{ include.name }}</h2>
