@@ -1,8 +1,8 @@
-<section id="speakers" class="divider diagonal-left">
+<section id="speakers">
     <div class="container">
         <h1>Speakers</h1>
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="100">
                 <div class="speaker card">
                     <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
                     <div class="info">
@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="200">
                 <div class="speaker card">
                     <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
                     <div class="info">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="300">
                 <div class="speaker card">
                     <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
                     <div class="info">
@@ -27,10 +27,11 @@
                 </div>
             </div>
             
+            {% assign delay = 400 %}            
             {% for speaker_hash in site.data.speakers %}
             {% assign id = speaker_hash[0] %}
-            {% assign speaker = speaker_hash[1] %}       
-                <div class="col-lg-4 col-md-6 col-sm-12">
+            {% assign speaker = speaker_hash[1] %}
+                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="{{ delay + (forloop.index * 100) }}">
                     <div class="speaker card" data-target-modal="{{ id }}Modal">
                         <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}" data-target-modal="{{ id }}Modal">
                         <div class="info">

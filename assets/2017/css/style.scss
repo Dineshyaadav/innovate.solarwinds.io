@@ -2,7 +2,6 @@
 ---
 
 @import 'colors';
-@import 'animations';
 
 // Screen breaks
 $s: 576px;
@@ -188,13 +187,19 @@ form {
     }
 }
 
+.divider-curvy {
+    background: url("{{ site.baseurl }}/assets/2017/images/divider-pattern.png");
+    background-repeat: repeat-x;
+}
+
 .navbar {
     position: absolute;
+    top: 0;
     width: 100%;
     z-index: 500;
     padding-top: 1em;
-    margin-bottom: 1em;
     overflow: hidden;
+    background: #FFF;
 
     #logo {
         text-transform: uppercase;
@@ -218,7 +223,7 @@ form {
     }
 
     nav {
-        text-align: center;
+        text-align: left;
         padding-top: 1.5em;
         text-transform: uppercase;
         
@@ -283,13 +288,14 @@ form {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(255,255,255, 1);
     box-shadow: 0 0 0.2em rgba(0,0,0,0.4);
 }
 
 .hero {
     position: relative;
-    height: 100vh;
+    height: 800px;
+    margin-top: 133px;
+    overflow: hidden;
 
     .intro,
     .container,
@@ -300,19 +306,24 @@ form {
     .intro {
         position: relative;
         padding: 2em;
-        text-align: center;
-        animation: fade-in 1s forwards; 
 
         h1 {
-            font-size: 2.5em;
-            line-height: 1.5em;
+            font-size: 4em;
+            line-height: 0.5em;
             color: _palette(blue);
         }
 
         h2, h3 {
-            font-size: 1.75em;
+            font-size: 2em;
             color: _palette(gray);
         }
+    }
+
+    svg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -100;
     }
 }
 
@@ -344,7 +355,7 @@ section {
         position: relative;
         overflow: hidden;
         height: 530px;
-        box-shadow: 0 0 0.4em rgba(0,0,0,0.2);
+        // box-shadow: 0 0 0.4em rgba(0,0,0,0.2);
 
         .light {
             position: absolute;
@@ -369,16 +380,16 @@ section {
         background: _palette(blue);
         box-shadow: inset 0 0 0.4em rgba(0,0,0,0.3);
 
-        &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 17px;
-            background: url("{{ site.baseurl }}/assets/2017/images/brand-line.jpg");
-            background-repeat: no-repeat;
-        }
+        // &::before {
+        //     content: "";
+        //     display: block;
+        //     position: absolute;
+        //     top: 0;
+        //     width: 100%;
+        //     height: 17px;
+        //     background: url("{{ site.baseurl }}/assets/2017/images/brand-line.jpg");
+        //     background-repeat: no-repeat;
+        // }
 
         .event-times {
             margin-top: 3em;
