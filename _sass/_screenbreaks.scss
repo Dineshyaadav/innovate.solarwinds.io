@@ -1,0 +1,239 @@
+@media screen and (max-width: 1500px) {
+  .footer-wrapper {
+    .footer {
+      .ribbon-screen-sm {
+        display: block;
+        padding: 0.5em;
+        width: 100%;
+        background: #F99D1C;
+        color: #FFF;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.1em;
+        font-weight: 500;
+        text-align: center;
+    
+        a {
+            color: #FFF;
+            text-decoration: none;
+    
+            &:visited,
+            &:hover,
+            &:active {
+                color: inherit;
+            }
+        }
+      }
+    }
+
+    .ribbon-container {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $l) {
+  
+      .navbar {
+          #logo {
+              #expand-nav {
+                  display: inline-block;
+              }
+          }
+      
+          nav {
+              display: none;
+          }
+      }
+  
+      .affix {
+          background: #FFF;
+          box-shadow: 0 0 0.5em rgba(0,0,0,0.4);
+      }
+
+      .hero {
+        .intro {
+          h1 {
+            font-size: 2.5em;
+          }
+    
+          h2 {
+            font-size: 1.5em;
+          }
+        }
+        .collage {
+          background-position: 90% 40%;
+        }
+      }
+      
+      section {
+          &#about {
+              position: static;
+              min-height: 0;
+              height: auto;
+      
+              .light, #lightbulb {
+                  display: none !important;
+              }
+          }
+  
+          &#register {
+              form {
+                  input {
+                      margin-left: 0;
+                  }
+              }
+          }
+  
+          &#speakers {
+              .speaker {
+                  &.card {
+                    .info-box {
+                      position: relative;
+                      opacity: 1;
+                      left: 0;
+                      right: 0;
+                      background: none;
+
+                      .info {
+                        position: relative;
+                        opacity: 1;
+                        top: auto;
+                        right: auto;
+                        bottom: auto;
+                        left: auto;
+                        background: none;
+
+                        button {
+                          &.more-info-link {
+                            display: block;
+                          }
+                        }
+                      }
+                    }
+                  }
+              }
+          }
+      }
+  
+      .speaker {
+          .headshot {
+              display: none;
+          }
+      }
+  
+      .modal {
+          .content {
+              width: 100%;
+              height: 100vh;
+              top: 0;
+              overflow: scroll;
+          }
+  
+          &#mobileNavModal {            
+              .content {
+                  overflow: hidden;
+              }
+      
+              .mobile-nav {
+                  font-size: 1.2em;
+                  padding: 1.5em 0 0;
+                  text-align: center;
+                  height: 0;
+                  text-transform: uppercase;               
+      
+                  ul {
+                      padding: 0;              
+          
+                      li {
+                          display: block;
+                          padding: 1em 0;                    
+                          border-top: 0.1em solid _palette(grayLight);
+      
+                          a {
+                              width: 100%;
+                              text-decoration: none;                       
+      
+                              &:visited {
+                                  color: _palette(textPrimary);
+                              }
+      
+                              &:hover {
+                                  color: _palette(orange);
+                                  background-color: inherit;
+                                  border-radius: 0;
+                                  box-shadow: none;
+                              }
+      
+                              &:active {
+                                  color: _palette(textPrimary);
+                              }
+      
+                              &.active {
+                                  color: #FFF;
+                              }
+                              
+                          }
+      
+                          &:first-child {
+                              border-top: 0px;
+                          }
+      
+                          &:last-child {
+                              padding-bottom: 0;
+                          }
+                      }
+                  }
+              }
+          }
+  
+          #registration-form {
+              iframe {
+                  width: 100%;
+                  height: 2540px;
+                  margin-top: -60px;
+              }
+          }
+      }
+  
+      .footer {
+          .ribbon {
+              transform: none;
+              left: auto;
+              top: 0;
+              width: 100%;
+          }
+      }
+  }
+
+@media screen and (max-width: $m) {
+  .hero {  
+    .intro {
+        h1 {
+            font-size: 2em;
+            line-height: 1.2em;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+    }
+  }
+}
+
+@media screen and (max-width: $s) {
+  .hero {
+    .collage {
+      background-position: 90% 95%;
+      background-size: 70% auto;
+    }
+  }
+
+  section {
+    &#about-brno {
+      .title {
+        left: 15px;
+        right: 15px;
+      }
+    }
+  }
+}

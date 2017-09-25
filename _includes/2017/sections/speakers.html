@@ -1,45 +1,54 @@
 <section id="speakers">
     <div class="container">
         <h1>Speakers</h1>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center align-items-center">
             <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="100">
                 <div class="speaker card">
                     <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
-                    <div class="info">
-                        <h3>TBA</h3>
+                    <div class="info-box">
+                        <div class="info">
+                            <h3>TBA</h3>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="200">
                 <div class="speaker card">
                     <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
-                    <div class="info">
-                        <h3>TBA</h3>
+                    <div class="info-box">
+                        <div class="info">
+                            <h3>TBA</h3>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="300">
                 <div class="speaker card">
                     <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
-                    <div class="info">
-                        <h3>TBA</h3>
+                    <div class="info-box">
+                        <div class="info">
+                            <h3>TBA</h3>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            {% assign delay = 400 %}            
+            {% assign delay = 300 %}
             {% for speaker_hash in site.data.speakers %}
             {% assign id = speaker_hash[0] %}
             {% assign speaker = speaker_hash[1] %}
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="{{ delay + (forloop.index * 100) }}">
-                    <div class="speaker card" data-target-modal="{{ id }}Modal">
-                        <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}" data-target-modal="{{ id }}Modal">
-                        <div class="info">
-                            <h3>{{ speaker.name }}</h3>
-                            <p class="title">
-                                <em>{{ speaker.title }}</em><br />
-                                {{ speaker.company }}
-                            </p>
+                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="{{ forloop.index | times: 100 | plus: delay }}">
+                    <div class="speaker card">
+                        <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}">
+                        <div class="info-box" data-target-modal="{{ id }}Modal">
+                            <div class="info" data-target-modal="{{ id }}Modal">
+                                <h3 data-target-modal="{{ id }}Modal">{{ speaker.name }}</h3>
+                                <p class="title" data-target-modal="{{ id }}Modal">
+                                    <strong>{{ speaker.title }}</strong><br />
+                                    {{ speaker.company }}
+                                    <button class="more-info-link inverted no-border" data-target-modal="{{ id }}Modal">Read Bio</button>
+                                </p>
+                            </div>     
                         </div>
                     </div>
                 </div>

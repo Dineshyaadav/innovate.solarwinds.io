@@ -28,7 +28,7 @@ $(document).ready(() => {
     let $details = $('section#details'),
         $detailsOffset = ($details.offset().top - navHeight),
         $detailsPosition = ($detailsOffset + $details.outerHeight()/2);
-    let $footerRibbon = $('.footer .ribbon'),
+    let $footerRibbon = $('.footer-wrapper .ribbon-container .ribbon'),
         $ribbonState = $footerRibbon.data('state');
 
     // Global scroll events
@@ -82,21 +82,21 @@ $(document).ready(() => {
         }
 
         // Only on desktop, toggle lightbulb to lit when user hits about section
-        if ($('#lightbulb').css('display') !== 'none'
+        if ($('#light').css('display') === 'none'
             && scroll > ($aboutOffset - 100)
             && scroll < ($aboutOffset + 100)) {
-            $('#lightbulb').fadeOut('slow');
-            $('.light').css('display', 'block');
-        } else if (($('#lightbulb').css('display') === 'none' && scroll < ($aboutOffset - 99))
-                    || ($('#lightbulb').css('display') === 'none' && scroll > ($aboutOffset + 101))) {
-            $('.light').fadeOut('slow');                       
-            $('#lightbulb').fadeIn('slow');
+            $('#light').fadeIn('slow');
+        } else if (($('#light').css('display') !== 'none'
+                    && scroll < ($aboutOffset - 99)) ||
+                    ($('#light').css('display') !== 'none'
+                    && scroll > ($aboutOffset + 101))) {
+            $('#light').fadeOut('slow');                       
         }
 
-        if ($(window).width() > 768
+        if ($(window).width() >= 1500
             && scroll + $(window).height() === $(document).height()
             && $ribbonState === 'offscreen') {
-            $footerRibbon.animate({left: '-14%'}, 300);
+            $footerRibbon.animate({left: '-102px'}, 300);
             $footerRibbon.data('state', 'onscreen');
         }
     });
@@ -140,10 +140,11 @@ $(document).ready(() => {
     $(window).resize(() => {
         if ($(window).width() >= sizeL) {
             $('nav').css('display', 'block');
-            $('#expand-nav').css('display', 'none');            
+            $('#expand-nav').css('display', 'none');
         } else {
             $('nav').css('display', 'none');
             $('#expand-nav').css('display', 'block');
+            $('.ribbon').css('left', '0');            
         }
     })
 

@@ -28,7 +28,7 @@
             </div>
             <div class="col-md-4 col-sm-12">
                 <h3>What's nearby</h3>
-                <button class="primary" data-target-modal="aboutBrno">Guide To Brno</a>
+                <button class="primary"><a href="#about-brno">Guide To Brno</a></button>
             </div>
         </div>
     </div>
@@ -38,42 +38,5 @@
     <iframe width="100%" height="450" frameborder="0" style="border:0"
     src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJWwbvSaqVEkcRcBNVMCFzWM4&key=AIzaSyDZ1xeIkiN9Hy3UcGD_bNzRc4CWpuOPngY" allowfullscreen></iframe>
 </section>
-
-{% capture modalContent %}
-<h1>About Brno</h1>         
-<div class="row about-brno justify-content-center align-items-center">
-    <div class="col-md-6 col-sm-12">
-        <aside class="info">
-            <p>
-                The students’ city. Czech’s Silicon Valley. Second largest. A capital of Moravia. A lot of epithets describe 
-                this vibrant city full of cafés, bars, bistros, high-tech companies, and three large universities with more 
-                than 90,000 students in total. Each year, Brno hosts plenty of cultural and sporting events, expos, and technical conferences.
-            </p>
-        </aside>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <aside class="links">
-            <h2>Guides</h2>           
-            <ul>
-                <li>
-                    <a href="http://www.stylishcoffee.cz/2017/05/brno-diary-pruvodce-tipy.html" target="_blank">Cafés and Bistros (Czech)</a>
-                </li>
-                <li>
-                    <a href="https://www.nytimes.com/2017/04/12/travel/cafe-and-cocktail-culture-brno-czech-republic.html?mcubz=3" target="_blank">Nightlife and Bars</a>
-                </li>
-                <li>
-                    <a href="https://www.gotobrno.cz/en/" target="_blank">Visitor Guide</a>
-                </li>
-                <li>
-                    <a href="http://www.brno.use-it.travel/" target="_blank">A Local's Guide</a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/watch?v=AvpLBIfjR1A" target="_blank">Video Guide</a>
-                </li>
-            </ul>
-        </aside>
-    </div>
-</div>
-{% endcapture %}
 
 {% include partials/modal.html id='aboutBrno' content=modalContent %}
