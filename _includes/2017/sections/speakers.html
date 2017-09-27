@@ -33,7 +33,6 @@
                 </div>
             </div>
             
-            {% assign delay = 300 %}
             {% for speaker_hash in site.data.speakers %}
             {% assign id = speaker_hash[0] %}
             {% assign speaker = speaker_hash[1] %}
@@ -63,7 +62,7 @@
                         We'd love to see a proposal and consider you for a slot at the
                         Summit.
                     </p>
-                    <button class="primary"><a href="https://goo.gl/forms/YWTEw1jVSIOQzFzg1" target="_blank">Submit your proposal</a></button>
+                    <button class="primary" data-target-modal="speakerFormModal">Submit your proposal</button>
                 </aside>
             </div>
         </div>
@@ -96,3 +95,11 @@
     {% include partials/modal.html id=modalId content=modalContent  %}
 
 {% endfor %}
+
+{% capture registrationContent %}
+    <div id="speaker-form">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe4_R8f9nvKCQk1w5SxtlbVM1m_MSBiWnQ1rLg1_nz6moEW3w/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>    
+    </div>
+{% endcapture %}
+
+{% include partials/modal.html id="speakerFormModal" content=registrationContent fullScreen=true %}

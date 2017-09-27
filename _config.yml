@@ -11,5 +11,5 @@ sass:
 
 # Testing
 baseurl: ''
-# port: 8082
-# host: 10.110.46.130
+port: 8082
+host: 10.110.46.130

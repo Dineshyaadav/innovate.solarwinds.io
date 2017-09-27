@@ -222,11 +222,6 @@ form {
     }
 }
 
-.divider-curvy {
-    background: url("{{ site.baseurl }}/assets/2017/images/divider-pattern.png");
-    background-repeat: repeat-x;
-}
-
 .navbar {
     position: absolute;
     top: 0;
@@ -235,11 +230,13 @@ form {
     padding-top: 1em;
     overflow: hidden;
     background: #FFF;
+    font-family: $roboto;
 
     #logo {
         text-transform: uppercase;
         color: _palette(textPrimary);
-        font-weight: 700;
+        font-weight: 500;
+        font-size: 1em;
         max-width: 250px;
 
         #expand-nav {
@@ -260,7 +257,7 @@ form {
 
     nav {
         text-align: left;
-        padding-top: 1.5em;
+        padding-top: 1em;
         text-transform: uppercase;
         
         ul {
@@ -273,7 +270,6 @@ form {
                     color: inherit;
                     text-decoration: none;
                     padding: 0.5em 1em;
-                    font-weight: 500;                    
 
                     &:visited {
                         color: _palette(textPrimary);
@@ -294,26 +290,39 @@ form {
     &::after {
         content: "";
         display: block;
-        margin-top: 20px;
+        margin-top: 15px;
         width: 100%;
         height: 10px;
         background: url("{{ site.baseurl }}/assets/2017/images/brand-line.jpg");
-        background-repeat: no-repeat;
+        background-repeat: repeat-x;
     }
 }
 
 // Nav for plain text pages (Code of Conduct)
 .plain {
+    position: relative;
     margin: 0.5em auto;
-    padding: 1em 0;    
+    padding: 1em;
+    text-transform: uppercase;
+    color: _palette(textPrimary);
+    font-family: $roboto;
 
     #logo {
         background: #FFF;
         width: 100%;
+        font-weight: 500;
+        font-size: 1em;
 
         img {
-            max-width: 11.4em;            
+            max-width: 192px;            
         }
+    }
+
+    .home-link {
+        position: absolute;
+        right: 10%;
+        top: 40%;
+        cursor: pointer;
     }
 
     .back {
@@ -404,7 +413,6 @@ section {
     &#about {
         position: relative;
         overflow: hidden;
-        height: 540px;
         margin-top: 1em;
         background: _palette(grayVLight);
         border-top: 1px solid #E6E6E6;
@@ -412,7 +420,7 @@ section {
 
         .light {
             position: absolute;
-            top: 0;
+            bottom: -10%;
             right: 0;
             width: 100%;
             height: 100%;
@@ -423,16 +431,16 @@ section {
             z-index: -50;
             background: url('../images/lightbulb-on.png');
             background-repeat: no-repeat;
-            background-position: 80% 0;
-            background-size: 400px auto;
+            background-position: 80%;
+            background-size: 500px auto;
         }
 
         #lightbulb {
             z-index: -100;            
             background-image: url('../images/lightbulb.png');
             background-repeat: no-repeat;
-            background-position: 80% 0;
-            background-size: 400px auto;
+            background-position: 80%;
+            background-size: 500px auto;
         }
     }
 
@@ -583,7 +591,7 @@ section {
             box-shadow: 0 0 25px rgba(0,0,0, 0.3);
 
             ul {
-                margin-top: 1.5em;
+                margin-top: 2em;
             }
             
             .title {
@@ -697,30 +705,54 @@ section {
     
         a {
             color: _palette(grayLight);
+        }
     
-            .social {
-                display: inline-block;
+        .social {
+            display: block;
+            position: relative;
+            margin-left: -0.7em;
+
+            span {
+                position: absolute;
+                top: 25%;
+            }
+
+            #twitter {
+                transition: background-image 0.25s ease-in-out;
+                background-image: url('../../icons/social/twitter-grayLight.png');
+                background-size: 100% auto;
                 width: 3.5em;
                 height: 3.5em;
+                display: inline-block;
     
-                &#facebook {
-                    transition: background-image 0.25s ease-in-out;
-                    background-image: url('../../icons/social/facebook-grayLight.png');
-                    background-size: 100% auto;
-    
-                    &:hover {
-                        background-image: url('../../icons/social/facebook-grayVLight.png')
-                    }
+                &:hover {
+                    background-image: url('../../icons/social/twitter-grayVLight.png')
                 }
-    
-                &#twitter {
-                    transition: background-image 0.25s ease-in-out;
-                    background-image: url('../../icons/social/twitter-grayLight.png');
-                    background-size: 100% auto;
-    
-                    &:hover {
-                        background-image: url('../../icons/social/twitter-grayVLight.png')
-                    }
+            }
+
+            #facebook {
+                transition: background-image 0.25s ease-in-out;
+                background-image: url('../../icons/social/facebook-grayLight.png');
+                background-size: 100% auto;
+                width: 3.5em;
+                height: 3.5em;
+                display: inline-block;
+
+                &:hover {
+                    background-image: url('../../icons/social/facebook-grayVLight.png')
+                }
+            }
+
+            #linked-in {
+                transition: background-image 0.25s ease-in-out;
+                background-image: url('../../icons/social/linkedin-grayLight.png');
+                background-size: 100% auto;
+                width: 3.5em;
+                height: 3.5em;
+                display: inline-block;
+
+                &:hover {
+                    background-image: url('../../icons/social/linkedin-grayVLight.png')
                 }
             }
         }
@@ -801,8 +833,9 @@ section {
     background: rgba(255,255,255, 0.8);
 
     .content {
+        opacity: 0;
         position: relative;
-        top: 10%;
+        top: 40%;
         margin: auto;
         padding: 2em;
         width: 50%;
@@ -813,7 +846,7 @@ section {
 
     &.full-screen {
         .content {
-            top: 0;
+            top: 40%;
             left: 0;
             bottom: 0;
             right: 0;
@@ -836,14 +869,26 @@ section {
         }
     }
 
+    iframe {
+        width: 100%;
+        margin-top: -120px;
+    }
+
     #registration-form {
         overflow: hidden;
         margin-top: 2em;
 
         iframe {
-            width: 100%;
-            height: 2020px;
-            margin-top: -120px;
+            height: 2020px;            
+        }
+    }
+
+    #speaker-form {
+        overflow: hidden;
+        margin-top: 2em;
+
+        iframe {
+            height: 2000px;            
         }
     }
 }

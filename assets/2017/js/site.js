@@ -83,14 +83,16 @@ $(document).ready(() => {
 
         // Only on desktop, toggle lightbulb to lit when user hits about section
         if ($('#light').css('display') === 'none'
-            && scroll > ($aboutOffset - 100)
-            && scroll < ($aboutOffset + 100)) {
-            $('#light').fadeIn('slow');
-        } else if (($('#light').css('display') !== 'none'
-                    && scroll < ($aboutOffset - 99)) ||
-                    ($('#light').css('display') !== 'none'
-                    && scroll > ($aboutOffset + 101))) {
-            $('#light').fadeOut('slow');                       
+            && scroll > ($aboutOffset)
+            && scroll < ($aboutOffset + 200)) {
+                $('#light').fadeIn('slow');
+        }
+        
+        if (($('#light').css('display') !== 'none'
+            && scroll < ($aboutOffset)) ||
+            ($('#light').css('display') !== 'none'
+            && scroll > ($aboutOffset + 200))) {
+                $('#light').fadeOut('slow');                       
         }
 
         if ($(window).width() >= 1500
@@ -153,25 +155,51 @@ $(document).ready(() => {
     $('[data-target-modal]').on('click', (e) => {
         let modalId = $(e.target).data('target-modal');
         $(`#${modalId}`).css('display', 'block');
+        if ($(`#${modalId}`).hasClass('full-screen')) {
+            $(`#${modalId} .content`).animate({
+                opacity: 1,
+                top: 0
+            }, 300);
+        } else {
+            $(`#${modalId} .content`).animate({
+                opacity: 1,
+                top: '10%'
+            }, 300);
+        }
         $('body').addClass('modal-open');
     });
 
     $('.modal .close').on('click', (e) => {
-        $(`.modal`).css('display', 'none');
+        $(`.modal .content`).animate({
+            opacity: 0,
+            top: '40%'
+        }, 300, function() {
+            $(`.modal`).css('display', 'none');
+        });
         $('body').removeClass('modal-open');
     });
 
     // Handle when user clicks outside the modal window
     $(window).on('click', (e) => {
         if ($(e.target).hasClass('modal')) {
-            $('.modal').css('display', 'none');
+            $(`.modal .content`).animate({
+                opacity: 0,
+                top: '40%'
+            }, 300, function() {
+                $(`.modal`).css('display', 'none');
+            });
             $('body').removeClass('modal-open');
         }
     });
 
     // Handle closing mobile nav modal when user clicks link
     $(document).on('click', '.mobile-nav .links li', () => {
-        $(`.modal`).css('display', 'none');
+        $(`.modal .content`).animate({
+            opacity: 0,
+            top: '40%'
+        }, 300, function() {
+            $(`.modal`).css('display', 'none');
+        });
         $('body').removeClass('modal-open');
     });
 });
