@@ -12,7 +12,7 @@ $(document).ready(() => {
 
     // Calculate section element positioning once on page load
     let navHeight = $('.navbar').outerHeight(true);
-    
+
     let $about = $('section#about'),
         $aboutOffset = ($about.offset().top - navHeight),
         $aboutPosition = ($aboutOffset + $about.outerHeight()/2 - navHeight);

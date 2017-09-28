@@ -31,8 +31,17 @@
   }
 }
 
+@media screen and (max-width: $xl) {
+    section {
+        &#details {
+            .links {
+                width: 325px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: $l) {
-  
       .navbar {
           #logo {
               #expand-nav {
@@ -66,53 +75,60 @@
       }
       
       section {
-          &#about {
-              position: static;
-              min-height: 0;
-              height: auto;
-      
-              .light, #lightbulb {
-                  display: none !important;
-              }
-          }
-  
-          &#register {
-              form {
-                  input {
-                      margin-left: 0;
-                  }
-              }
-          }
-  
-          &#speakers {
-              .speaker {
-                  &.card {
-                    .info-box {
-                      position: relative;
-                      opacity: 1;
-                      left: 0;
-                      right: 0;
-                      background: none;
+        &#about {
+            position: static;
+            min-height: 0;
+            height: auto;
+    
+            .light, #lightbulb {
+                display: none !important;
+            }
+        }
 
-                      .info {
-                        position: relative;
-                        opacity: 1;
-                        top: auto;
-                        right: auto;
-                        bottom: auto;
-                        left: auto;
-                        background: none;
+        &#register {
+            form {
+                input {
+                    margin-left: 0;
+                }
+            }
+        }
 
-                        button {
-                          &.more-info-link {
-                            display: block;
-                          }
+        &#speakers {
+            .speaker {
+                &.card {
+                .info-box {
+                    position: relative;
+                    opacity: 1;
+                    left: 0;
+                    right: 0;
+                    background: none;
+
+                    .info {
+                    position: relative;
+                    opacity: 1;
+                    top: auto;
+                    right: auto;
+                    bottom: auto;
+                    left: auto;
+                    background: none;
+
+                    button {
+                        &.more-info-link {
+                        display: block;
                         }
-                      }
                     }
-                  }
-              }
-          }
+                    }
+                }
+                }
+            }
+        }
+
+        &#details {
+            .links {
+                position: relative;
+                margin: 0 auto;
+            }
+        }
       }
   
       .speaker {
@@ -245,6 +261,25 @@
         left: 15px;
         right: 15px;
       }
+    }
+
+    &#details {
+        .container {
+            background: none;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .links {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            margin-left: 2.5em;
+        }
+
+        #brno-bg {
+            opacity: 0.2;
+        }
     }
   }
 }

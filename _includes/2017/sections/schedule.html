@@ -2,101 +2,17 @@
     <div class="container">
         <h1>Schedule</h1>
         <div class="event-times">
-            <div class="row">
-                <div class="col-sm-1 time">
-                    12 PM
+            <div class="row justify-content-center">
+                {% for item in site.data.schedule %}
+                <div class="col-lg-10 col-sm-12 time-block time-{{ item.duration }} {% if item.admin %}admin{% endif %}"  data-aos="fade-left" data-easing="ease-in-sine">
+                    <div class="time" data-aos="fade-right">
+                        <span>{{ item.time }}</span>
+                    </div>
+                    <div class="event">
+                        {{ item.event }} {% if item.topic %} - {{ item.topic }}{% endif %}
+                    </div>
                 </div>
-                <div class="col-sm-11 time-block standard" data-aos="fade">
-                    Check-In
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    12:30 PM
-                </div>
-                <div class="col-sm-11 time-block" data-aos="fade">
-                    Panel - TBA
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    1 PM
-                </div>
-                <div class="col-sm-11 time-block min-45" data-aos="fade">
-                    Talk - TBA
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    1:45 PM
-                </div>
-                <div class="col-sm-11 time-block min-45" data-aos="fade">
-                    Talk - TBA
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    2:30 PM
-                </div>
-                <div class="col-sm-11 time-block min-45" data-aos="fade">
-                    Talk - TBA
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    3:15 PM
-                </div>
-                <div class="col-sm-11 time-block standard" data-aos="fade">
-                    Break
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    3:30 PM
-                </div>
-                <div class="col-sm-11 time-block min-45" data-aos="fade">
-                    Talk - TBA
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    4:15 PM
-                </div>
-                <div class="col-sm-11 time-block min-45" data-aos="fade">
-                    Talk - TBA
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    5 PM
-                </div>
-                <div class="col-sm-11 time-block standard" data-aos="fade">
-                    Break / Additional Check-In
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    5:30 PM
-                </div>
-                <div class="col-sm-11 time-block min-45" data-aos="fade">
-                    Lightning Talks
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    6:15 PM
-                </div>
-                <div class="col-sm-11 time-block min-45" data-aos="fade">
-                    Talk - TBA
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1 time">
-                    7 PM
-                </div>
-                <div class="col-sm-11 time-block standard" data-aos="fade">
-                    Social &mdash; Happy Hour
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

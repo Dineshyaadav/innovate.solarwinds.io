@@ -1,0 +1,67 @@
+- time: 12:00 PM
+  duration: 30
+  event: Check-In Begins
+  admin: true
+
+- time: 12:30 PM
+  duration: 30
+  event: Panel
+  topic: TBA
+  speaker: TBA
+
+- time: 1:00 PM
+  duration: 45
+  event: Talk
+  topic: TBA
+  speaker: TBA
+
+- time: 1:45 PM
+  duration: 45
+  event: Talk
+  topic: TBA
+  speaker: TBA
+
+- time: 2:30 PM
+  duration: 45
+  event: Talk
+  topic: TBA
+  speaker: TBA
+
+- time: 3:15 PM
+  duration: 15
+  event: Break
+  admin: true
+
+- time: 3:30 PM
+  duration: 45
+  event: Talk
+  topic: TBA
+  speaker: TBA
+
+- time: 4:15 PM
+  duration: 45
+  event: Talk
+  topic: TBA
+  speaker: TBA
+
+- time: 5:00 PM
+  duration: 30
+  event: Break
+  admin: true
+
+- time: 5:30 PM
+  duration: 45
+  event: Lightning Talks
+  topic: TBA
+  speaker: TBA
+
+- time: 6:15 PM
+  duration: 45
+  event: Talk
+  topic: TBA
+  speaker: TBA
+
+- time: 7:00 PM
+  duration: 60
+  event: Social — Happy Hour
+  admin: true
