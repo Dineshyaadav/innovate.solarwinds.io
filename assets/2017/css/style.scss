@@ -146,12 +146,11 @@ button,
         transition: background 0.25s ease-in-out,
                     color 0.25s ease-in-out,
                     border 0.25s ease-in-out;
-        background: rgba(255,255,255, 0.6);
+        background: #FFF;
         color: _palette(orange);
         border: 1px solid _palette(orange);
     
         &:hover {
-            background: rgba(255,255,255, 0.8);
             color: _palette(orangeHov);
             border: 1px solid _palette(orangeHov);
         }
@@ -233,11 +232,24 @@ form {
     font-family: $roboto;
 
     #logo {
+        position: relative;
+        height: 78px;
         text-transform: uppercase;
         color: _palette(textPrimary);
         font-weight: 500;
         font-size: 1em;
-        max-width: 250px;
+        
+        #swi_logo {
+            position: absolute;
+            top: -26px;
+            max-width: 250px;
+        }
+
+        span {
+            position: absolute;
+            bottom: 1px;
+            left: 22px;
+        }
 
         #expand-nav {
             display: none;
@@ -414,7 +426,7 @@ section {
     &#about {
         position: relative;
         overflow: hidden;
-        margin-top: 1em;
+        // margin-top: 1em;
         background: _palette(grayVLight);
         border-top: 1px solid #E6E6E6;
         box-shadow: 0 0 0.4em rgba(0,0,0,0.2);

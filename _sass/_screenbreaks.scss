@@ -299,3 +299,45 @@
         height: 700px;
     }
 }
+
+// For the SVG hero image
+@media screen and (max-width: 1800px) {
+    .hero {
+        svg {
+            left: -5%;
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .hero {
+        svg {
+            left: -15%;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .hero {
+        svg {
+            left: -25%;
+        }
+    }
+}
+
+@media screen and (max-width: $l) {
+    .hero {
+        svg {
+            left: -40%;
+        }
+    }
+}
+
+@media screen and (max-width: $m) {
+    .hero {
+        svg {
+            left: -1150px;
+            bottom: -250px;
+        }
+    }
+}
