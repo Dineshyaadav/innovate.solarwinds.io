@@ -243,17 +243,15 @@
             font-size: 1.2em;
         }
     }
+    
+    .bg-image {
+        background-position: top center;
+    }
   }
 }
 
 // Specifically for phone
 @media screen and (max-width: $s) {
-  .hero {
-    .collage {
-      background-position: 90% 95%;
-      background-size: 70% auto;
-    }
-  }
 
   section {
     &#about-brno {

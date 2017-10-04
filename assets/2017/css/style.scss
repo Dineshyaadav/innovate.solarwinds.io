@@ -247,7 +247,7 @@ form {
 
         span {
             position: absolute;
-            bottom: 1px;
+            bottom: -1px;
             left: 22px;
         }
 
@@ -355,12 +355,11 @@ form {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    margin-bottom: -2px;
 
     .intro,
     .container,
     .row,
-    .collage {
+    .bg-image {
         height: inherit;        
     }
 
@@ -387,15 +386,15 @@ form {
         z-index: -100;
     }
 
-    .collage {
+    .bg-image {
         position: absolute;
         z-index: -100;
-        top: 0;
+        bottom: 0;
         width: 100%;
-        background: url('{{ site.baseurl}}/assets/2017/images/hero-bg.jpg');
+        background: url('{{ site.baseurl}}/assets/2017/images/hero-bg.png');
         background-repeat: no-repeat;
-        background-position: 80% 70%;
-        background-size: 40% auto;
+        background-position: 100% 100%;
+        background-size: cover;
     }
 }
 
@@ -433,7 +432,7 @@ section {
 
         .light {
             position: absolute;
-            bottom: -10%;
+            bottom: 0;
             right: 0;
             width: 100%;
             height: 100%;
