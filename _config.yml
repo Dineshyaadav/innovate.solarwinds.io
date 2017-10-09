@@ -1,7 +1,7 @@
 # Basics
 name: SolarWinds Innovate Summit 2017
 description: A conference for tech professionals
-# baseurl: 'http://innovate.solarwinds.io'
+baseurl: 'http://innovate.solarwinds.io'
 iourl: 'http://solarwinds.io'
 
 # Setup
@@ -10,6 +10,6 @@ sass:
     style: compressed
 
 # Testing
-baseurl: ''
-port: 8082
-host: 10.110.46.130
+#baseurl: ''
+#port: 8082
+#host: 10.110.46.130
