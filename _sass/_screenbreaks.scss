@@ -338,4 +338,14 @@
             bottom: -250px;
         }
     }
+
+    section {
+        &#schedule {
+            .time-block {
+                .time {
+                    padding: 0 0.4em
+                }
+            }
+        }
+    }
 }
