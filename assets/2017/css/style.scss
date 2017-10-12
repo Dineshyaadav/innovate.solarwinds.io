@@ -59,6 +59,24 @@ a {
     &:active {
         color: _palette(grayDark);
     }
+
+    &.button {
+        padding: 0.7em 1em;
+        color: #FFF;
+
+        &:visited {
+            color: #FFF;
+        }
+    
+        &:hover {
+            color: #FFF;
+            text-decoration: none;
+        }
+    
+        &:active {
+            color: #FFF;
+        }
+    }
 }
 
 button,
@@ -74,28 +92,6 @@ button,
 
     &:hover {
         cursor: pointer;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    
-        &:visited {
-            color: inherit;
-        }
-    
-        &:hover {
-            color: inherit;
-            text-decoration: none;
-        }
-    
-        &:active {
-            color: inherit;
-        }
-
-        &.button {
-            line-height: 1.5em;
-        }
     }
 
     &.action {
@@ -166,6 +162,10 @@ button,
             box-shadow: inset 0 0 0 0.1em _palette(grayMed);
         }
     }
+}
+
+div.button {
+    display: inline-block;
 }
 
 ul {

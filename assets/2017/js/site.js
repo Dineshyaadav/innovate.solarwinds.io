@@ -1,6 +1,8 @@
+console.log('This is getting loaded');
+
 $(document).ready(() => {
     // Screen breaks
-    let sizeS = 576,
+    var sizeS = 576,
         sizeM = 768,
         sizeL = 992,
         sizeXl = 1200;
@@ -11,29 +13,29 @@ $(document).ready(() => {
     }
 
     // Calculate section element positioning once on page load
-    let navHeight = $('.navbar').outerHeight(true);
+    var navHeight = $('.navbar').outerHeight(true);
 
-    let $about = $('section#about'),
+    var $about = $('section#about'),
         $aboutOffset = ($about.offset().top - navHeight),
         $aboutPosition = ($aboutOffset + $about.outerHeight()/2 - navHeight);
-    let $schedule = $('section#schedule'),
+    var $schedule = $('section#schedule'),
         $scheduleOffset = ($schedule.offset().top - navHeight),
         $schedulePosition = ($scheduleOffset + $schedule.outerHeight()/2);
-    let $register = $('section#register'),
+    var $register = $('section#register'),
         $registerOffset = ($register.offset().top - navHeight),
         $registerPosition = ($registerOffset + $register.outerHeight()/2);
-    let $speakers = $('section#speakers'),
+    var $speakers = $('section#speakers'),
         $speakersOffset = ($speakers.offset().top - navHeight),
         $speakersPosition = ($speakersOffset + $speakers.outerHeight()/2);
-    let $details = $('section#details'),
+    var $details = $('section#details'),
         $detailsOffset = ($details.offset().top - navHeight),
         $detailsPosition = ($detailsOffset + $details.outerHeight()/2);
-    let $footerRibbon = $('.footer-wrapper .ribbon-container .ribbon'),
+    var $footerRibbon = $('.footer-wrapper .ribbon-container .ribbon'),
         $ribbonState = $footerRibbon.data('state');
 
     // Global scroll events
     $(window).scroll(function() {
-        let scroll = $(window).scrollTop();    
+        var scroll = $(window).scrollTop();    
         
         // When user scrolls, display fixed nav menu with background
         if (scroll >= 1 && !$('.navbar').hasClass('affix')) {
@@ -114,7 +116,7 @@ $(document).ready(() => {
             && location.hostname == this.hostname) {
             
             // Figure out element to scroll to and check if it exists
-            let target = $(this.hash);
+            var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
           
             // If it does exist, implement smooth scrolling
@@ -124,7 +126,7 @@ $(document).ready(() => {
                     scrollTop: (target.offset().top - $('.navbar').outerHeight(true))
                 }, 1000, function() {
                     // Must change focus!
-                    let $target = $(target);
+                    var $target = $(target);
                     $target.focus();
 
                     if ($target.is(":focus")) { // Checking if the target was focused
@@ -152,8 +154,8 @@ $(document).ready(() => {
 
     // Modals
 
-    $('[data-target-modal]').on('click', (e) => {
-        let modalId = $(e.target).data('target-modal');
+    $('div[data-target-modal]').on('click', (e) => {
+        var modalId = $(e.target).data('target-modal');
         $(`#${modalId}`).css('display', 'block');
         if ($(`#${modalId}`).hasClass('full-screen')) {
             $(`#${modalId} .content`).animate({
