@@ -77,6 +77,26 @@
                     {{ speaker.company }}
                 </p>
                 {{ speaker.bio }}
+                <footer>
+                    <h3>Connect with {{ speaker.name | truncatewords: 1, "" }}</h3>
+                    <ul class="inline">
+                        {% if speaker.linkedin %}
+                        <li>
+                            <a href="{{ speaker.linkedin }}"><div class="social-linked-in"></div></a>
+                        </li>
+                        {% endif %}
+                        {% if speaker.twitter %}
+                        <li>
+                            <a href="https://twitter.com/{{ speaker.twitter }}"><div class="social-twitter"></div></a>
+                        </li>
+                        {% endif %}
+                        {% if speaker.website %}
+                        <li>
+                            <a href="{{ speaker.website }}"><div class="social-website"></div></a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </footer>
             </div>
         </div>  
     </div>  

@@ -2,5 +2,9 @@ name: Fredrik Skogman
 image: fredrik-skogman.jpg
 title: Principal Architect
 company: Pingdom
-bio: "<p>For the love of Solaris and C99. Specialties: Systems design and implementation. 
-Thorough knowledge of concurrent programming, network programming and distributed systems.</p>"
+bio: "<p>Forged in the world of military training simulators, Fredrik is now architecturing cloud native SaaS products 
+      used by more than 700,000 people. He is always seeking more reliable and transparent systems that are easy to extend and operate.
+      Working all over the place at Pingdom since 2015, Fredrik's focus going forward is on integrating SolarWinds' cloud portfolio.</p>"
+linkedin: https://www.linkedin.com/in/skogman/
+twitter: sparcv9
+website: 
