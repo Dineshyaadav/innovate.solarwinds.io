@@ -4,14 +4,19 @@
         <div class="event-times">
             <div class="row justify-content-center">
                 {% for item in site.data.schedule %}
-                <div class="col-lg-10 col-sm-12 time-block time-{{ item.duration }} {% if item.admin %}admin{% endif %}"  data-aos="fade-left" data-easing="ease-in-sine">
+                <div class="col-lg-10 col-sm-12 time-block time-{{ item.duration }} {% if item.admin %}admin{% endif %}" {% if item.description %}data-target-popover="{{ forloop.index }}"{% endif %} data-aos="fade-left" data-easing="ease-in-sine">
                     <div class="time" data-aos="fade-right">
                         <span>{{ item.time }}</span>
                     </div>
-                    <div class="event">
-                        {{ item.event }} {% if item.topic %} - {{ item.topic }}{% endif %}
+                    <div class="event" {% if item.description %}data-target-popover="{{ forloop.index }}"{% endif %}>
+                        {% unless item.topic %}{{ item.event }}{% endunless %}
+                        {% if item.speaker %}
+                          {{ item.speaker }}<br />
+                          {{ item.topic }}
+                        {% endif %}
                     </div>
                 </div>
+                {% if item.description %}{% include partials/popover.html content=item.description id=forloop.index type=item.event %}{% endif %}              
                 {% endfor %}
             </div>
         </div>

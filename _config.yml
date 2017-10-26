@@ -1,10 +1,14 @@
 # Basics
 name: SolarWinds Innovate Summit 2017
 description: A conference for tech professionals
-baseurl: 'http://innovate.solarwinds.io'
 iourl: 'http://solarwinds.io'
+repository: leecalcote/innovate.solarwinds.io
 
 # Setup
 sass:
     sass_dir: ./_sass
     style: compressed
+exclude: [src, node_modules]
+
+# Testing
+# baseurl: ''

@@ -224,6 +224,10 @@
               width: 100%;
           }
       }
+
+      .popover {
+        max-width: 546px;
+      }
   }
 
 // Tablets and phones
@@ -247,6 +251,20 @@
     .bg-image {
         background-position: top center;
     }
+  }
+
+  section#schedule {
+    .time-block {
+      .event {
+        text-align: left;
+        margin-left: 4em;
+      }
+    }
+  }
+
+  .popover {
+    max-width: 396px;
+    margin-left: 1.6em;
   }
 }
 
@@ -279,6 +297,10 @@
             opacity: 0.2;
         }
     }
+  }
+
+  .popover {
+    margin-left: 0;
   }
 }
 

@@ -12,14 +12,20 @@
 - time: 5:30 PM
   duration: 45
   event: Talk
-  topic: 
-  speaker: 
+  topic: Writing Monitor-Friendly Software
+  speaker: Karlo Zatylny
+  description: "Software is written with functionality and debugging in mind. Most often programmers use logging as the primary method for debugging 
+  their application. Performance counters are another way to track application behavior and performance but can also be used to track problems and 
+  identify when and where to look in log files for issues. This talk will focus on the use of analytics in every day programming and the power it 
+  unleashes in helping programmers optimize their time in searching for resolutions."
 
 - time: 6:15 PM
   duration: 15
-  event: Lightning Talk - You don't scale like servers scale
-  topic: 
-  speaker: 
+  event: Lightning Talk
+  topic: "You Don't Scale: How to Work in the Industry and Physically Survive"
+  speaker: Oliver Wood
+  description: "Back in 2006, Oli worked himself into hospital, collapsing a disc in his spine and ending up taking 3 months off work after surgery. 
+  Lets talk about what happened and how to avoid it."
 
 - time: 6:30 PM
   duration: 15
@@ -40,8 +46,13 @@
 - time: 7:15 PM
   duration: 45
   event: Talk
-  topic: 
-  speaker: 
+  topic: Managing Infrastructure As Code - Why You Should Too
+  speaker: Fredrik Skogman
+  description: "Modern cloud architectures often involves multiple data-centers in
+  different regions. Managing the infrastructure in a reliable way needs
+  appropriate tooling that automates the process to avoid repetitive and
+  error prone tasks. This talk goes through tooling used and best practices
+  at SolarWinds Cloud's engineering organisations."
 
 - time: 8:00 PM
   duration: 60

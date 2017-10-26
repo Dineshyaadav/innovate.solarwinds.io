@@ -1,115 +1,117 @@
 <section id="speakers">
-    <div class="container">
-        <h1>Speakers</h1>
-        <div class="row justify-content-center align-items-center">            
-            {% for speaker_hash in site.data.speakers %}
-            {% assign id = speaker_hash[0] %}
-            {% assign speaker = speaker_hash[1] %}
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="{{ forloop.index | times: 100 | plus: delay }}">
-                    <div class="speaker card">
-                        <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}">
-                        <div class="info-box" data-target-modal="{{ id }}Modal">
-                            <div class="info" data-target-modal="{{ id }}Modal">
-                                <h3 data-target-modal="{{ id }}Modal">{{ speaker.name }}</h3>
-                                <p class="title" data-target-modal="{{ id }}Modal">
-                                    <strong>{{ speaker.title }}</strong><br />
-                                    {{ speaker.company }}
-                                    <button class="more-info-link inverted no-border" data-target-modal="{{ id }}Modal">Read Bio</button>
-                                </p>
-                            </div>     
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-
-            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="100">
-                <div class="speaker card">
-                    <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
-                    <div class="info-box">
-                        <div class="info">
-                            <h3>TBA</h3>
-                        </div>
-                    </div>
-                </div>
+  <div class="container">
+    <h1>Speakers</h1>
+    <div class="row justify-content-center align-items-center">
+      {% for speaker_hash in site.data.speakers %}
+        {% assign id = speaker_hash[0] %}
+        {% assign speaker = speaker_hash[1] %}
+        
+        <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="{{ forloop.index | times: 100 | plus: delay }}">
+          <div class="speaker card">
+            <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}">
+            <div class="info-box" data-target-modal="{{ id }}Modal">
+              <div class="info" data-target-modal="{{ id }}Modal">
+                <h3 data-target-modal="{{ id }}Modal">{{ speaker.name }}</h3>
+                <p class="title" data-target-modal="{{ id }}Modal">
+                  <strong>{{ speaker.title }}</strong>
+                  <br /> {{ speaker.company }}
+                  <button class="more-info-link inverted no-border" data-target-modal="{{ id }}Modal">Read Bio</button>
+                </p>
+              </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="200">
-                <div class="speaker card">
-                    <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
-                    <div class="info-box">
-                        <div class="info">
-                            <h3>TBA</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <aside>
-                    <h3>Do you have a research project or topic you're particularly
-                        knowledgable on?
-                    </h3>
-                    <p>
-                        We'd love to see a proposal and consider you for a slot at the
-                        Summit.
-                    </p>
-                    <div class="button primary" data-target-modal="speakerFormModal">Submit your proposal</div>
-                </aside>
-            </div>
+          </div>
         </div>
+      {% endfor %}
+
+      <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="100">
+        <div class="speaker card">
+          <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
+          <div class="info-box">
+            <div class="info">
+              <h3>TBA</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="200">
+        <div class="speaker card">
+          <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
+          <div class="info-box">
+            <div class="info">
+              <h3>TBA</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <aside>
+          <h3>Do you have a research project or topic you're particularly knowledgable on?
+          </h3>
+          <p>
+            We'd love to see a proposal and consider you for a slot at the Summit.
+          </p>
+          <div class="button primary" data-target-modal="speakerFormModal">Submit your proposal</div>
+        </aside>
+      </div>
     </div>
+  </div>
 </section>
 
 {% for speaker_hash in site.data.speakers %}
-    {% capture modalId %}{{ speaker_hash[0] | append: "Modal" }}{% endcapture %}
-    {% assign speaker = speaker_hash[1] %}
-    {% capture speakerName %}{{ speaker.name }}{% endcapture %}
+  {% capture modalId %}{{ speaker_hash[0] | append: "Modal" }}{% endcapture %}
+  {% assign speaker = speaker_hash[1] %}
+  {% capture speakerName %}{{ speaker.name }}{% endcapture %}
 
-    {% capture modalContent %}
-    <div class="speaker">            
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-9 col-sm-12">
-                <div class="headshot">
-                    <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}">
-                </div>
-                <h2>{{ speaker.name }}</h2>
-                <p class="title">
-                    <em>{{ speaker.title }}</em><br />
-                    {{ speaker.company }}
-                </p>
-                {{ speaker.bio }}
-                <footer>
-                    <h3>Connect with {{ speaker.name | truncatewords: 1, "" }}</h3>
-                    <ul class="inline">
-                        {% if speaker.linkedin %}
-                        <li>
-                            <a href="{{ speaker.linkedin }}"><div class="social-linked-in"></div></a>
-                        </li>
-                        {% endif %}
-                        {% if speaker.twitter %}
-                        <li>
-                            <a href="https://twitter.com/{{ speaker.twitter }}"><div class="social-twitter"></div></a>
-                        </li>
-                        {% endif %}
-                        {% if speaker.website %}
-                        <li>
-                            <a href="{{ speaker.website }}"><div class="social-website"></div></a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </footer>
-            </div>
-        </div>  
-    </div>  
-    {% endcapture %}
-
-    {% include partials/modal.html id=modalId content=modalContent  %}
-
+  {% capture modalContent %}
+    <div class="speaker">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-9 col-sm-12">
+          <div class="headshot">
+            <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}">
+          </div>
+          <h2>{{ speaker.name }}</h2>
+          <p class="title">
+            <strong>{{ speaker.title }}</strong>
+            <br /> {{ speaker.company }}
+          </p>
+          {{ speaker.bio }}
+          <footer>
+            <h3>Connect with {{ speaker.name | truncatewords: 1, "" }}</h3>
+            <ul class="inline">
+              {% if speaker.linkedin %}
+              <li>
+                <a href="{{ speaker.linkedin }}">
+                  <div class="social-linked-in"></div>
+                </a>
+              </li>
+              {% endif %} {% if speaker.twitter %}
+              <li>
+                <a href="https://twitter.com/{{ speaker.twitter }}">
+                  <div class="social-twitter"></div>
+                </a>
+              </li>
+              {% endif %} {% if speaker.website %}
+              <li>
+                <a href="{{ speaker.website }}">
+                  <div class="social-website"></div>
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+          </footer>
+        </div>
+      </div>
+    </div>
+  {% endcapture %} 
+  {% include partials/modal.html id=modalId content=modalContent %}
 {% endfor %}
 
-{% capture registrationContent %}
-    <div id="speaker-form">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe4_R8f9nvKCQk1w5SxtlbVM1m_MSBiWnQ1rLg1_nz6moEW3w/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>    
-    </div>
+{% capture registrationContent%}
+  <div id="speaker-form">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe4_R8f9nvKCQk1w5SxtlbVM1m_MSBiWnQ1rLg1_nz6moEW3w/viewform?embedded=true"
+      frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+  </div>
 {% endcapture %}
 
 {% include partials/modal.html id="speakerFormModal" content=registrationContent fullScreen=true %}
