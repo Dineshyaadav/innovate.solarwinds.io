@@ -11,7 +11,7 @@
                     <div class="event" {% if item.description %}data-target-popover="{{ forloop.index }}"{% endif %}>
                         {% unless item.topic %}{{ item.event }}{% endunless %}
                         {% if item.speaker %}
-                          {{ item.speaker }}<br />
+                          <strong>{{ item.speaker }}</strong><br />
                           {{ item.topic }}
                         {% endif %}
                     </div>
@@ -20,5 +20,6 @@
                 {% endfor %}
             </div>
         </div>
+        <p class="disclaimer">Schedule is subject to change before and up to the date of the event</p>        
     </div>
 </section>
