@@ -16,6 +16,7 @@ After cloning, install local dependencies:
 
 ```
 bundle install
+npm install
 ```
 
 Then, you'll want to create the build for the static site:
@@ -29,3 +30,6 @@ And then you can serve it. It will automatically watch for changes to your files
 ```
 npm run start
 ```
+
+## Pushing updates
+Be sure to run `npm run build` before you push your changes so that Babel can compile the Javascript file to help with browser compatibility.
