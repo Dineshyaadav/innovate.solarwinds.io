@@ -23,27 +23,6 @@
         </div>
       {% endfor %}
 
-      <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="100">
-        <div class="speaker card">
-          <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
-          <div class="info-box">
-            <div class="info">
-              <h3>TBA</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="200">
-        <div class="speaker card">
-          <img src="{{ site.baseurl }}/assets/2017/images/speakers/speaker-nobg.png" alt="Sign up to speak">
-          <div class="info-box">
-            <div class="info">
-              <h3>TBA</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="col-lg-4 col-md-6 col-sm-12">
         <aside>
           <h3>Do you have a research project or topic you're particularly knowledgable on?
@@ -75,30 +54,32 @@
             <strong>{{ speaker.title }}</strong>
             <br /> {{ speaker.company }}
           </p>
-          {{ speaker.bio }}
+          <p>{{ speaker.bio }}</p>
           <footer>
+            {% if speaker.social %}
             <h3>Connect with {{ speaker.name | truncatewords: 1, "" }}</h3>
-            <ul class="inline">
-              {% if speaker.linkedin %}
-              <li>
-                <a href="{{ speaker.linkedin }}">
-                  <div class="social-linked-in"></div>
-                </a>
-              </li>
-              {% endif %} {% if speaker.twitter %}
-              <li>
-                <a href="https://twitter.com/{{ speaker.twitter }}">
-                  <div class="social-twitter"></div>
-                </a>
-              </li>
-              {% endif %} {% if speaker.website %}
-              <li>
-                <a href="{{ speaker.website }}">
-                  <div class="social-website"></div>
-                </a>
-              </li>
-              {% endif %}
-            </ul>
+              <ul class="inline">
+                {% if speaker.social.linkedin %}
+                <li>
+                  <a href="{{ speaker.social.linkedin }}">
+                    <div class="social-linked-in"></div>
+                  </a>
+                </li>
+                {% endif %} {% if speaker.social.twitter %}
+                <li>
+                  <a href="https://twitter.com/{{ speaker.social.twitter }}">
+                    <div class="social-twitter"></div>
+                  </a>
+                </li>
+                {% endif %} {% if speaker.social.website %}
+                <li>
+                  <a href="{{ speaker.social.website }}">
+                    <div class="social-website"></div>
+                  </a>
+                </li>
+                {% endif %}
+              </ul>
+            {% endif %}
           </footer>
         </div>
       </div>

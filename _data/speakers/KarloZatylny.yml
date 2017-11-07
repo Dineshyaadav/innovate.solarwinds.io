@@ -1,10 +1,11 @@
 name: Karlo Zatylny
-image: karlozatylny.jpg
+image: karlo-zatylny.jpg
 title: Principal Architect
 company: SolarWinds
-bio: "<p>Integrating intelligent algorithms into software that yields immediate customer value is Karlo's top priority. 
+bio: "Integrating intelligent algorithms into software that yields immediate customer value is Karlo's top priority. 
 Whether through data analytics or the integration of new technology, his aim is to architect software solutions that 
-give the users an advantage in their daily jobs.</p>"
-linkedin: https://www.linkedin.com/in/karlo-zatylny/
-twitter: 
-website: 
+give the users an advantage in their daily jobs."
+social:
+  linkedin: https://www.linkedin.com/in/karlo-zatylny/
+  twitter: 
+  website: 
