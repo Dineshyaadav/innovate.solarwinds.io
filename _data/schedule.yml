@@ -44,15 +44,16 @@
 - time: 6:45 PM
   duration: 15
   event: Lightning Talk
-  topic: "Engineering Investment: Balancing the Supply and Demand Equations"
-  speaker: August Wehrmann
-  description: "August will provide a model for balancing investments within a product 
-  portfolio based on the maturity of the product offerings and the markets in which they play."
+  topic:
+  speaker:
+  description:
 
 - time: 7:00 PM
   duration: 15
   event: Lightning Talk
-  speaker: 
+  topic:
+  speaker:
+  description: 
 
 - time: 7:15 PM
   duration: 45
