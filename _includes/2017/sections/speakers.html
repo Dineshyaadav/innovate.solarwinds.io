@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Speakers</h1>
     <div class="row justify-content-center align-items-center">
-      {% for speaker_hash in site.data.speakers %}
+      {% for speaker_hash in site.data.2017.speakers %}
         {% assign id = speaker_hash[0] %}
         {% assign speaker = speaker_hash[1] %}
         
@@ -37,7 +37,7 @@
   </div>
 </section>
 
-{% for speaker_hash in site.data.speakers %}
+{% for speaker_hash in site.data.2017.speakers %}
   {% capture modalId %}{{ speaker_hash[0] | append: "Modal" }}{% endcapture %}
   {% assign speaker = speaker_hash[1] %}
   {% capture speakerName %}{{ speaker.name }}{% endcapture %}
@@ -90,7 +90,7 @@
 
 {% capture registrationContent%}
   <div id="speaker-form">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe4_R8f9nvKCQk1w5SxtlbVM1m_MSBiWnQ1rLg1_nz6moEW3w/viewform?embedded=true"
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdx4cWYX3RwLf823ClLyCqWd00r4kQTgS2tyFXQCR9To7E7oQ/viewform?embedded=true"
       frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
   </div>
 {% endcapture %}

@@ -3,7 +3,7 @@
         <h1>Schedule</h1>
         <div class="event-times">
             <div class="row justify-content-center">
-                {% for item in site.data.schedule %}
+                {% for item in site.data.2017.schedule %}
                 <div class="col-lg-10 col-sm-12 time-block time-{{ item.duration }} {% if item.admin %}admin{% endif %}" {% if item.description %}data-target-popover="{{ forloop.index }}"{% endif %} data-aos="fade-left" data-easing="ease-in-sine">
                     <div class="time" data-aos="fade-right">
                         <span>{{ item.time }}</span>

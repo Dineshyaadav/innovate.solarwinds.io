@@ -191,7 +191,7 @@
         });
 
         // Close dialogs if user clicks on window outside of them
-        $(window).on('click', function (e) {
+        $(window).on('click touch', function (e) {
             if ($(e.target).hasClass('modal')) {
                 $('.modal .content').animate({
                     opacity: 0,

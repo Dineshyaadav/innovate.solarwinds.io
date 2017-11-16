@@ -1,0 +1,373 @@
+@media screen and (max-width: 1500px) {
+  .footer-wrapper {
+    .footer {
+      .ribbon-screen-sm {
+        display: block;
+        padding: 0.5em;
+        width: 100%;
+        background: #F99D1C;
+        color: #FFF;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.1em;
+        font-weight: 500;
+        text-align: center;
+    
+        a {
+            color: #FFF;
+            text-decoration: none;
+    
+            &:visited,
+            &:hover,
+            &:active {
+                color: inherit;
+            }
+        }
+      }
+    }
+
+    .ribbon-container {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $xl) {
+    section {
+        &#details {
+            .links {
+                width: 325px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $l) {
+      .navbar {
+          #logo {
+              #expand-nav {
+                  display: inline-block;
+              }
+          }
+      
+          nav {
+              display: none;
+          }
+      }
+  
+      .affix {
+          background: #FFF;
+          box-shadow: 0 0 0.5em rgba(0,0,0,0.4);
+      }
+
+      .hero {
+        .intro {
+          h1 {
+            font-size: 2.5em;
+          }
+    
+          h2 {
+            font-size: 1.5em;
+          }
+        }
+        .collage {
+          background-position: 90% 40%;
+        }
+      }
+      
+      section {
+        &#about {
+            position: static;
+            min-height: 0;
+            height: auto;
+    
+            .light, #lightbulb {
+                display: none !important;
+            }
+        }
+
+        &#register {
+            form {
+                input {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        &#speakers {
+            .speaker {
+                &.card {
+                .info-box {
+                    position: relative;
+                    opacity: 1;
+                    left: 0;
+                    right: 0;
+                    background: none;
+
+                    .info {
+                    position: relative;
+                    opacity: 1;
+                    top: auto;
+                    right: auto;
+                    bottom: auto;
+                    left: auto;
+                    background: none;
+
+                    button {
+                        &.more-info-link {
+                        display: block;
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        }
+
+        &#details {
+            .links {
+                position: relative;
+                margin: 0 auto;
+            }
+        }
+      }
+  
+      .speaker {
+          .headshot {
+              display: none;
+          }
+      }
+  
+      .modal {
+          .content {
+              width: 100%;
+              height: 100vh;
+              top: 40%;
+              overflow: scroll;
+          }
+  
+          &#mobileNavModal {            
+              .content {
+                  overflow: hidden;
+              }
+      
+              .mobile-nav {
+                  font-size: 1.2em;
+                  padding: 1.5em 0 0;
+                  text-align: center;
+                  height: 0;
+                  text-transform: uppercase;               
+      
+                  ul {
+                      padding: 0;              
+          
+                      li {
+                          display: block;
+                          padding: 1em 0;                    
+                          border-top: 0.1em solid _palette(grayLight);
+      
+                          a {
+                              width: 100%;
+                              text-decoration: none;                       
+      
+                              &:visited {
+                                  color: _palette(textPrimary);
+                              }
+      
+                              &:hover {
+                                  color: _palette(orange);
+                                  background-color: inherit;
+                                  border-radius: 0;
+                                  box-shadow: none;
+                              }
+      
+                              &:active {
+                                  color: _palette(textPrimary);
+                              }
+      
+                              &.active {
+                                  color: #FFF;
+                              }
+                              
+                          }
+      
+                          &:first-child {
+                              border-top: 0px;
+                          }
+      
+                          &:last-child {
+                              padding-bottom: 0;
+                          }
+                      }
+                  }
+              }
+          }
+  
+          #registration-form {
+              iframe {
+                  height: 2540px;
+                  margin-top: -60px;
+              }
+          }
+
+          #speaker-form {
+            iframe {
+                margin-top: -60px;
+            }
+        }
+      }
+  
+      .footer {
+          .ribbon {
+              transform: none;
+              left: auto;
+              top: 0;
+              width: 100%;
+          }
+      }
+
+      .popover {
+        max-width: 546px;
+      }
+  }
+
+// Tablets and phones
+@media screen and (max-width: $m) {
+  aside {
+    margin-top: 1em;
+  }
+
+  .hero {  
+    .intro {
+        h1 {
+            font-size: 2em;
+            line-height: 1.2em;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+    }
+    
+    .bg-image {
+        background-position: top center;
+    }
+  }
+
+  section#schedule {
+    .time-block {
+      .event {
+        text-align: left;
+        margin-left: 4em;
+      }
+    }
+  }
+
+  .popover {
+    max-width: 396px;
+    margin-left: 1.6em;
+  }
+}
+
+// Specifically for phone
+@media screen and (max-width: $s) {
+
+  section {
+    &#about-brno {
+      .title {
+        left: 15px;
+        right: 15px;
+      }
+    }
+
+    &#details {
+        .container {
+            background: none;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .links {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            margin-left: 2.5em;
+        }
+
+        #brno-bg {
+            opacity: 0.2;
+        }
+    }
+  }
+
+  .popover {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 736px) and (orientation: landscape) {
+    .hero {
+        margin-top: 126px;
+
+        .collage {
+            background-size: 40% auto;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-height: 1024px) {
+    .hero {
+        height: 700px;
+    }
+}
+
+// For the SVG hero image
+@media screen and (max-width: 1800px) {
+    .hero {
+        svg {
+            left: -5%;
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .hero {
+        svg {
+            left: -15%;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .hero {
+        svg {
+            left: -25%;
+        }
+    }
+}
+
+@media screen and (max-width: $l) {
+    .hero {
+        svg {
+            left: -40%;
+        }
+    }
+}
+
+@media screen and (max-width: $m) {
+    .hero {
+        svg {
+            left: -1150px;
+            bottom: -250px;
+        }
+    }
+
+    section {
+        &#schedule {
+            .time-block {
+                .time {
+                    padding: 0 0.4em
+                }
+            }
+        }
+    }
+}
