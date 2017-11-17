@@ -1,0 +1,766 @@
+---
+---
+
+@import 'colors';
+@import 'animations';
+
+// Screen breaks
+$s: 576px;
+$m: 768px;
+$l: 992px;
+$xl: 1200px;
+
+// Import corporate fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,500,700');
+$roboto: 'Roboto', sans-serif;
+$openSans: 'Open Sans', sans-serif;
+
+body {
+    font-size: 16px;
+    line-height: 1.5em;
+    font-family: $openSans;
+    color: #FFF;
+    background-color: #444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $roboto;
+}
+
+p {
+    margin: 2em 0;
+}
+
+mark {
+    background: _palette(yellow);   
+}
+
+::selection {
+    background: _palette(yellow);
+}
+
+::-moz-selection {
+    background: _palette(yellow);
+}
+
+:focus {
+    outline: none;
+}
+
+a {
+    transition: color 0.25s ease-in-out;
+    color: inherit;
+
+    &:visited {
+        color: _palette(grayDark);
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:active {
+        color: _palette(grayDark);
+    }
+}
+
+button,
+.button,
+a.button {
+    font-family: $roboto;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    margin-right: 1em;
+    line-height: 1.5em;
+    border: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.action {
+        transition: background 0.25s ease-in-out;
+        background: _palette(cta);
+        color: #FFF;
+    
+        &:hover {
+            background: _palette(ctaHov);
+        }
+
+        &:active {
+            background: _palette(ctaAct);
+        }
+    }
+
+    &.primary {
+        transition: background 0.25s ease-in-out;
+        background: _palette(orange);
+        color: #FFF;
+    
+        &:hover {
+            background: _palette(orangeHov);
+        }
+
+        &:active {
+            background: _palette(orangeAct);
+        }
+    }
+
+    &.secondary {
+        text-transform: none;
+        background: none;
+        border-left: 2px dotted _palette(grayMed);
+        color: _palette(orange);
+
+        &:hover {
+            text-decoration: underline;
+            color: _palette(orangeHov);
+        }
+        
+        &.no-border {
+            border: none;
+        }
+    }
+
+    &.inverted {
+        transition: background 0.25s ease-in-out,
+                    color 0.25s ease-in-out,
+                    border 0.25s ease-in-out;
+        background: #FFF;
+        color: _palette(orange);
+        border: 1px solid _palette(orange);
+    
+        &:hover {
+            color: _palette(orangeHov);
+            border: 1px solid _palette(orangeHov);
+        }
+    }
+
+    &.outline {
+        transition: box-shadow 0.25s ease-in-out;
+        background: none;
+        color: _palette(gray);
+        box-shadow: inset 0 0 0 0.1em _palette(gray);
+    
+        &:hover {
+            box-shadow: inset 0 0 0 0.1em _palette(grayMed);
+        }
+    }
+}
+
+a.button {
+    padding: 10px 1em;    
+}
+
+div.button {
+    display: inline-block;
+}
+
+ul {
+    // Add class "links" to a list to have it display with no bullets
+    &.links {
+        text-decoration: none;    
+
+        li {
+            list-style-type: none;            
+        }
+    }
+
+    &.inline {
+        text-decoration: none;
+        padding-left: 0;
+
+        li {
+            list-style-type: none;
+            display: inline-block;
+        }
+    }
+}
+
+form {
+    .field-group {
+        margin: 2em 0;
+        text-align: left;
+    }
+
+    label {
+        text-align: right;
+    }
+
+    input {
+        transform: box-shadow 0.25s ease-in-out;
+        display: inline-block;
+        padding: 0.7em;
+        width: 100%;
+        border: 0;
+        box-shadow: 0 0 0.1em rgba(0,0,0, 0.4);
+        color: _palette(textPrimary);
+
+        &:focus {
+            box-shadow: 0 0 0.4em rgba(0,0,0, 0.4);            
+        }
+    }
+
+    .form-control {
+        text-align: left;
+    }
+
+    .row {
+        margin-bottom: 0.5em;
+    }
+
+    .response {
+        margin: 0.5em 0;
+        padding: 0.5em;
+        text-align: center;
+        text-shadow: 0 0 0.2em rgba(0,0,0, 0.3);
+        font-size: 0.8em;
+        font-weight: 700;
+    }
+}
+
+.disclaimer {
+  font-size: 0.8em;
+}
+
+// Social Media Icons
+
+.social {
+    &-twitter {
+        transition: background-image 0.25s ease-in-out;
+        background-image: url('../../icons/social/twitter-grayLight.png');
+        background-size: 100% auto;
+        width: 3.5em;
+        height: 3.5em;
+        display: inline-block;
+    
+        &:hover {
+            background-image: url('../../icons/social/twitter-grayVLight.png')
+        }
+    }
+    
+    &-facebook {
+        transition: background-image 0.25s ease-in-out;
+        background-image: url('../../icons/social/facebook-grayLight.png');
+        background-size: 100% auto;
+        width: 3.5em;
+        height: 3.5em;
+        display: inline-block;
+    
+        &:hover {
+            background-image: url('../../icons/social/facebook-grayVLight.png')
+        }
+    }
+    
+    &-linked-in {
+        transition: background-image 0.25s ease-in-out;
+        background-image: url('../../icons/social/linkedin-grayLight.png');
+        background-size: 100% auto;
+        width: 3.5em;
+        height: 3.5em;
+        display: inline-block;
+    
+        &:hover {
+            background-image: url('../../icons/social/linkedin-grayVLight.png')
+        }
+    }
+    
+    &-website {
+        transition: background-image 0.25s ease-in-out;
+        background-image: url('../../icons/social/website-grayLight.png');
+        background-size: 100% auto;
+        width: 3.5em;
+        height: 3.5em;
+        display: inline-block;
+    
+        &:hover {
+            background-image: url('../../icons/social/website-grayVLight.png')
+        }
+    }
+}
+
+iframe {
+  border: 0;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-bottom: 1em;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Header Content Area */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+    padding-top: 1em;
+    overflow: hidden;
+    font-family: $roboto;
+    color: #FFF;
+
+    #logo {
+        position: relative;
+        height: 78px;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1em;
+        
+        #swi_logo {
+            position: absolute;
+            top: -26px;
+            max-width: 250px;
+        }
+
+        span {
+            position: absolute;
+            bottom: -1px;
+            left: 22px;
+        }
+
+        #expand-nav {
+            display: none;
+            position: absolute;
+            top: 0.7em;
+            right: 1.5em;
+            padding-top: 1.2em;
+            cursor: pointer;
+        }
+
+        img {
+            display: block;
+            max-width: 192px;
+            margin-bottom: 0.5em;      
+        }
+    }
+
+    nav {
+        text-align: left;
+        padding-top: 1em;
+        text-transform: uppercase;
+        
+        ul {
+
+            li {
+                display: inline-block;
+
+                a {
+                    transition: color 0.25s ease-in-out;
+                    color: inherit;
+                    text-decoration: none;
+                    padding: 0.5em 1em;
+                    font-weight: 400;
+
+                    &:visited {
+                        color: _palette(textPrimary);
+                    }
+
+                    &:hover {
+                        color: _palette(orange);
+                    }
+
+                    &.active {
+                        color: _palette(blue);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background: #000;
+
+  h1 {
+    font-size: 3em;
+    line-height: 1.5em;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    background: url('/assets/2016/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-attachment: fixed;
+  }
+
+  &__proceed {
+    font-size: 2em;
+    animation: bounce 6s linear 2s 10;
+    color: _palette(orange);
+  }
+}
+
+// // Fixed nav upon scroll
+// .affix {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     box-shadow: 0 0 0.2em rgba(0,0,0,0.4);
+// }
+
+/* Main Content Area */
+
+.main-wrapper {
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: url("{{ site.baseurl }}/assets/global/brand-line.jpg");
+    background-repeat: repeat-x;
+  }
+}
+
+#talks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4em 0;
+}
+
+.card--video {
+  position: relative;
+  padding: 2em;
+  min-height: 520px;
+  background: #EEE;  
+  box-shadow: 0 0 25px 4px rgba(0,0,0, 0.4);
+
+  &__header {
+    img {
+      max-width: 100%;
+    }
+
+    h3, h4 {
+      margin: 1em 0;
+    }
+
+    h3 {
+      min-height: 48px;
+      color: _palette(orange);
+    }
+
+    h4 {
+      color: _palette(blue);
+    }
+  }
+
+  &__body {
+    color: _palette(textPrimary);
+  }
+
+  &__modal-link {
+    position: absolute;
+    width: 100%;
+    height: 520px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+  }
+}
+
+/* Footer Content Area */
+
+.footer-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: _palette(grayDark);
+
+    .footer {
+        position: relative;
+        overflow: hidden;
+        padding: 3em 0;
+        color: _palette(grayLight);
+    
+        h2 {
+            color: #FFF;
+        }
+    
+        ul {
+            margin: 2em 0;
+            padding: 0;
+    
+            li {
+                color: #FFF;
+                margin: 1.5em 0;
+            }
+        }
+    
+        a {
+            color: _palette(grayLight);
+        }
+    
+        // Block containers for social media icons and description
+
+        .social {
+            display: block;
+            position: relative;
+            margin-left: -0.7em;
+
+            span {
+                position: absolute;
+                top: 25%;
+            }
+        }
+    
+        button {
+            margin-top: 0.5em;
+        }
+    
+        .copyright {
+            color: #858484;
+            font-size: 0.95em;
+            text-align: center;
+    
+            .row {
+                .col-lg-7, .col-sm-12 {
+                    background: rgba(255,255,255, 0.05);
+                    margin: 4em auto 0;  
+                    padding: 1em;            
+                    border-radius: 0.5em;
+                }
+            }
+        }
+    
+        .ribbon-screen-sm {
+            display: none;
+        }
+    }
+
+    .ribbon-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    .ribbon {
+        position: absolute;
+        top: -42px;
+        left: -500px; // Goes to -102% when footer scrolls into view
+        display: inline-block;
+        padding: 0.5em;
+        width: 350px;
+        background: #F99D1C;
+        color: #FFF;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.1em;
+        font-weight: 500;
+        text-align: center;
+        transform: rotate(-45deg);
+        transform-origin: 100% 100%;
+
+        a {
+            color: #FFF;
+            text-decoration: none;
+
+            &:visited,
+            &:hover,
+            &:active {
+                color: inherit;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background: rgba(255,255,255, 0.8);
+
+    .content {
+        opacity: 0;
+        position: relative;
+        top: 40%;
+        margin: auto;
+        padding: 2em;
+        width: 50%;
+        background-color: #FFF;
+        color: _palette(textPrimary);
+        box-shadow: 0 0 0.3em rgba(0,0,0, 0.4);
+        overflow: hidden;
+    }
+
+    &.full-screen {
+        .content {
+            top: 40%;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
+    }
+
+    .close {
+        float: right;
+        font-size: 2em;
+        font-weight: bold;
+
+        &:hover,
+        &:focus {
+            color: _palette(gray);
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+
+    &__content {
+      margin-top: 2em;
+
+      h3 {
+        color: _palette(blue);
+      }
+    }
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+.popover {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  max-width: 600px;
+  margin-left: 2.5em;
+  height: auto;
+  z-index: 100;
+
+  &:before {
+    content: "⯅";
+    position: absolute;
+    top: -18px;
+    left: 47%;
+    font-size: 2em;
+    color: _palette(yellow);
+  }
+
+  .popover-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 6px 0;
+    text-align: center;
+    text-transform: uppercase;
+    background: _palette(yellow);
+  }
+
+  .popover-content {
+    margin-top: 1.5em;
+    padding: 1em;
+    background: #FFF;
+    box-shadow: 0 0 25px rgba(0,0,0,0.1);
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .footer-wrapper {
+    .footer {
+      .ribbon-screen-sm {
+        display: block;
+        padding: 0.5em;
+        width: 100%;
+        background: #F99D1C;
+        color: #FFF;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.1em;
+        font-weight: 500;
+        text-align: center;
+    
+        a {
+            color: #FFF;
+            text-decoration: none;
+    
+            &:visited,
+            &:hover,
+            &:active {
+                color: inherit;
+            }
+        }
+      }
+    }
+
+    .ribbon-container {
+      display: none;
+    }
+  }
+}
+
+@media(max-width: $l) {
+  #talks {
+    * {
+      margin-bottom: 1em;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .footer {
+    .ribbon {
+        transform: none;
+        left: auto;
+        top: 0;
+        width: 100%;
+    }
+  }
+
+  .modal {
+    .content {
+        width: 100%;
+        height: 100vh;
+        top: 40%;
+        overflow: scroll;
+    }  
+  }
+}
+
+@import 'helpers';

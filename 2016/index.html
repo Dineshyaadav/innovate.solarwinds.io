@@ -1,0 +1,51 @@
+---
+title: December 14, 2016
+layout: 2016/default
+---
+
+<section id="talks" data-aos="fade-up" data-aos-easing="ease-in">
+  <div class="container">
+    <h1>The Talks</h1>
+    <div class="row">
+      {% for video in site.data['2016'].talks %}
+      <div class="col-sm-4">
+        <section class="card--video">
+          <header class="card--video__header">
+            <!-- <img src="{{ site.data.helpers.youtube.thumb-link}}/{{ video.id }}/{{ site.data.helpers.youtube.thumb-file.med }}" alt="{{ video.title }}" title="{{ video.title }} by {{ video.speaker }}" /> -->
+            <div class="video-wrapper">
+                <iframe src="{{ site.data.helpers.youtube.video-link }}/{{ video.id }}" allowfullscreen>Loading...</iframe>
+            </div>
+            <h3>{{ video.title }}</h3>
+            <h4>{{ video.speaker }}</h4>
+          </header>
+          <p class="card--video__body">
+            {{ video.description | truncate: 150 }}
+          </p>
+          <div class="card--video__modal-link js-card-modal" data-target-modal="{{ video.title | remove: ' ' }}Modal"></div>          
+        </section>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% for video in site.data['2016'].talks %}
+  {% capture modal-content %}
+    <div class="modal__content">
+      <div class="video-wrapper">
+          <iframe src="{{ site.data.helpers.youtube.video-link }}/{{ video.id }}" allowfullscreen>Loading...</iframe>
+      </div>
+      <h3>{{ video.title }} - {{ video.speaker }}</h3>
+      <p>
+        {{ video.description }}
+      </p>
+      <div class="u-center">
+        {% if video.slides %}<a class="button primary u-center" href="{{ video.slides }}">View Slides</a>{% endif %}
+      </div>
+    </div>
+  {% endcapture %}
+
+  {% capture modal-id %}{{ video.title | remove: ' ' }}Modal{% endcapture %}
+
+  {% include partials/modal.html id=modal-id content=modal-content %}
+{% endfor %}

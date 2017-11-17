@@ -1,0 +1,25 @@
+- title: Characterizing and Contrasting Container Orchestrators
+  speaker: Lee Calcote
+  id: y81hEEkXOsE
+  description: "Running a few containers? No problem. Running hundreds or thousands? Enter the 
+  container orchestrator. In this session Lee Calcote takes a look at the characteristics of 
+  the four most popular container orchestrators and what makes them alike, yet unique."
+  slides: http://calcotestudios.com/talks/slides-tech-summit-characterizing-and-contrasting-container-orchestrators.html
+
+- title: Innovation and the Evolution of Cyber Attacks
+  speaker: Steven Colquitt
+  id: ml56L0MujHk
+  description: "While technology continues to evolve and improve our quality of life, there’s a culture 
+  of crime that evolves to take advantage of those innovations. In this session, Steven Colquitt will 
+  talk about the evolution of malware and common threats that target typical business networks and 
+  systems. He’ll examine some of the high-profile hacking incidents in recent years and talk about 
+  the new security challenges related to IoT, where more connected devices mean more attack vectors."
+  
+- title: Mobile UI Testing at Scale
+  speaker: Martin Simecek
+  id: igJsTc1w1xI
+  description: "Mobile app testing is not an easy task, especially when talking about user interface. 
+  Xamarin Test Cloud provides developers with thousands of physical devices on which they can run 
+  their UI tests and evaluate results, comparing different screen sizes, operating system versions, 
+  etc. This session with Martin Simecek will show you how to use Xamarin Test Cloud and how Microsoft 
+  integrates it to its complete DevOps pipeline – from code, through compilation and testing, to deployment."
