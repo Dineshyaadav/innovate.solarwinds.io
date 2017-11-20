@@ -12,9 +12,5 @@ _site/
 # General
 .DS_Store
 
-# Ruby files
-Gemfile
-Gemfile.lock
-
 # Node
 node_modules/

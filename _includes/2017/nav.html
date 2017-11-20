@@ -1,6 +1,6 @@
 {% capture navLinks %}
     {% for link in site.data.2017.navLinks %}
-        <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+        <li><a href="/{{ link.url }}">{{ link.name }}</a></li>
     {% endfor %}
 {% endcapture %}
 
@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-3 col-sm-12">
                 <div id="logo">                       
-                    <a href="#top">
+                    <a href="/#top">
                         {% include partials/logo-svg.html %}
                     </a>
                     <span>
