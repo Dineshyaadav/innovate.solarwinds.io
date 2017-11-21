@@ -1,19 +1,19 @@
 version: 2
 jobs:
-  machine:
-    environment:
-      NOKOGIRI_USE_SYSTEM_LIBRARIES: true # speeds up installation of html-proofer
+  build:
+    working_directory: /app/
+    # The primary container is an instance of the first list image listed. Your build commands run in this container.
+    docker:
+      - image: jekyll/jekyll:3.5.0
+    steps:
+      - checkout
+      - run: jekyll build
+      - run: htmlproofer ./_site --allow-hash-href --check-html --disable-external
+      - run: aws s3 sync _site/ s3://innovate.solarwinds.io/ --delete
 
-  dependencies:
-    post:
-      - bundle exec jekyll build
 
-  test:
-    post:
-      - bundle exec htmlproofer ./_site --allow-hash-href --check-favicon --check-html --disable-external
-  
-  deployment:
-    prod:
-      branch: master
-      commands:
-        - aws s3 sync _site/ s3://innovate.solarwinds.io/ --delete
+
+
+
+
+
