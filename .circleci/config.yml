@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run: jekyll build
-      - run: htmlproofer ./_site --allow-hash-href --check-html --disable-external
+      # - run: htmlproofer ./_site --allow-hash-href --check-html --disable-external
       - run: aws s3 sync _site/ s3://innovate.solarwinds.io/ --delete
 
 
