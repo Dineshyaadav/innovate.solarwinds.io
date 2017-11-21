@@ -12,3 +12,5 @@ exclude: [node_modules, _config.yml, .gitignore, CNAME, Dockerfile, Gemfile, LIC
 
 # Testing
 # baseurl: ''
+
+include: [".well-known"]
