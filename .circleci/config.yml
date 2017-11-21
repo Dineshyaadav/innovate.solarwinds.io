@@ -4,7 +4,7 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run: jekyll build
+      - run: bundle exec jekyll build
       - run: aws s3 sync _site/ s3://innovate.solarwinds.io/ --delete
 
 
