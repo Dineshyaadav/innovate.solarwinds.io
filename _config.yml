@@ -2,7 +2,7 @@
 name: SolarWinds Innovate Summit 2017
 description: A conference for tech professionals
 iourl: 'https://solarwinds.io'
-repository: leecalcote/innovate.solarwinds.io
+repository: solarwinds/innovate.solarwinds.io
 
 # Setup
 sass:
