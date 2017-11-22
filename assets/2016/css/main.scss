@@ -221,6 +221,23 @@ form {
     }
 }
 
+#back-link {
+    z-index: 100;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+
+    a {
+        transition: color 0.25s ease-in-out;
+        color: #FFF;
+        text-decoration: none;
+
+        &:hover {
+            color: _palette(orange);
+        }
+    }
+}
+
 .disclaimer {
   font-size: 0.8em;
 }
