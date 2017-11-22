@@ -309,72 +309,81 @@ iframe {
     z-index: 500;
     padding-top: 1em;
     overflow: hidden;
+    background: #FFF;
     font-family: $roboto;
-    color: #FFF;
+    color: _palette(textPrimary);
 
-    #logo {
-        position: relative;
-        height: 78px;
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: 1em;
-        
-        #swi_logo {
-            position: absolute;
-            top: -26px;
-            max-width: 250px;
-        }
-
-        span {
-            position: absolute;
-            bottom: -1px;
-            left: 22px;
-        }
-
-        #expand-nav {
-            display: none;
-            position: absolute;
-            top: 0.7em;
-            right: 1.5em;
-            padding-top: 1.2em;
-            cursor: pointer;
-        }
-
-        img {
-            display: block;
-            max-width: 192px;
-            margin-bottom: 0.5em;      
-        }
+    &::after {
+        content: "";
+        display: block;
+        margin-top: 15px;
+        width: 100%;
+        height: 5px;
+        background: url("{{ site.baseurl }}/assets/global/brand-line.jpg");
+        background-repeat: repeat-x;
     }
+}
 
-    nav {
-        text-align: left;
-        padding-top: 1em;
-        text-transform: uppercase;
-        
-        ul {
+#logo {
+    position: relative;
+    height: 78px;
+    text-transform: uppercase;
+    color: _palette(textPrimary);
+    font-weight: 500;
+    font-size: 1em;
 
-            li {
-                display: inline-block;
+    span {
+        position: absolute;
+        bottom: -1px;
+        left: 22px;
+    }
+    
+    img {
+        display: block;
+        max-width: 192px;
+        margin-bottom: 0.5em;
+    }
+}
 
-                a {
-                    transition: color 0.25s ease-in-out;
-                    color: inherit;
-                    text-decoration: none;
-                    padding: 0.5em 1em;
-                    font-weight: 400;
+#swi_logo {
+    position: absolute;
+    top: -26px;
+    max-width: 250px;
+}
 
-                    &:visited {
-                        color: _palette(textPrimary);
-                    }
+#expand-nav {
+    display: none;
+    position: absolute;
+    top: 0.7em;
+    right: 1.5em;
+    padding-top: 1.2em;
+    cursor: pointer;
+}
 
-                    &:hover {
-                        color: _palette(orange);
-                    }
+nav {
+    text-align: left;
+    padding-top: 1em;
+    text-transform: uppercase;
 
-                    &.active {
-                        color: _palette(blue);
-                    }
+    ul {
+
+        li {
+            display: inline-block;
+
+            a {
+                transition: color 0.25s ease-in-out;
+                color: inherit;
+                text-decoration: none;
+                padding: 0.5em 1em;
+                font-weight: 400;
+                &:visited {
+                    color: _palette(textPrimary);
+                }
+                &:hover {
+                    color: _palette(orange);
+                }
+                &.active {
+                    color: _palette(blue);
                 }
             }
         }
@@ -429,15 +438,6 @@ iframe {
 
 .main-wrapper {
   overflow: hidden;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 5px;
-    background: url("{{ site.baseurl }}/assets/global/brand-line.jpg");
-    background-repeat: repeat-x;
-  }
 }
 
 #talks {

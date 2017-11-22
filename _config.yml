@@ -12,3 +12,4 @@ exclude: [src, node_modules]
 
 # Testing
 # baseurl: ''
+port: 8082
