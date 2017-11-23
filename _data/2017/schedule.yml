@@ -53,7 +53,9 @@
   event: Lightning Talk
   topic: "Prometheus - Alert Manager & Storage Adapters"
   speaker: Lee Calcote
-  description: ""
+  description: "Join for a case study on how Prometheus, Alert Manager and remote storage works. 
+  We’ll talk about why we’re harnessing the power of Prometheus and integrating it as as an open-source 
+  monitoring solution with SolarWinds AppOptics as a monitoring service offering."
 
 - time: 6:45 PM
   duration: 30 
