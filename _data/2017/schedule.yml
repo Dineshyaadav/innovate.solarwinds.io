@@ -5,7 +5,7 @@
 
 - time: 5:00 PM
   duration: 30
-  event: Panel
+  event: DevOps & Cloud Native Panel
   topic: 
   speaker: 
 
@@ -56,7 +56,7 @@
   description: ""
 
 - time: 6:45 PM
-  duration: 30
+  duration: 30 
   event: Talk
   topic: "Managing Infrastructure As Code - Why You Should Too"
   speaker: Fredrik Skogman
@@ -66,13 +66,20 @@
   error prone tasks. This talk goes through tooling used and best practices
   at SolarWinds Cloud's engineering organisations."
 
-  - time: 7:15 PM
+- time: 7:15 PM
   duration: 45
   event: Talk
   topic: "The Serverless Landscape"
   speaker: Lee Calcote & Girish Ranganathan
-  description:
-  
+  description: "The Serverless working group within the Cloud Native Computing Foundation (CNCF) is one of many. In this talk we’ll answer: 
+  Why does this working group exist? 
+  What are we currently doing? 
+  How our efforts help the ecosystem? 
+  What are the current Serverless and FaaS projects? 
+  How do they contrast? 
+  Common Serverless myths. 
+  Serverless’s biggest challenges and best-suited use cases."
+
 - time: 8:00 PM
   duration: 60
   event: Social — Happy Hour
