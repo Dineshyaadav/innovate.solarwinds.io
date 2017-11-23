@@ -71,7 +71,7 @@
 - time: 7:15 PM
   duration: 45
   event: Talk
-  topic: "The Serverless Landscape"
+  topic: "The Serverless Landscape & the CNCF"
   speaker: Lee Calcote & Girish Ranganathan
   description: "The Serverless working group within the Cloud Native Computing Foundation (CNCF) is one of many. In this talk we’ll answer: 
   Why does this working group exist? 
