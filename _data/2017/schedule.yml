@@ -10,7 +10,7 @@
   speaker: 
 
 - time: 5:30 PM
-  duration: 45
+  duration: 30
   event: Talk
   topic: Writing Monitor-Friendly Software
   speaker: Karlo Zatylny
@@ -22,8 +22,8 @@
   every day programming and the power it unleashes in helping programmers optimize 
   their time in searching for resolutions."
 
-- time: 6:15 PM
-  duration: 15
+- time: 6:00 PM
+  duration: 10
   event: Lightning Talk
   topic: "You Don't Scale: How to Work in the Industry and Physically Survive"
   speaker: Oli Wood
@@ -31,8 +31,8 @@
   in his spine and ending up taking 3 months off work after surgery. Let's talk 
   about what happened and how to avoid it."
 
-- time: 6:30 PM
-  duration: 15
+- time: 6:10 PM
+  duration: 10
   event: Lightning Talk
   topic: "CoreHard: Running An External Engineering Community"
   speaker: Anton Naumovich
@@ -41,22 +41,22 @@
   organizing meetups and conferences. The experience is based on CoreHard — Belarusian 
   C++ community — and accompanying CoreHard conferences that Anton oversees."
 
-- time: 6:45 PM
-  duration: 15
+- time: 6:20 PM
+  duration: 10
   event: Lightning Talk
   topic: Golang Tips and Tricks
   speaker: Trevor Rosen
   description: 
 
-- time: 7:00 PM
-  duration: 15
+- time: 6:30 PM
+  duration: 10
   event: Lightning Talk
   topic: Prometheus - Alert Manager & Storage Adapters
   speaker: Lee Calcote
   description: 
 
-- time: 7:15 PM
-  duration: 45
+- time: 6:45 PM
+  duration: 30
   event: Talk
   topic: Managing Infrastructure As Code - Why You Should Too
   speaker: Fredrik Skogman
@@ -65,6 +65,12 @@
   appropriate tooling that automates the process to avoid repetitive and
   error prone tasks. This talk goes through tooling used and best practices
   at SolarWinds Cloud's engineering organisations."
+
+  - time: 7:15 PM
+  duration: 45
+  event: Talk
+  topic: The Serverless Landscape
+  speaker: Lee Calcote & Girish Ranganathan
 
 - time: 8:00 PM
   duration: 60
