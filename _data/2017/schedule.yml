@@ -46,14 +46,14 @@
   event: Lightning Talk
   topic: "Golang Tips and Tricks"
   speaker: Trevor Rosen
-  description: 
+  description: ""
 
 - time: 6:30 PM
   duration: 10
   event: Lightning Talk
   topic: "Prometheus - Alert Manager & Storage Adapters"
   speaker: Lee Calcote
-  description: 
+  description: ""
 
 - time: 6:45 PM
   duration: 30
