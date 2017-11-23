@@ -1070,5 +1070,18 @@ section {
   }
 }
 
+.error-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background: _palette(yellow);
+
+    h2 {
+        font-size: 5em;
+    }
+}
+
 // Screen break overrides
 @import '2017/screenbreaks';

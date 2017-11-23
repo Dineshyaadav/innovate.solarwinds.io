@@ -15,8 +15,7 @@ gem install jekyll bundler
 After cloning, install local dependencies:
 
 ```
-bundle install
-npm install
+npm run setup
 ```
 
 Then, you'll want to create the build for the static site:

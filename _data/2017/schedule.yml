@@ -5,12 +5,12 @@
 
 - time: 5:00 PM
   duration: 30
-  event: Panel
+  event: DevOps & Cloud Native Panel
   topic: 
   speaker: 
 
 - time: 5:30 PM
-  duration: 45
+  duration: 30
   event: Talk
   topic: Writing Monitor-Friendly Software
   speaker: Karlo Zatylny
@@ -22,8 +22,8 @@
   every day programming and the power it unleashes in helping programmers optimize 
   their time in searching for resolutions."
 
-- time: 6:15 PM
-  duration: 15
+- time: 6:00 PM
+  duration: 10
   event: Lightning Talk
   topic: "You Don't Scale: How to Work in the Industry and Physically Survive"
   speaker: Oli Wood
@@ -31,8 +31,8 @@
   in his spine and ending up taking 3 months off work after surgery. Let's talk 
   about what happened and how to avoid it."
 
-- time: 6:30 PM
-  duration: 15
+- time: 6:10 PM
+  duration: 10
   event: Lightning Talk
   topic: "CoreHard: Running An External Engineering Community"
   speaker: Anton Naumovich
@@ -41,30 +41,46 @@
   organizing meetups and conferences. The experience is based on CoreHard — Belarusian 
   C++ community — and accompanying CoreHard conferences that Anton oversees."
 
+- time: 6:20 PM
+  duration: 10
+  event: Lightning Talk
+  topic: "Golang Tips and Tricks"
+  speaker: Trevor Rosen
+  description: ""
+
+- time: 6:30 PM
+  duration: 10
+  event: Lightning Talk
+  topic: "Prometheus - Alert Manager & Storage Adapters"
+  speaker: Lee Calcote
+  description: "Join for a case study on how Prometheus, Alert Manager and remote storage works. 
+  We’ll talk about why we’re harnessing the power of Prometheus and integrating it as as an open-source 
+  monitoring solution with SolarWinds AppOptics as a monitoring service offering."
+
 - time: 6:45 PM
-  duration: 15
-  event: Lightning Talk
-  topic:
-  speaker:
-  description:
-
-- time: 7:00 PM
-  duration: 15
-  event: Lightning Talk
-  topic:
-  speaker:
-  description: 
-
-- time: 7:15 PM
-  duration: 45
+  duration: 30 
   event: Talk
-  topic: Managing Infrastructure As Code - Why You Should Too
+  topic: "Managing Infrastructure As Code - Why You Should Too"
   speaker: Fredrik Skogman
   description: "Modern cloud architectures often involves multiple data-centers in
   different regions. Managing the infrastructure in a reliable way needs
   appropriate tooling that automates the process to avoid repetitive and
   error prone tasks. This talk goes through tooling used and best practices
   at SolarWinds Cloud's engineering organisations."
+
+- time: 7:15 PM
+  duration: 45
+  event: Talk
+  topic: "The Serverless Landscape & the CNCF"
+  speaker: Lee Calcote & Girish Ranganathan
+  description: "The Serverless working group within the Cloud Native Computing Foundation (CNCF) is one of many. In this talk we’ll answer: 
+  Why does this working group exist? 
+  What are we currently doing? 
+  How our efforts help the ecosystem? 
+  What are the current Serverless and FaaS projects? 
+  How do they contrast? 
+  Common Serverless myths. 
+  Serverless’s biggest challenges and best-suited use cases."
 
 - time: 8:00 PM
   duration: 60
