@@ -44,9 +44,9 @@
 - time: 6:45 PM
   duration: 15
   event: Lightning Talk
-  topic:
-  speaker:
-  description:
+  topic: Golang Tips and Tricks
+  speaker: Trevor Rosen
+  description: 
 
 - time: 7:00 PM
   duration: 15
