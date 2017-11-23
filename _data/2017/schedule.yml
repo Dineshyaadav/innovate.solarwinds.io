@@ -51,8 +51,8 @@
 - time: 7:00 PM
   duration: 15
   event: Lightning Talk
-  topic:
-  speaker:
+  topic: Prometheus - Alert Manager & Storage Adapters
+  speaker: Lee Calcote
   description: 
 
 - time: 7:15 PM
