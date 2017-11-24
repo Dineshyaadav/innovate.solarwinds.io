@@ -363,7 +363,7 @@ form {
         margin-top: 15px;
         width: 100%;
         height: 5px;
-        background: url("{{ site.baseurl }}/assets/2017/images/brand-line.jpg");
+        background: url("{{ site.baseurl }}/assets/global/brand-line.jpg");
         background-repeat: repeat-x;
     }
 }
@@ -1084,4 +1084,4 @@ section {
 }
 
 // Screen break overrides
-@import './screenbreaks';
+@import '2017/screenbreaks';

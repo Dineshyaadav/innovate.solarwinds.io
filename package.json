@@ -4,6 +4,5 @@
     "build": "bundle exec jekyll build",
     "start": "bundle exec jekyll serve"
   },
-  "devDependencies": {},
-  "dependencies": {}
+  "devDependencies": {}
 }

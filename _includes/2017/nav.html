@@ -1,6 +1,6 @@
-{% capture navLinks %}
-    {% for link in site.data.2017.navLinks %}
-        <li><a href="/{{ link.url }}">{{ link.name }}</a></li>
+{% capture nav-links %}
+    {% for link in site.data.2017.nav-links %}
+        <li><a href="{{ link.url }}">{{ link.name }}</a></li>
     {% endfor %}
 {% endcapture %}
 
@@ -22,7 +22,7 @@
             <div class="col-lg-9">
                 <nav>
                     <ul>
-                        {{ navLinks }}
+                        {{ nav-links }}
                     </ul>
                 </nav>
             </div>

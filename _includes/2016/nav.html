@@ -1,0 +1,41 @@
+{% capture nav-links %} {% for link in site.data.2016.nav-links %}
+<li>
+    <a href="{{ link.url }}">{{ link.name }}</a>
+</li>
+{% endfor %} {% endcapture %}
+
+<div class="navbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12">
+                <div id="logo">
+                    <a href="#top">
+                        {% include partials/logo-svg.html %}
+                    </a>
+                    <span>
+                        Innovate Openly
+                    </span>
+                    <div id="expand-nav" data-target-modal="mobileNavModal">
+                        <i class="fa fa-2x fa-navicon" aria-hidden="true" data-target-modal="mobileNavModal"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <nav>
+                    <ul>
+                        {{ nav-links }}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% capture modalContent %}
+<div class="mobile-nav">
+    <ul class="links">
+        {{ navLinks }}
+    </ul>
+</div>
+{% endcapture %} {% include partials/modal.html id="mobileNavModal" content=modalContent %}

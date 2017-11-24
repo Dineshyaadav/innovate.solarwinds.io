@@ -1,0 +1,5 @@
+- name: The Talks
+  url: "#talks"
+
+- name: Register
+  url: /
