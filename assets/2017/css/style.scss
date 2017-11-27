@@ -1043,7 +1043,7 @@ section {
   z-index: 100;
 
   &:before {
-    content: "⯅";
+    content: "\25B4"; // ▴
     position: absolute;
     top: -18px;
     left: 47%;
