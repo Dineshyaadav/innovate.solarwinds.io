@@ -1,15 +1,15 @@
 - time: 4:00 PM
-  duration: 30
+  duration: 60
   event: Registration/Check-In
   admin: true
 
-- time: 4:30 PM
+- time: 5:00 PM
   duration: 30
   event: DevOps & Cloud Native Panel
   topic: 
   speaker: 
 
-- time: 5:00 PM
+- time: 5:30 PM
   duration: 30
   event: Talk
   topic: Writing Monitor-Friendly Software
@@ -22,7 +22,7 @@
   every day programming and the power it unleashes in helping programmers optimize 
   their time in searching for resolutions."
 
-- time: 5:30 PM
+- time: 6:00 PM
   duration: 10
   event: Lightning Talk
   topic: "You Don't Scale: How to Work in the Industry and Physically Survive"
@@ -31,7 +31,7 @@
   in his spine and ending up taking 3 months off work after surgery. Let's talk 
   about what happened and how to avoid it."
 
-- time: 5:40 PM
+- time: 6:10 PM
   duration: 10
   event: Lightning Talk
   topic: "CoreHard: Running An External Engineering Community"
@@ -41,19 +41,14 @@
   organizing meetups and conferences. The experience is based on CoreHard — Belarusian 
   C++ community — and accompanying CoreHard conferences that Anton oversees."
 
-- time: 5:50 PM
+- time: 6:20 PM
   duration: 10
   event: Lightning Talk
   topic: "Golang Tips and Tricks"
   speaker: Trevor Rosen
   description: 
 
-- time: 6:00 PM
-  duration: 30
-  event: Break
-  admin: true
-
-- time: 6:25 PM
+- time: 6:30 PM
   duration: 10
   event: Lightning Talk
   topic: "Prometheus - Alert Manager & Storage Adapters"
@@ -61,14 +56,6 @@
   description: "Join for a case study on how Prometheus, Alert Manager and remote storage works. 
   We’ll talk about why we’re harnessing the power of Prometheus and integrating it as as an open-source 
   monitoring solution with SolarWinds AppOptics as a monitoring service offering."
-
-- time: 6:35 PM
-  duration: 10
-  event: Lightning Talk
-  topic: "Metrics, Traces, and Logs"
-  speaker: Mark Martin
-  description: "Inspired by Peter Bourgon's blog post earlier this year on this topic, we'll talk 
-  about the intersection of metrics, traces, and logs."
 
 - time: 6:45 PM
   duration: 30 
