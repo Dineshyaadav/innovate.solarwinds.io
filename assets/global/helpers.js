@@ -7,6 +7,10 @@
     modalOffset = '0%';
   }
 
+  if (document.cookie.match(/EUCookieCompliance=accepted;/)) {
+      $('div.cookie-banner').addClass('hidden');
+  }
+
   $(document).ready(function() {
     // Smooth scrolling from CSS Tricks
     $('a[href*="#"]')
@@ -124,5 +128,13 @@
         });
         $('body').removeClass('modal-open');
     });
+
+    // Cookie acceptance in EU
+    if (!$('div.cookie-banner').hasClass('hidden')) {
+        $('span.js-accept-cookies').on('click', function() {
+            document.cookie = 'EUCookieCompliance=accepted';
+            $('div.cookie-banner').addClass('hidden');
+        });
+    }
   });
 })(jQuery)
