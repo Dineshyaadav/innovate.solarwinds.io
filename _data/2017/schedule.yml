@@ -50,7 +50,7 @@
   But did you know it’s also great for IoT development? 
   The Gobot framework (gobot.io) provides interfaces for dozens of platforms and protocols, 
   implementing both high-level abstractions and low-level drivers. In this lightning talk, 
-  Gobot contributor Trevor Rosen will show you how easy it is to control electronics with this sophisticated 
+  Gobot maintainer Trevor Rosen will show you how easy it is to control electronics with this sophisticated 
   and highly portable language."
 
 - time: 6:30 PM
