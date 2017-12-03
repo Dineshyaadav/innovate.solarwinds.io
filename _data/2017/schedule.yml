@@ -44,9 +44,14 @@
 - time: 6:20 PM
   duration: 10
   event: Lightning Talk
-  topic: "Golang Tips and Tricks"
+  topic: "Go-based IoT with Gobot"
   speaker: Trevor Rosen
-  description: 
+  description: You probably know of the Go programming language from things like Docker and Kubernetes. 
+  But did you know it’s also great for IoT development? 
+  The Gobot framework (gobot.io) provides interfaces for dozens of platforms and protocols, 
+  implementing both high-level abstractions and low-level drivers. In this lightning talk, 
+  Gobot contributor Trevor Rosen will show you how easy it is to control electronics with this sophisticated 
+  and highly portable language.
 
 - time: 6:30 PM
   duration: 10
