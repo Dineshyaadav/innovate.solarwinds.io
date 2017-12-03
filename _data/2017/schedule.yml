@@ -46,7 +46,7 @@
   event: Lightning Talk
   topic: "Go-based IoT with Gobot"
   speaker: Trevor Rosen
-  description: You probably know of the Go programming language from things like Docker and Kubernetes. 
+  description: "You probably know of the Go programming language from things like Docker and Kubernetes. 
   But did you know it’s also great for IoT development? 
   The Gobot framework (gobot.io) provides interfaces for dozens of platforms and protocols, 
   implementing both high-level abstractions and low-level drivers. In this lightning talk, 
