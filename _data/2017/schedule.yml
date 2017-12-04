@@ -66,11 +66,8 @@
   event: Lightning Talk
   topic: "The Monitoring Trifecta: Metrics, Logs, Traces"
   speaker: Mark Martin
-  description: "Modern cloud architectures often involves multiple data-centers in
-  different regions. Managing the infrastructure in a reliable way needs
-  appropriate tooling that automates the process to avoid repetitive and
-  error prone tasks. This talk goes through tooling used and best practices
-  at SolarWinds Cloud's engineering organisations."
+  description: "Let's discuss the intersection of Metrics, Traces, and Logs and how these three monitoring paradigms
+  overlap to form signals to monitor your distributed systems."
   
 - time: 6:40 PM
   duration: 10 
