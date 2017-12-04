@@ -93,9 +93,9 @@
 - time: 7:00 PM
   duration: 10 
   event: Lightning Talk
-  topic: "Logging Kubernetes with Fluentd & Papertrail"
+  topic: "Visibility into Docker Swarm & Kubernetes Networks"
   speaker: Karlo Zatylny
-  description: "Running containers across multiple hosts? How's your network doing? Which driver are you using? 
+  description: "Running Docker containers across multiple hosts? How's your network doing? Which driver are you using? 
   Which should you be? Karlo will demo a free container monitoring tool that not only provides visibility into your
   multi-host workloads, it'll help you decide which network driver you to use."
 
