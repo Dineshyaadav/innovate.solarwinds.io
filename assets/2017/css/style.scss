@@ -10,7 +10,7 @@ $l: 992px;
 $xl: 1200px;
 
 // Import corporate fonts
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,500,700');
 $roboto: 'Roboto', sans-serif;
 $openSans: 'Open Sans', sans-serif;
 
@@ -516,6 +516,7 @@ section {
     &#schedule {
         background: _palette(blue);
         box-shadow: inset 0 0 0.4em rgba(0,0,0,0.3);
+        padding-bottom: 10em;
 
         .event-times {
             margin-top: 3em;
@@ -582,28 +583,12 @@ section {
                 &[data-target-popover] {
                   cursor: pointer;
                 }
+
+                &__speaker {
+                    font-weight: 600;
+                }
             }
         }
-
-        // .time {
-        //     font-weight: 700;
-        //     font-size: 0.8em;
-        // }
-
-        // .time-block {
-        //     padding: 1em;
-        //     text-align: center;
-        //     background: rgba(238,238,238,0.8);            
-        //     box-shadow: 0 0 0.1em rgba(0,0,0, 0.4);
-
-        //     &.standard {
-        //         background: rgba(255,255,255, 0.5);                
-        //     }
-
-        //     &.min-45 {
-        //         padding: 2em;
-        //     }
-        // }
     }
 
     &#register {

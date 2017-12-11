@@ -11,7 +11,7 @@
                     <div class="event" {% if item.description %}data-target-popover="{{ forloop.index }}"{% endif %}>
                         {% unless item.topic %}{{ item.event }}{% endunless %}
                         {% if item.speaker %}
-                          <strong>{{ item.speaker }}</strong><br />
+                          <span class="event__speaker" {% if item.description %}data-target-popover="{{ forloop.index }}"{% endif %}>{{ item.speaker }}</span><br />
                           {{ item.topic }}
                         {% endif %}
                     </div>
