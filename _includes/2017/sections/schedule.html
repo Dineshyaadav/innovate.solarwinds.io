@@ -16,7 +16,18 @@
                         {% endif %}
                     </div>
                 </div>
-                {% if item.description %}{% include partials/popover.html content=item.description id=forloop.index type=item.event %}{% endif %}              
+                {% capture popover-content %}
+                    <div class="popover--event__image">
+                    {%- if item.time == "7:30 PM" -%}
+                        <img src="/assets/2017/images/speakers/lee-calcote.jpg" alt="Lee Calcote" />
+                        <img src="/assets/2017/images/speakers/girish-ranganathan.jpg" alt="Girish Ranganathan" />
+                    {%- else -%}
+                        <img src="/assets/2017/images/speakers/{{ item.speaker | slugify }}.jpg" alt="{{ item.speaker }}" />
+                    {%- endif -%}
+                    </div>
+                    {{ item.description }}
+                {% endcapture %}
+                {% if item.description %}{% include partials/popover.html content=popover-content id=forloop.index type=item.event add-class="popover--event" %}{% endif %}              
                 {% endfor %}
             </div>
         </div>

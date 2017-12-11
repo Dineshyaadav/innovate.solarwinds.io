@@ -1,4 +1,4 @@
-<div id="{{ include.id }}" class="popover">
+<div id="{{ include.id }}" class="popover{% if include.add-class %} {{ include.add-class }}{% endif %}">
   <div class="popover-header">{{ include.type }}</div>
   <div class="popover-content">{{ include.content }}</div>
 </div>
