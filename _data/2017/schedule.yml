@@ -3,8 +3,13 @@
   event: Registration/Check-In
   admin: true
 
+- time: 4:50 PM
+  duration: 10
+  event: Welcome & Innovate Summit Introduction
+  admin: true
+
 - time: 5:00 PM
-  duration: 30
+  duration: 25
   event: Talk
   topic: Writing Monitor-Friendly Software
   speaker: Karlo Zatylny
@@ -16,7 +21,7 @@
   every day programming and the power it unleashes in helping programmers optimize 
   their time in searching for resolutions."
 
-- time: 5:30 PM
+- time: 5:25 PM
   duration: 10
   event: Lightning Talk
   topic: "You Don't Scale: How to Work in the Industry and Physically Survive"
@@ -25,7 +30,7 @@
   in his spine and ending up taking 3 months off work after surgery. Let's talk 
   about what happened and how to avoid it."
 
-- time: 5:40 PM
+- time: 5:35 PM
   duration: 10
   event: Lightning Talk
   topic: "CoreHard: Running An External Engineering Community"
@@ -35,7 +40,7 @@
   organizing meetups and conferences. The experience is based on CoreHard — Belarusian 
   C++ community — and accompanying CoreHard conferences that Anton oversees."
 
-- time: 5:50 PM
+- time: 5:45 PM
   duration: 10
   event: Lightning Talk
   topic: "Prometheus - Alert Manager & Storage Adapters"
@@ -44,12 +49,12 @@
   We’ll talk about why we’re harnessing the power of Prometheus and integrating it as as an open-source 
   monitoring solution with SolarWinds AppOptics as a monitoring service offering."
 
-- time: 6:00 PM
-  duration: 20
+- time: 5:55 PM
+  duration: 10
   event: Break
   admin: true
 
-- time: 6:20 PM
+- time: 6:05 PM
   duration: 10
   event: Lightning Talk
   topic: "Go-based IoT with Gobot"
@@ -61,7 +66,7 @@
   Gobot contributor Trevor Rosen will show you how easy it is to control electronics with this sophisticated 
   and highly portable language."
   
-- time: 6:30 PM
+- time: 6:15 PM
   duration: 10 
   event: Lightning Talk
   topic: "The Monitoring Trifecta: Metrics, Logs, Traces"
@@ -69,7 +74,7 @@
   description: "Let's discuss the intersection of Metrics, Traces, and Logs and how these three monitoring paradigms
   overlap to form signals to monitor your distributed systems."
   
-- time: 6:40 PM
+- time: 6:25 PM
   duration: 10 
   event: Talk
   topic: "Logging Docker with Papertrail"
@@ -78,7 +83,7 @@
   with advanced functionality, such as tailing, contextual log analysis, colorized logs, advanced search, etc.
   Push and pull Docker logs from Papertrail. Buffer your logs so they aren't lost in the event of network disruption."
   
-- time: 6:50 PM
+- time: 6:35 PM
   duration: 10 
   event: Lightning Talk
   topic: "Logging Kubernetes with Fluentd & Papertrail"
@@ -87,7 +92,7 @@
   Fluentd allows you to unify data collection and consumption for a better use and understanding of data.
   Alex will demo show how to bring the power of Papertrail's agggregated logging to Kubernetes"
 
-- time: 7:00 PM
+- time: 6:45 PM
   duration: 10 
   event: Lightning Talk
   topic: "Visibility into Docker Swarm & Kubernetes Networks"
@@ -96,13 +101,13 @@
   Which should you be? Karlo will demo a free container monitoring tool that not only provides visibility into your
   multi-host workloads, it'll help you decide which network driver you to use."
 
-- time: 7:10 PM
-  duration: 20
+- time: 6:55 PM
+  duration: 10
   event: Break
   admin: true
 
-- time: 7:30 PM
-  duration: 20 
+- time: 7:05 PM
+  duration: 25 
   event: Talk
   topic: "Managing Infrastructure As Code - Why You Should Too"
   speaker: Fredrik Skogman
@@ -112,8 +117,8 @@
   error prone tasks. This talk goes through tooling used and best practices
   at SolarWinds Cloud's engineering organisations."
 
-- time: 7:50 PM
-  duration: 40
+- time: 7:30 PM
+  duration: 30
   event: Talk
   topic: "The Serverless Landscape & the CNCF"
   speaker: Lee Calcote & Girish Ranganathan
@@ -126,7 +131,7 @@
     - Common Serverless myths.<br /> 
     - Serverless’s biggest challenges and best-suited use cases."
 
-- time: 8:30 PM
+- time: 8:00 PM
   duration: 30
   event: Social — Happy Hour
   admin: true
