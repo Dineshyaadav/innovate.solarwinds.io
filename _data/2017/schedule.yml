@@ -11,7 +11,7 @@
 - time: 5:00 PM
   duration: 25
   event: Talk
-  topic: Writing Monitor-Friendly Software
+  topic: Analytics Driven Development
   speaker: Karlo Zatylny
   description: "Software is written with functionality and debugging in mind. 
   Most often, programmers use logging as the primary method for debugging their 
