@@ -11,7 +11,7 @@
 - time: 5:00 PM
   duration: 25
   event: Talk
-  topic: Writing Monitor-Friendly Software
+  topic: Analytics Driven Development
   speaker: Karlo Zatylny
   description: "Software is written with functionality and debugging in mind. 
   Most often, programmers use logging as the primary method for debugging their 
@@ -24,15 +24,6 @@
 - time: 5:25 PM
   duration: 10
   event: Lightning Talk
-  topic: "You Don't Scale: How to Work in the Industry and Physically Survive"
-  speaker: Oli Wood
-  description: "Back in 2006, Oli worked himself into hospital, collapsing a disc 
-  in his spine and ending up taking 3 months off work after surgery. Let's talk 
-  about what happened and how to avoid it."
-
-- time: 5:35 PM
-  duration: 10
-  event: Lightning Talk
   topic: "CoreHard: Running An External Engineering Community"
   speaker: Anton Naumovich
   description: "Anton will speak about his experience in launching and running 
@@ -40,7 +31,7 @@
   organizing meetups and conferences. The experience is based on CoreHard — Belarusian 
   C++ community — and accompanying CoreHard conferences that Anton oversees."
 
-- time: 5:45 PM
+- time: 5:35 PM
   duration: 10
   event: Lightning Talk
   topic: "Prometheus - Alert Manager & Storage Adapters"
@@ -49,12 +40,28 @@
   We’ll talk about why we’re harnessing the power of Prometheus and integrating it as as an open-source 
   monitoring solution with SolarWinds AppOptics as a monitoring service offering."
 
+- time: 5:45 PM
+  duration: 10 
+  event: Talk
+  topic: "Logging Docker with Papertrail"
+  speaker: Girish Ranganathan
+  description: "Learn how the Papertrail log driver for Docker enhances your logging experience
+  with advanced functionality, such as tailing, contextual log analysis, colorized logs, advanced search, etc.
+  Push and pull Docker logs from Papertrail. Buffer your logs so they aren't lost in the event of network disruption."
+    
 - time: 5:55 PM
-  duration: 10
+  duration: 10 
+  event: Lightning Talk
+  topic: "A Shallow Dive into Clickhouse"
+  speaker: Mark Martin
+  description: "Let's discuss and get hands-on with a blazing fast analytical DBMS - Clickhouse."
+
+- time: 6:05 PM
+  duration: 30
   event: Break
   admin: true
 
-- time: 6:05 PM
+- time: 6:35 PM
   duration: 10
   event: Lightning Talk
   topic: "Go-based IoT with Gobot"
@@ -65,25 +72,8 @@
   implementing both high-level abstractions and low-level drivers. In this lightning talk, 
   Gobot contributor Trevor Rosen will show you how easy it is to control electronics with this sophisticated 
   and highly portable language."
-  
-- time: 6:15 PM
-  duration: 10 
-  event: Lightning Talk
-  topic: "The Monitoring Trifecta: Metrics, Logs, Traces"
-  speaker: Mark Martin
-  description: "Let's discuss the intersection of Metrics, Traces, and Logs and how these three monitoring paradigms
-  overlap to form signals to monitor your distributed systems."
-  
-- time: 6:25 PM
-  duration: 10 
-  event: Talk
-  topic: "Logging Docker with Papertrail"
-  speaker: Girish Ranganathan
-  description: "Learn how the Papertrail log driver for Docker enhances your logging experience
-  with advanced functionality, such as tailing, contextual log analysis, colorized logs, advanced search, etc.
-  Push and pull Docker logs from Papertrail. Buffer your logs so they aren't lost in the event of network disruption."
-  
-- time: 6:35 PM
+
+- time: 6:45 PM
   duration: 10 
   event: Lightning Talk
   topic: "Logging Kubernetes with Fluentd & Papertrail"
@@ -92,7 +82,7 @@
   Fluentd allows you to unify data collection and consumption for a better use and understanding of data.
   Alex will demo show how to bring the power of Papertrail's agggregated logging to Kubernetes"
 
-- time: 6:45 PM
+- time: 6:55 PM
   duration: 10 
   event: Lightning Talk
   topic: "Visibility into Docker Swarm & Kubernetes Networks"
@@ -100,11 +90,6 @@
   description: "Running Docker containers across multiple hosts? How's your network doing? Which driver are you using? 
   Which should you be? Karlo will demo a free container monitoring tool that not only provides visibility into your
   multi-host workloads, it'll help you decide which network driver you to use."
-
-- time: 6:55 PM
-  duration: 10
-  event: Break
-  admin: true
 
 - time: 7:05 PM
   duration: 25 
@@ -129,6 +114,6 @@
   of Serverless's biggest challenges and best-suited use cases."
 
 - time: 8:00 PM
-  duration: 30
-  event: Social — Happy Hour
+  duration: 60
+  event: Afterparty!
   admin: true
