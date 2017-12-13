@@ -24,15 +24,6 @@
 - time: 5:25 PM
   duration: 10
   event: Lightning Talk
-  topic: "You Don't Scale: How to Work in the Industry and Physically Survive"
-  speaker: Oli Wood
-  description: "Back in 2006, Oli worked himself into hospital, collapsing a disc 
-  in his spine and ending up taking 3 months off work after surgery. Let's talk 
-  about what happened and how to avoid it."
-
-- time: 5:25 PM
-  duration: 10
-  event: Lightning Talk
   topic: "CoreHard: Running An External Engineering Community"
   speaker: Anton Naumovich
   description: "Anton will speak about his experience in launching and running 
