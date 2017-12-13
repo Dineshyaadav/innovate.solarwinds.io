@@ -54,14 +54,13 @@
   event: Lightning Talk
   topic: "A Shallow Dive into Clickhouse"
   speaker: Mark Martin
-  description: "Let's discuss the intersection of Metrics, Traces, and Logs and how these three monitoring paradigms
-  overlap to form signals to monitor your distributed systems."
+  description: "Let's discuss and get hands-on with a blazing fast analytical DBMS - Clickhouse."
 
 - time: 6:05 PM
   duration: 30
   event: Break
   admin: true
-  
+
 - time: 6:35 PM
   duration: 10
   event: Lightning Talk
