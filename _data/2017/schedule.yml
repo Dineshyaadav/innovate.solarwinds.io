@@ -41,6 +41,28 @@
   monitoring solution with SolarWinds AppOptics as a monitoring service offering."
 
 - time: 5:45 PM
+  duration: 10 
+  event: Talk
+  topic: "Logging Docker with Papertrail"
+  speaker: Girish Ranganathan
+  description: "Learn how the Papertrail log driver for Docker enhances your logging experience
+  with advanced functionality, such as tailing, contextual log analysis, colorized logs, advanced search, etc.
+  Push and pull Docker logs from Papertrail. Buffer your logs so they aren't lost in the event of network disruption."
+    
+- time: 5:55 PM
+  duration: 10 
+  event: Lightning Talk
+  topic: "A Shallow Dive into Clickhouse"
+  speaker: Mark Martin
+  description: "Let's discuss the intersection of Metrics, Traces, and Logs and how these three monitoring paradigms
+  overlap to form signals to monitor your distributed systems."
+
+- time: 6:05 PM
+  duration: 30
+  event: Break
+  admin: true
+  
+- time: 6:35 PM
   duration: 10
   event: Lightning Talk
   topic: "Go-based IoT with Gobot"
@@ -51,29 +73,7 @@
   implementing both high-level abstractions and low-level drivers. In this lightning talk, 
   Gobot contributor Trevor Rosen will show you how easy it is to control electronics with this sophisticated 
   and highly portable language."
-  
-- time: 5:55 PM
-  duration: 10 
-  event: Lightning Talk
-  topic: "The Monitoring Trifecta: Metrics, Logs, Traces"
-  speaker: Mark Martin
-  description: "Let's discuss the intersection of Metrics, Traces, and Logs and how these three monitoring paradigms
-  overlap to form signals to monitor your distributed systems."
 
-- time: 6:05 PM
-  duration: 30
-  event: Break
-  admin: true
-
-- time: 6:35 PM
-  duration: 10 
-  event: Talk
-  topic: "Logging Docker with Papertrail"
-  speaker: Girish Ranganathan
-  description: "Learn how the Papertrail log driver for Docker enhances your logging experience
-  with advanced functionality, such as tailing, contextual log analysis, colorized logs, advanced search, etc.
-  Push and pull Docker logs from Papertrail. Buffer your logs so they aren't lost in the event of network disruption."
-  
 - time: 6:45 PM
   duration: 10 
   event: Lightning Talk
