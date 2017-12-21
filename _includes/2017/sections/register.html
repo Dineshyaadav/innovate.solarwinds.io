@@ -8,7 +8,8 @@
                     We have limited availability, so we encourage you to sign up as soon as possible 
                     to ensure you'll have a spot. On conference day, check-in will begin at 4pm.
                 </p>
-                <div class="button inverted" data-target-modal="registrationModal">Register Now</div>                                        
+                <!-- <div class="button inverted" data-target-modal="registrationModal">Register Now</div> -->
+                <em>This event has passed. Stay tuned for videos, photos, and slide decks!</em>
             </div>
             <div class="col-md-6 col-sm-12">
                 <aside>
@@ -24,11 +25,3 @@
         </div>
     </div>
 </section>
-
-{% capture modalContent %}
-    <div id="registration-form">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGU-TAVi0oxgNqMhRCusBl7uh26xLne6Y-rdOZWy0Km76uuQ/viewform?embedded=true" frameborder="0">Loading...</iframe>
-    </div>
-{% endcapture %}
-
-{% include partials/modal.html id="registrationModal" content=modalContent fullScreen=true %}
