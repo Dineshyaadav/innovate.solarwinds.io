@@ -7,6 +7,7 @@
   duration: 10
   event: Welcome & Innovate Summit Introduction
   admin: true
+  slides: 01-welcome-to-innovate-summit-2017.pdf
 
 - time: 5:00 PM
   duration: 25
@@ -20,6 +21,7 @@
   to look in log files for issues. This talk will focus on the use of analytics in 
   every day programming and the power it unleashes in helping programmers optimize 
   their time in searching for resolutions."
+  slides: 02-analytics-driven-development.pdf
 
 - time: 5:25 PM
   duration: 10
@@ -30,6 +32,7 @@
   an engineering community — naming, branding, promoting, getting the audience, 
   organizing meetups and conferences. The experience is based on CoreHard — Belarusian 
   C++ community — and accompanying CoreHard conferences that Anton oversees."
+  slides: 03-corehard-running-an-engineering-community.pdf
 
 - time: 5:35 PM
   duration: 10
@@ -39,6 +42,7 @@
   description: "Join for a case study on how Prometheus, Alert Manager and remote storage works. 
   We’ll talk about why we’re harnessing the power of Prometheus and integrating it as as an open-source 
   monitoring solution with SolarWinds AppOptics as a monitoring service offering."
+  slides: 04-prometheus-longterm-storage.pdf
 
 - time: 5:45 PM
   duration: 10 
@@ -48,6 +52,7 @@
   description: "Learn how the Papertrail log driver for Docker enhances your logging experience
   with advanced functionality, such as tailing, contextual log analysis, colorized logs, advanced search, etc.
   Push and pull Docker logs from Papertrail. Buffer your logs so they aren't lost in the event of network disruption."
+  slides: 05-docker-log-driver-for-papertrail.pdf
     
 - time: 5:55 PM
   duration: 10 
@@ -55,6 +60,7 @@
   topic: "A Shallow Dive into Clickhouse"
   speaker: Mark Martin
   description: "Let's discuss and get hands-on with a blazing fast analytical DBMS - Clickhouse."
+  slides: 06-clickhouse-shallow-dive.pdf
 
 - time: 6:05 PM
   duration: 30
@@ -72,6 +78,7 @@
   implementing both high-level abstractions and low-level drivers. In this lightning talk, 
   Gobot contributor Trevor Rosen will show you how easy it is to control electronics with this sophisticated 
   and highly portable language."
+  slides: 07-go-based-iot-with-gobot.pdf
 
 - time: 6:45 PM
   duration: 10 
@@ -81,6 +88,7 @@
   description: "Fluentd is an open source data collector for unified logging layer.
   Fluentd allows you to unify data collection and consumption for a better use and understanding of data.
   Alex will demo show how to bring the power of Papertrail's agggregated logging to Kubernetes"
+  slides: 08-logging-kubernetes-with-fluentd-papertrail.pdf
 
 - time: 6:55 PM
   duration: 10 
@@ -90,6 +98,7 @@
   description: "Running Docker containers across multiple hosts? How's your network doing? Which driver are you using? 
   Which should you be? Karlo will demo a free container monitoring tool that not only provides visibility into your
   multi-host workloads, it'll help you decide which network driver you to use."
+  slides: 09-visibility-into-docker-swarm-kubernetes-networks-cmon.pdf
 
 - time: 7:05 PM
   duration: 25 
@@ -101,6 +110,7 @@
   appropriate tooling that automates the process to avoid repetitive and
   error prone tasks. This talk goes through tooling used and best practices
   at SolarWinds Cloud's engineering organisations."
+  slides: 10-infrastructure-automation.pdf
 
 - time: 7:30 PM
   duration: 30
@@ -112,6 +122,7 @@
   the ecosystem. We'll also take a look at some of the current Serverless and FaaS projects and 
   cover some of the common Serverless myths. Finally, we'll look ahead toward what we foresee as some 
   of Serverless's biggest challenges and best-suited use cases."
+  slides: 11-state-of-serverless-the-cncf.pdf
 
 - time: 8:00 PM
   duration: 60

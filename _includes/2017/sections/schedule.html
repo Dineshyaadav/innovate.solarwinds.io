@@ -1,10 +1,16 @@
 <section id="schedule" data-aos="fade-up" data-aos-easing="ease-in">
     <div class="container">
         <h1>Schedule</h1>
+        <p>View the slides from each presentation by clicking the respective talk. Videos coming soon!</p>
         <div class="event-times">
             <div class="row justify-content-center">
                 {% for item in site.data.2017.schedule %}
                 <div class="col-lg-10 col-sm-12 time-block time-{{ item.duration }} {% if item.admin %}admin{% endif %}" {% if item.description %}data-target-popover="{{ forloop.index }}"{% endif %} data-aos="fade-left" data-easing="ease-in-sine">
+                    {% if item.speaker %}
+                    <div class="c-more">
+                        <span>&plus;</span>
+                    </div>
+                    {% endif %}
                     <div class="time" data-aos="fade-right">
                         <span>{{ item.time }}</span>
                     </div>
@@ -25,7 +31,8 @@
                         <img src="/assets/2017/images/speakers/{{ item.speaker | slugify }}.jpg" alt="{{ item.speaker }}" />
                     {%- endif -%}
                     </div>
-                    {{ item.description }}
+                    {{ item.description }}<br /><br />
+                    <div class="u-center"><a class="button primary" href="/assets/2017/docs/{{ item.slides }}" target="_blank">View Slides</a></div>
                 {% endcapture %}
                 {% if item.description %}{% include partials/popover.html content=popover-content id=forloop.index type=item.event add-class="popover--event" %}{% endif %}              
                 {% endfor %}

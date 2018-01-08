@@ -106,6 +106,7 @@ a.button {
     }
 
     &.secondary {
+        display: inline-block;
         text-transform: none;
         background: none;
         border-left: 2px dotted _palette(grayMed);
@@ -583,10 +584,15 @@ section {
         }
 
         .time-block {
+            transition: background 0.25s ease-in-out;
             position: relative;
             margin: 0.5em 0;
             background: rgba(255,255,255, 0.7);
-            border: 1px solid _palette(grayVLight);            
+            border: 1px solid _palette(grayVLight);
+            
+            &:hover {
+                background: rgba(255, 255, 255, 0.9);
+            }
 
             &.admin {
                 background: rgba(255,255,255, 0.5);
@@ -827,6 +833,43 @@ section {
     }
 }
 
+.c-more {
+    position: absolute;
+    z-index: -5;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    color: _palette(textPrimary);
+}
+
+#photos {
+    background: _palette(green);
+    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3);
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+    &__thumb {
+        max-width: 128px;
+        margin: 0 5px 10px;
+
+        &:hover {
+            cursor: pointer;
+            margin: 0 5px 5px;
+            padding: 5px;
+            border: 1px solid #FFF;
+        }
+    }
+}
+
 .speaker {
     padding: 1em;
 
@@ -993,10 +1036,6 @@ section {
     }
 }
 
-.hidden {
-    display: none;
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -1112,6 +1151,16 @@ section {
         font-size: 2em;
         cursor: pointer;
     }
+}
+
+// Utilities
+.hidden {
+    display: none;
+}
+
+.u-center {
+    margin: 0 auto;
+    text-align: center;
 }
 
 // Screen break overrides
