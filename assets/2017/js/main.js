@@ -22,9 +22,9 @@
         var $schedule = $('section#schedule'),
             $scheduleOffset = $schedule.offset().top - navHeight,
             $schedulePosition = $scheduleOffset + $schedule.outerHeight() / 2;
-        var $register = $('section#register'),
-            $registerOffset = $register.offset().top - navHeight,
-            $registerPosition = $registerOffset + $register.outerHeight() / 2;
+        var $photos = $('section#photos'),
+            $photosOffset = $photos.offset().top - navHeight,
+            $photosPosition = $photosOffset + $photos.outerHeight() / 2;
         var $speakers = $('section#speakers'),
             $speakersOffset = $speakers.offset().top - navHeight,
             $speakersPosition = $speakersOffset + $speakers.outerHeight() / 2;
@@ -61,10 +61,10 @@
                 $('nav li a[href="#schedule"]').removeClass('active');
             }
 
-            if (scroll >= $registerOffset && scroll <= $registerPosition && !$('nav li a[href="#register"]').hasClass('active')) {
-                $('nav li a[href="#register"]').addClass('active');
-            } else if (scroll < $registerOffset && $('nav li a[href="#register"]').hasClass('active') || scroll > $registerPosition && $('nav li a[href="#register"]').hasClass('active')) {
-                $('nav li a[href="#register"]').removeClass('active');
+            if (scroll >= $photosOffset && scroll <= $photosPosition && !$('nav li a[href="#photos"]').hasClass('active')) {
+                $('nav li a[href="#photos"]').addClass('active');
+            } else if (scroll < $photosOffset && $('nav li a[href="#photos"]').hasClass('active') || scroll > $photosPosition && $('nav li a[href="#photos"]').hasClass('active')) {
+                $('nav li a[href="#photos"]').removeClass('active');
             }
 
             if (scroll >= $speakersOffset && scroll <= $speakersPosition && !$('nav li a[href="#speaker"]').hasClass('active')) {
@@ -104,6 +104,57 @@
                 $('#expand-nav').css('display', 'block');
                 $('.ribbon').css('left', '0');
             }
+        });
+
+        function openGallery($image) {
+            var image = $image.get(0);
+            
+            // Demo example from https://github.com/electerious/basicLightbox
+            function init(instance) {
+                var getSrc = function getSrc(elem) {
+                    return elem.getAttribute('data-src');
+                };
+                var getPrev = function getPrev(elem) {
+                    return document.getElementById(elem.getAttribute('data-prev'));
+                };
+                var getNext = function getNext(elem) {
+                    return document.getElementById(elem.getAttribute('data-next'));
+                };
+
+                instance.element().querySelector('img').src = '';
+                instance.element().querySelector('img').src = getSrc(image);
+
+                var prev = instance.element().querySelector('#prev');
+                var next = instance.element().querySelector('#next');
+
+                prev.onclick = function (e) {
+                    image = getPrev(image);
+                    init(instance);
+                };
+
+                next.onclick = function (e) {
+                    image = getNext(image);
+                    init(instance);
+                };
+
+                $('body').addClass('modal-open');
+            };
+
+            function end(instance) {
+                $('body').removeClass('modal-open');
+            };
+
+            basicLightbox.create('<img>', {
+                beforePlaceholder: '<button id="prev">&#60;</button>',
+                afterPlaceholder: '<button id="next">&#62;</button>',
+                beforeShow: init,
+                beforeClose: end
+            }).show();
+        }
+
+        $('.gallery__thumb').on('click', function (e) {
+            openGallery($(this));
+            return;
         });
     });
 })(jQuery);
