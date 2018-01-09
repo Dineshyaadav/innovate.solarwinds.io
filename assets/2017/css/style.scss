@@ -491,6 +491,11 @@ form {
             font-size: 2em;
             color: _palette(gray);
         }
+
+        &__subtitle {
+            max-width: 538px;
+            line-height: 1.2em;
+        }
     }
 
     svg {
@@ -830,6 +835,25 @@ section {
             font-size: 1.5em;
             font-weight: 700;
         }
+    }
+}
+
+.about__aside {
+    display: flex;
+    border: 1px solid _palette(blue);
+    align-items: center;
+
+    &-header {
+        background: _palette(blue);
+        color: #FFF;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    a {
+        margin-left: 1em;
     }
 }
 
