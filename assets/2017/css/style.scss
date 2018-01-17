@@ -576,6 +576,7 @@ section {
     }
 
     &#schedule {
+        z-index: 1;
         background: _palette(blue);
         box-shadow: inset 0 0 0.4em rgba(0,0,0,0.3);
         padding-bottom: 10em;
