@@ -1,0 +1,9 @@
+---
+layout: 2017/stripped
+add-meta: <meta name="robots" content="noindex"><meta name="googlebot" content="noindex">
+---
+{%- for deck in site.static_files -%}
+  {%- if deck.path contains 'assets/2017/docs/original' -%}
+    <a href="{{ deck.path }}">{{ deck.name }}</a><br />
+  {%- endif -%}
+{%- endfor -%}

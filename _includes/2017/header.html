@@ -19,6 +19,9 @@
 		<meta name="description" content="A one-day event where SolarWinds engineers share ideas with the tech community on running infrastructure and applications at-scale." />
 		<meta name="keywords" content="software engineering, monitoring, containers, docker, kubernetes, swarm, tech conference, tech networking, tech events, tech talks" />
 		<meta property="og:image" content="{{ site.baseurl }}/assets/2017/images/social-preview.png" />
+		{% if page.add-meta %}
+		{{ page.add-meta %}}
+		{% endif %}
 
 		<!-- Favicon/device icons -->
 		<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/icons/apple-touch-icon.png">
