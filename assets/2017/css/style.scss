@@ -648,7 +648,7 @@ section {
                 text-align: center;
                 margin-left: 5em;
 
-                &[data-target-popover] {
+                &[data-expand] {
                   cursor: pointer;
                 }
 
@@ -656,6 +656,26 @@ section {
                     font-weight: 600;
                 }
             }
+        }
+    }
+
+    .time-description {
+        background: #FFF;
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+        height: 0;
+        visibility: hidden;
+
+        &__text {
+            display: block;
+            padding: 1em;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        &_video {
+            text-align: center;
         }
     }
 
@@ -858,16 +878,32 @@ section {
     }
 }
 
-.c-more {
-    position: absolute;
-    z-index: -5;
-    top: 0;
-    right: 10px;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    font-size: 1.5em;
-    color: _palette(textPrimary);
+.c {
+    &-more, &-less {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        color: _palette(textPrimary);
+    }
+
+    &-more {
+        position: absolute;
+        z-index: -5;
+        top: 0;
+        right: 10px;
+        bottom: 0;
+    }
+
+    &-less {
+        height: 100%;
+        min-width: 30px;
+        background: #EEE;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 #photos {
@@ -1001,10 +1037,6 @@ section {
             }
         }
     
-        button {
-            margin-top: 0.5em;
-        }
-    
         .copyright {
             color: #858484;
             font-size: 0.95em;
@@ -1059,6 +1091,10 @@ section {
             }
         }
     }
+}
+
+#mc-embedded-subscribe {
+    margin-top: 0.5em;
 }
 
 .modal {
@@ -1151,6 +1187,7 @@ section {
 }
 
 .cookie-banner {
+    z-index: 1000;
     position: fixed;
     bottom: 0;
     left: 0;

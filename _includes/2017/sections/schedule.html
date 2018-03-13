@@ -5,7 +5,7 @@
         <div class="event-times">
             <div class="row justify-content-center">
                 {% for item in site.data.2017.schedule %}
-                <div class="col-lg-10 col-sm-12 time-block time-{{ item.duration }} {% if item.admin %}admin{% endif %}" {% if item.description %}data-target-popover="{{ forloop.index }}"{% endif %} data-aos="fade-left" data-easing="ease-in-sine">
+                <div class="col-lg-10 col-sm-12 time-block time-{{ item.duration }}{% if item.admin %} admin{% endif %}" data-aos="fade-left" data-easing="ease-in-sine">
                     {% if item.speaker %}
                     <div class="c-more">
                         <span>&plus;</span>
@@ -14,27 +14,27 @@
                     <div class="time" data-aos="fade-right">
                         <span>{{ item.time }}</span>
                     </div>
-                    <div class="event" {% if item.description %}data-target-popover="{{ forloop.index }}"{% endif %}>
+                    <div class="event{% if item.video %} js-expand{% endif %}"{% if item.video %} data-expand="{% if item.topic %}{{ item.topic | slugify }}{% else %}{{ item.event | slugify }}{% endif %}"{% endif %} >
                         {% unless item.topic %}{{ item.event }}{% endunless %}
                         {% if item.speaker %}
-                          <span class="event__speaker" {% if item.description %}data-target-popover="{{ forloop.index }}"{% endif %}>{{ item.speaker }}</span><br />
+                          <span class="event__speaker">{{ item.speaker }}</span><br />
                           {{ item.topic }}
                         {% endif %}
                     </div>
                 </div>
-                {% capture popover-content %}
-                    <div class="popover--event__image">
-                    {%- if item.time == "7:30 PM" -%}
-                        <img src="/assets/2017/images/speakers/lee-calcote.jpg" alt="Lee Calcote" />
-                        <img src="/assets/2017/images/speakers/girish-ranganathan.jpg" alt="Girish Ranganathan" />
-                    {%- else -%}
-                        <img src="/assets/2017/images/speakers/{{ item.speaker | slugify }}.jpg" alt="{{ item.speaker }}" />
-                    {%- endif -%}
+                {% if item.video %}
+                    <div id="{% if item.topic %}{{ item.topic | slugify }}{% else %}{{ item.event | slugify }}{% endif %}" data-video="{{ item.video }}" class="col-lg-10 col-sm-12 time-description">
+                        <div class="time-description__text">
+                            <div class="time-description__video">
+                                <iframe id="{{ item.video }}" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            {% if item.description %}{{ item.description }}<br />{% endif %}<br />
+                            <div class="u-center">
+                                <a class="button primary" href="/assets/2017/docs/{{ item.slides }}" target="_blank">View Slides</a>
+                            </div>
+                        </div>
                     </div>
-                    {{ item.description }}<br /><br />
-                    <div class="u-center"><a class="button primary" href="/assets/2017/docs/{{ item.slides }}" target="_blank">View Slides</a></div>
-                {% endcapture %}
-                {% if item.description %}{% include partials/popover.html content=popover-content id=forloop.index type=item.event add-class="popover--event" %}{% endif %}              
+                {% endif %}
                 {% endfor %}
             </div>
         </div>

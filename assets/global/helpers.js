@@ -137,4 +137,41 @@
         });
     }
   });
+
+    $('.js-expand').on('click', (e) => {
+        let $elem = $(e.target);
+        let contentId = $elem.data('expand');
+        if ($elem.hasClass('is-expanded')) {
+            $elem.removeClass('is-expanded');
+            $(`#${contentId}`).animate({
+                height: '0'
+            }, 300, function () {
+                $(`#${contentId}`).css({
+                    visibility: 'hidden'
+                });
+            });
+            if ($elem.siblings('.c-more')) {
+                $elem.siblings('.c-more').children().html("&plus;");
+            }
+        } else {
+            $elem.addClass('is-expanded');
+            let contentId = $elem.data('expand');
+            let vidId = $(`#${contentId}`).data('video');
+            let $vid = $(`#${vidId}`);
+            if (!$vid.attr('src')) {
+                $vid.attr('src', `https://youtube.com/embed/${vidId}`);
+            }
+            $(`#${contentId}`).css({
+                visibility: 'visible',
+                height: 0
+            });
+            $(`#${contentId}`).animate({
+                height: '100%'
+            }, 300);
+
+            if ($elem.siblings('.c-more')) {
+                $elem.siblings('.c-more').children().html("&minus;");
+            }
+        }
+    });
 })(jQuery)
