@@ -139,8 +139,8 @@
   });
 
     $('.js-expand').on('click', (e) => {
-        let $elem = $(e.target);
-        let contentId = $elem.data('expand');
+        var $elem = $(e.target);
+        var contentId = $elem.data('expand');
         if ($elem.hasClass('is-expanded')) {
             $elem.removeClass('is-expanded');
             $(`#${contentId}`).animate({
@@ -155,9 +155,9 @@
             }
         } else {
             $elem.addClass('is-expanded');
-            let contentId = $elem.data('expand');
-            let vidId = $(`#${contentId}`).data('video');
-            let $vid = $(`#${vidId}`);
+            var contentId = $elem.data('expand');
+            var vidId = $(`#${contentId}`).data('video');
+            var $vid = $(`#${vidId}`);
             if (!$vid.attr('src')) {
                 $vid.attr('src', `https://youtube.com/embed/${vidId}`);
             }

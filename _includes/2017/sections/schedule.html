@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 {% if item.video %}
-                    <div id="{% if item.topic %}{{ item.topic | slugify }}{% else %}{{ item.event | slugify }}{% endif %}" data-video="{{ item.video }}" class="col-lg-10 col-sm-12 time-description">
+                    <div id="{% if item.topic %}{{ item.topic | slugify }}{% else %}{{ item.event | slugify }}{% endif %}" data-video="{{ item.video }}" class="col-lg-10 col-sm-12 time-description js-expandable">
                         <div class="time-description__video">
                             <script async type="text/javascript" id="vidyard_embed_code_{{ item.video }}" src="//play.vidyard.com/{{ item.video }}.js?v=3.1.1&type=inline"></script>
                         </div>

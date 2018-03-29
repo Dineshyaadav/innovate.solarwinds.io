@@ -156,5 +156,29 @@
             openGallery($(this));
             return;
         });
+
+        $('.js-open-talks').on('click', function (e) {
+            $('.js-expandable').each(function(i) {
+                if ($(this).hasClass('is-expanded')) {
+                    return;
+                } else {
+                    var contentId = $(this).attr('id');
+                    var $elem = $(`div [data-expand="${contentId}"`);
+                    $(this).addClass('is-expanded');
+                    $(`#${contentId}`).css({
+                        visibility: 'visible',
+                        height: 0
+                    });
+                    $(`#${contentId}`).animate({
+                        height: '100%'
+                    }, 300);
+
+                    if ($elem.siblings('.c-more')) {
+                        $elem.siblings('.c-more').children().html("&minus;");
+                    }
+                }
+            })
+            
+        })
     });
 })(jQuery);
