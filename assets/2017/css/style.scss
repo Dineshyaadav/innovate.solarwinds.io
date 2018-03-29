@@ -662,20 +662,21 @@ section {
     .time-description {
         background: #FFF;
         padding: 0;
-        margin: 0 auto;
-        text-align: center;
         height: 0;
         visibility: hidden;
 
         &__text {
             display: block;
-            padding: 1em;
+            padding: 0 1em 1em;
             max-width: 680px;
             margin: 0 auto;
         }
 
-        &_video {
+        &__video {
             text-align: center;
+            width: 560px;
+            height: 315px;
+            margin: 1em auto;
         }
     }
 
@@ -857,6 +858,12 @@ section {
             font-weight: 700;
         }
     }
+}
+
+.vidyard_player > span {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 auto !important;
 }
 
 .about__aside {
