@@ -2,7 +2,7 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: innovatesolarwindsio-nonprod-zeus-systemmonitor-tls-cert
+  name: iswio-np-zeus-systemmonitor-tls-cert
 spec:
   acme:
     config:
