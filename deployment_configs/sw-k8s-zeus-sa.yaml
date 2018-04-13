@@ -1,0 +1,27 @@
+# This role should pre-exist as part of solarwinds.io deployment
+# kind: Role
+# apiVersion: rbac.authorization.k8s.io/v1
+# metadata:
+#   name: pod-patcher
+# rules:
+# - apiGroups: ["extensions"]
+#   resources: ["deployments"]
+#   verbs: ["get", "watch", "list","patch"]
+# ---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: innovate-patcher
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: innovate-sa-binding
+subjects:
+- kind: ServiceAccount
+  name: innovate-patcher
+roleRef:
+  kind: Role
+  name: pod-patcher
+  apiGroup: rbac.authorization.k8s.io
+---

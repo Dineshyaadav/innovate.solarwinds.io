@@ -1,0 +1,9 @@
+FROM jekyll/jekyll:3.5.0 as external
+ADD . innovate.solarwinds.io/ 
+WORKDIR innovate.solarwinds.io
+RUN gem install bundler; bundle install; jekyll build; mv _site /bin/
+
+FROM nginx:1.13.11-alpine
+COPY --from=external /bin/_site/ /innovate/
+ADD nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
