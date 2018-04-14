@@ -8,7 +8,7 @@ repository: solarwinds/innovate.solarwinds.io
 sass:
     sass_dir: ./_sass
     style: compressed
-exclude: [node_modules, _config.yml, .gitignore, CNAME, Dockerfile, Gemfile, LICENSE, Makefile, package-lock.json, package.json, README.md]
+exclude: [node_modules, _config.yml, .gitignore, CNAME, Gemfile, LICENSE, Makefile, package-lock.json, package.json, README.md, nginx.conf, Dockerfile, Dockerfile_ci, .circleci/]
 
 # Testing
 # baseurl: ''
