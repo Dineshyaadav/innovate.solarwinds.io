@@ -1,17 +1,14 @@
 version: 2
 jobs:
   build:
-    machine: true
+    general:
+      branches:
+        only:
+          - staging
+          - master
+    machine:
+      services:
+        - docker
     steps:
       - checkout
-      - run: bundle install
-      - run: bundle exec jekyll build
-      - run: aws s3 sync _site/ s3://innovate.solarwinds.io/ --delete --region us-east-2
-      - run: aws cloudfront create-invalidation --distribution-id EC12UI1OMZP09 --paths /\*
-
-
-
-
-
-
-
+      - run: chmod +x build.sh && ./build.sh

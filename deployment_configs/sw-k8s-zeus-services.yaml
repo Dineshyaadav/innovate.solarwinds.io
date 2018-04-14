@@ -1,0 +1,76 @@
+##################################################################################################
+# Innovate service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: innovate-service
+  labels:
+    app: innovate-site
+spec:
+  ports:
+  - port: 80
+    name: http
+  selector:
+    app: innovate-site
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: innovate-site
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: innovate-site
+    spec:
+      imagePullSecrets:
+      - name: swregcred
+      containers:
+      - name: internal
+        image: quay.io/solarwinds/solarwinds-io-innovate
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 80
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 80
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: innovate-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: innovate-site
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 80
+  - type: Resource
+    resource:
+      name: memory
+      targetAverageValue: 500Mi
+---
