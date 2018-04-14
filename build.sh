@@ -26,12 +26,12 @@ if [[ $deploy = "true" ]]; then
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
     chmod +x kubectl && \
     export KUBECONFIG=kubeconfig && \
-    ./kubectl -n solarwindsio set image deployment events-site events=quay.io/solarwinds/solarwinds-io-innovate:$tag && \
+    ./kubectl -n solarwindsio set image deployment innovate-site events=quay.io/solarwinds/solarwinds-io-innovate:$tag && \
     sleep 5 && \
-    response=`./kubectl -n solarwindsio rollout status deployments/events-site --watch=true` && \
+    response=`./kubectl -n solarwindsio rollout status deployments/innovate-site --watch=true` && \
     if [[ $response = *"error"* ]]; then
         echo "Deployment not successful with msg: '$response'. Rolling back. . . "
-        ./kubectl rollout undo deployments events-site
+        ./kubectl rollout undo deployments innovate-site
         echo "Rolling back done . . . "
         exit 1
     fi
