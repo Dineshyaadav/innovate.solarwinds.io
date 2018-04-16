@@ -1,6 +1,6 @@
 <section id="schedule" data-aos="fade-up" data-aos-easing="ease-in">
     <div class="container">
-        <h1>Schedule</h1>
+        <h1>Schedule - Watch the Talks</h1>
         <p>Whether you missed the conference or just want to revisit it, click a talk below to watch the presentation as well as access the speaker's slide deck.</p>
         <div class="event-times">
             <div class="row justify-content-center">
@@ -23,11 +23,11 @@
                     </div>
                 </div>
                 {% if item.video %}
-                    <div id="{% if item.topic %}{{ item.topic | slugify }}{% else %}{{ item.event | slugify }}{% endif %}" data-video="{{ item.video }}" class="col-lg-10 col-sm-12 time-description">
+                    <div id="{% if item.topic %}{{ item.topic | slugify }}{% else %}{{ item.event | slugify }}{% endif %}" data-video="{{ item.video }}" class="col-lg-10 col-sm-12 time-description js-expandable">
+                        <div class="time-description__video">
+                            <script async type="text/javascript" id="vidyard_embed_code_{{ item.video }}" src="//play.vidyard.com/{{ item.video }}.js?v=3.1.1&type=inline"></script>
+                        </div>
                         <div class="time-description__text">
-                            <div class="time-description__video">
-                                <iframe id="{{ item.video }}" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                            </div>
                             {% if item.description %}{{ item.description }}<br />{% endif %}<br />
                             <div class="u-center">
                                 <a class="button primary" href="/assets/2017/docs/{{ item.slides }}" target="_blank">View Slides</a>
