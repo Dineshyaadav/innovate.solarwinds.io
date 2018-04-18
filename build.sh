@@ -29,7 +29,7 @@ if [[ $deploy = "true" ]]; then
     ./kubectl -n solarwindsio set image deployment innovate-site internal=quay.io/solarwinds/solarwinds-io-innovate:$tag && \
     sleep 5 && \
     response=`./kubectl -n solarwindsio rollout status deployments/innovate-site --watch=true` && \
-    if [[ $response = *"error"* ]]; then
+    if [[ $response != *"success"* ]]; then
         echo "Deployment not successful with msg: '$response'. Rolling back. . . "
         ./kubectl rollout undo deployments innovate-site
         echo "Rolling back done . . . "
