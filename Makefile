@@ -1,6 +1,7 @@
 export IMAGE=innovatesw
 export APP=isw
 export PORT=4000
+jekyll=bundle exec jekyll
 
 build: clean
 	docker build -t $(IMAGE) .
@@ -22,3 +23,12 @@ clean:
 	(docker rmi `docker images -qf "dangling=true"`) || true
 	(docker rmi $(IMAGE)) || true
 
+# For local testing
+site:
+	$(jekyll) serve
+
+build-site:
+	$(jekyll) build
+
+setup:
+	bundle install
