@@ -1,0 +1,98 @@
+<section id="speakers">
+  <div class="container">
+    <h1>Speakers</h1>
+    <div class="row justify-content-center align-items-center">
+      {% for speaker_hash in site.data.2017.speakers %}
+        {% assign id = speaker_hash[0] %}
+        {% assign speaker = speaker_hash[1] %}
+        
+        <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up-left" data-aos-easing="ease-in" data-aos-delay="{{ forloop.index | times: 100 | plus: delay }}">
+          <div class="speaker card">
+            <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}">
+            <div class="info-box" data-target-modal="{{ id }}Modal">
+              <div class="info" data-target-modal="{{ id }}Modal">
+                <h3 data-target-modal="{{ id }}Modal">{{ speaker.name }}</h3>
+                <p class="title" data-target-modal="{{ id }}Modal">
+                  <strong>{{ speaker.title }}</strong>
+                  <br /> {{ speaker.company }}
+                  <button class="more-info-link inverted no-border" data-target-modal="{{ id }}Modal">Read Bio</button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+      <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+        <aside>
+          <h3>Do you have a research project or topic you're particularly knowledgable on?
+          </h3>
+          <p>
+            We'd love to see a proposal and consider you for a slot at the Summit.
+          </p>
+          <div class="button primary" data-target-modal="speakerFormModal">Submit your proposal</div>
+        </aside>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+{% for speaker_hash in site.data.2017.speakers %}
+  {% capture modalId %}{{ speaker_hash[0] | append: "Modal" }}{% endcapture %}
+  {% assign speaker = speaker_hash[1] %}
+  {% capture speakerName %}{{ speaker.name }}{% endcapture %}
+
+  {% capture modalContent %}
+    <div class="speaker">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-9 col-sm-12">
+          <div class="headshot">
+            <img src="{{ site.baseurl }}/assets/2017/images/speakers/{{ speaker.image }}" alt="{{ speaker.name }}">
+          </div>
+          <h2>{{ speaker.name }}</h2>
+          <p class="title">
+            <strong>{{ speaker.title }}</strong>
+            <br /> {{ speaker.company }}
+          </p>
+          <p>{{ speaker.bio }}</p>
+          <footer>
+            {% if speaker.social %}
+            <h3>Connect with {{ speaker.name | truncatewords: 1, "" }}</h3>
+              <ul class="inline">
+                {% if speaker.social.linkedin %}
+                <li>
+                  <a href="{{ speaker.social.linkedin }}">
+                    <div class="social-linked-in"></div>
+                  </a>
+                </li>
+                {% endif %} {% if speaker.social.twitter %}
+                <li>
+                  <a href="https://twitter.com/{{ speaker.social.twitter }}">
+                    <div class="social-twitter"></div>
+                  </a>
+                </li>
+                {% endif %} {% if speaker.social.website %}
+                <li>
+                  <a href="{{ speaker.social.website }}">
+                    <div class="social-website"></div>
+                  </a>
+                </li>
+                {% endif %}
+              </ul>
+            {% endif %}
+          </footer>
+        </div>
+      </div>
+    </div>
+  {% endcapture %} 
+  {% include partials/modal.html id=modalId content=modalContent %}
+{% endfor %}
+
+{% capture registrationContent%}
+  <div id="speaker-form">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdx4cWYX3RwLf823ClLyCqWd00r4kQTgS2tyFXQCR9To7E7oQ/viewform?embedded=true"
+      frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+  </div>
+{% endcapture %}
+
+{% include partials/modal.html id="speakerFormModal" content=registrationContent fullScreen=true %}
